@@ -1,0 +1,14 @@
+name = "family-memory-assistant"
+main = "src/index.ts"
+compatibility_date = "2026-09-05"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "family-memory"
+database_id = "4000beb9-0ae2-412d-9b95-af0c468a8688"
+migrations_dir = "migrations"
+
+[vars]
+ENVIRONMENT = "production"
+FAMILY_TIMEZONE = "Australia/Sydney"

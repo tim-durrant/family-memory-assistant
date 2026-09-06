@@ -1,0 +1,17 @@
+services:
+  app:
+    image: node:22-bookworm-slim
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - node_modules:/workspace/node_modules
+      - wrangler_state:/workspace/.wrangler
+      - npm_cache:/root/.npm
+    ports:
+      - "8787:8787"
+    command: npm run dev -- --ip 0.0.0.0
+
+volumes:
+  node_modules:
+  wrangler_state:
+  npm_cache:

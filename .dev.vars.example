@@ -1,0 +1,6 @@
+ENVIRONMENT=development
+WHATSAPP_APP_SECRET=replace-with-local-meta-app-secret
+WHATSAPP_VERIFY_TOKEN=replace-with-local-verification-token
+WHATSAPP_ACCESS_TOKEN=replace-with-local-access-token
+WHATSAPP_PHONE_NUMBER_ID=replace-with-phone-number-id
+WHATSAPP_WABA_ID=replace-with-business-account-id
