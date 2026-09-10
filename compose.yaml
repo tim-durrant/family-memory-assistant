@@ -6,12 +6,14 @@ services:
       - .:/workspace
       - node_modules:/workspace/node_modules
       - wrangler_state:/workspace/.wrangler
+      - wrangler_auth:/root/.wrangler
       - npm_cache:/root/.npm
     ports:
       - "8787:8787"
-    command: npm run dev -- --ip 0.0.0.0
+    command: npm run dev -- --env local --ip 0.0.0.0
 
 volumes:
+  wrangler_auth:
   node_modules:
   wrangler_state:
   npm_cache:

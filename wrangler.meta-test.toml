@@ -1,0 +1,19 @@
+name = "family-memory-assistant-meta-test"
+main = "src/index.ts"
+compatibility_date = "2026-09-05"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+preview_urls = false
+
+[[d1_databases]]
+binding = "DB"
+database_name = "family-memory-meta-test"
+database_id = "3897d407-94c5-46bb-869d-d1767d852d63"
+migrations_dir = "migrations"
+
+[vars]
+ENVIRONMENT = "development"
+FAMILY_TIMEZONE = "Australia/Sydney"
+WHATSAPP_TRANSPORT = "meta"
+WHATSAPP_PHONE_NUMBER_ID = "1212645291941864"
+WHATSAPP_WABA_ID = "1741108257635191"

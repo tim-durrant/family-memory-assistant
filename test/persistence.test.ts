@@ -20,13 +20,14 @@ function database(person: { id: string } | null) {
 describe("inbound persistence", () => {
   it("rejects unknown senders without inserting a message", async () => {
     const { db, run } = database(null);
-    await expect(saveInboundMessage(db, event)).resolves.toBe(false);
+    await expect(saveInboundMessage(db, event)).resolves.toBeUndefined();
     expect(run).not.toHaveBeenCalled();
   });
 
   it("persists a permitted original message", async () => {
     const { db, run } = database({ id: "person-1" });
-    await expect(saveInboundMessage(db, event)).resolves.toBe(true);
+    const messageId = await saveInboundMessage(db, event);
+    expect(messageId).toBeTypeOf("string");
     expect(run).toHaveBeenCalledOnce();
   });
 });

@@ -1,6 +1,6 @@
 # Family memory assistant
 
-First milestone: verified WhatsApp Cloud API webhook -> D1 original message record -> acknowledgement reply.
+Current milestone: Twilio production WhatsApp webhook -> Cloudflare Worker -> D1 original message record -> deterministic memory reply.
 
 ## Local setup
 
@@ -8,7 +8,7 @@ This project uses OrbStack/Docker and the `node:22-bookworm-slim` image. No Node
 
 ```sh
 docker compose run --rm app npm install
-docker compose run --rm app npx wrangler d1 migrations apply family-memory --local
+docker compose run --rm app npx wrangler d1 migrations apply family-memory --local --env local
 docker compose up
 ```
 
@@ -26,12 +26,36 @@ INSERT INTO people (id, display_name, whatsapp_id, role, active, created_at, upd
 VALUES ('person-synthetic', 'Synthetic Daughter', '15550000002', 'owner', 1, datetime('now'), datetime('now'));
 ```
 
-`GET /dev/fixture` returns a synthetic Meta-shaped payload in development. It does not bypass webhook signature checks; tests should use the SDK's `computeSignature` helper.
+`GET /dev/fixture` returns a synthetic development fixture. It does not bypass webhook signature checks; tests should use the relevant transport signature helper.
+
+## Deterministic configuration
+
+Deterministic behaviour is assembled by `getDeterministicConfig()` in `src/config.ts`. Safe defaults preserve the current behaviour; deployment overrides are validated before use.
+
+Supported overrides include:
+
+```text
+FAMILY_TIMEZONE=Australia/Sydney
+DATE_LOCALE=en-AU
+AMBIGUOUS_NUMERIC_DATE_POLICY=clarify
+DETERMINISTIC_MIN_TOPIC_TERM_LENGTH=3
+DETERMINISTIC_ENABLE_WAITING_FACTS=true
+DETERMINISTIC_ENABLE_FACT_RESOLUTION=true
+DETERMINISTIC_ENABLE_REMINDER_CREATION=false
+DETERMINISTIC_POLITE_FILLERS=please,kindly
+DETERMINISTIC_TOPIC_STOP_WORDS=a,an,are,at,for,in,is,my,on,the,to,was,were
+# Optional confirmed aliases: alias=canonical pairs separated by commas.
+# DETERMINISTIC_TOPIC_ALIASES=driving appointment=driving test
+```
+
+User-facing reply templates can also be overridden with the `DETERMINISTIC_*_REPLY` variables documented by the `Env` type. An empty `DETERMINISTIC_UNKNOWN_INTENT_REPLY` deliberately preserves the current behaviour of ignoring unsupported/greeting messages.
 
 ## Production notes
 
 - Keep the D1 database ID in `wrangler.toml` aligned with the intended Cloudflare account; it is an identifier, not a secret.
-- Set production secrets with `docker compose run --rm app npx wrangler secret put`; never commit `.dev.vars` or production data.
-- Configure Meta's callback URL as `/webhooks/whatsapp` and use the verification token from the secret.
-- The Worker acknowledges valid payloads immediately and uses `waitUntil` for D1/reply processing.
+- Set production secrets with `docker compose run --rm app npx wrangler secret put ... --env=""`; never commit `.dev.vars` or production data.
+- Production uses `WHATSAPP_TRANSPORT=twilio` and the Twilio incoming webhook is `/webhooks/whatsapp`.
+- Configure Twilio's incoming-message URL as `https://<worker-domain>/webhooks/whatsapp` with HTTP POST.
+- The Worker validates `X-Twilio-Signature`, acknowledges valid requests with empty TwiML, and uses `waitUntil` for D1/reply processing.
 - Unknown senders receive no response and are not stored.
+- See [`docs/production-smoke-test.md`](docs/production-smoke-test.md) for the repeatable production baseline.
