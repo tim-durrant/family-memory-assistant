@@ -40,6 +40,18 @@ describe("deterministic memory interpretation", () => {
       kind: "when_question",
       topic: "driving test",
     });
+    expect(interpretMessage("Please tell me when my smoke test appointment is.")).toEqual({
+      kind: "when_question",
+      topic: "smoke test appointment",
+    });
+    expect(interpretMessage("Kindly advise me when my smoke test appointment please?")).toEqual({
+      kind: "when_question",
+      topic: "smoke test appointment",
+    });
+    expect(interpretMessage("What date is my smoke test appointment please?")).toEqual({
+      kind: "when_question",
+      topic: "smoke test appointment",
+    });
     expect(interpretMessage("Mark the MRI results as resolved")).toEqual({
       kind: "resolve_fact",
       topic: "mri results",

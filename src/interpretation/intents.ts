@@ -32,6 +32,8 @@ export const INTENT_CATALOG: Readonly<Record<SupportedIntentKind, IntentDefiniti
       "When is my driving test please?",
       "Please, when is my driving test?",
       "Could you tell me when my driving test is?",
+      "Kindly advise me when my driving test is please?",
+      "What date is my driving test please?",
     ],
     counterexamples: [
       "My driving test is 12 October 2026",

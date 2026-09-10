@@ -43,7 +43,8 @@ export function interpretMessage(
   }
 
   const whenMatch = lower.match(/^when(?:'s| is| will| would)\s+(.+?)(?:\?|$)/i)
-    ?? lower.match(/^(?:could you tell me|can you tell me|do you know)\s+when\s+(.+?)(?:\?|$)/i);
+    ?? lower.match(/^(?:could you tell me|can you tell me|do you know|tell me|advise me|let me know)\s+when\s+(.+?)(?:\?|$)/i)
+    ?? lower.match(/^what date is\s+(.+?)(?:\?|$)/i);
   if (whenMatch?.[1]) {
     return { kind: "when_question", topic: cleanTopic(whenMatch[1]) };
   }
