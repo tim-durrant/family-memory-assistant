@@ -104,6 +104,20 @@ describe("persisted clarification state", () => {
     expect(getClarification()?.status).toBe("cancelled");
   });
 
+  it("persists numbered fact choices and returns only the selected fact", async () => {
+    const { db, facts, getClarification } = database();
+    facts.push(
+      { id: "fact-1", statement: "Dentist appointment on 12 October", category: "appointment", status: "confirmed", importance: "normal", effective_date: "2026-10-12" },
+      { id: "fact-2", statement: "Hospital appointment on 18 October", category: "appointment", status: "confirmed", importance: "normal", effective_date: "2026-10-18" },
+    );
+    await expect(buildMemoryReply(db, "person-1", "message-1", "When is my appointment?", undefined, undefined, undefined, "conversation-1"))
+      .resolves.toMatch(/1\..*Dentist.*2\..*Hospital/s);
+    expect(getClarification()?.missing_field).toBe("fact_choice");
+    await expect(buildMemoryReply(db, "person-1", "message-2", "2", undefined, undefined, undefined, "conversation-1"))
+      .resolves.toContain("Hospital appointment");
+    expect(getClarification()?.status).toBe("completed");
+  });
+
   it("does not expose clarification state across conversations or expired state", async () => {
     const first = database();
     await buildMemoryReply(first.db, "person-1", "message-1", "My appointment is on 3 March", undefined, undefined, undefined, "conversation-1");

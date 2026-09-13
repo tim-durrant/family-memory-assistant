@@ -27,6 +27,7 @@ export interface Env {
   DETERMINISTIC_FACT_DELETE_POLICY?: string;
   DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES?: string;
   CLARIFICATION_TTL_MINUTES?: string;
+  MAX_CLARIFICATION_TURNS?: string;
   DETERMINISTIC_POLITE_FILLERS?: string;
   DETERMINISTIC_TOPIC_STOP_WORDS?: string;
   DETERMINISTIC_TOPIC_ALIASES?: string;
@@ -78,6 +79,7 @@ export type DeterministicConfig = {
   factDeletePolicy: "confirm";
   factConfirmationTtlMinutes: number;
   clarificationTtlMinutes: number;
+  maxClarificationTurns: number;
   politeFillers: readonly string[];
   topicStopWords: readonly string[];
   topicAliases: readonly { alias: string; canonical: string }[];
@@ -129,6 +131,7 @@ export const DEFAULT_DETERMINISTIC_CONFIG: DeterministicConfig = {
   factDeletePolicy: "confirm",
   factConfirmationTtlMinutes: 30,
   clarificationTtlMinutes: 30,
+  maxClarificationTurns: 2,
   politeFillers: ["please", "kindly"],
   topicStopWords: ["a", "an", "are", "at", "for", "in", "is", "my", "on", "the", "to", "was", "were"],
   topicAliases: [],
@@ -196,6 +199,11 @@ export function getDeterministicConfig(env: Env): DeterministicConfig {
       env.CLARIFICATION_TTL_MINUTES,
       DEFAULT_DETERMINISTIC_CONFIG.clarificationTtlMinutes,
       "CLARIFICATION_TTL_MINUTES",
+    ),
+    maxClarificationTurns: positiveInteger(
+      env.MAX_CLARIFICATION_TURNS,
+      DEFAULT_DETERMINISTIC_CONFIG.maxClarificationTurns,
+      "MAX_CLARIFICATION_TURNS",
     ),
     politeFillers: listValue(env.DETERMINISTIC_POLITE_FILLERS, DEFAULT_DETERMINISTIC_CONFIG.politeFillers),
     topicStopWords: listValue(env.DETERMINISTIC_TOPIC_STOP_WORDS, DEFAULT_DETERMINISTIC_CONFIG.topicStopWords),

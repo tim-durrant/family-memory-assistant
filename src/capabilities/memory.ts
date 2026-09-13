@@ -103,6 +103,23 @@ export async function buildMemoryReply(
       await completeClarification(db, pendingClarification.id);
       return `Saved: ${payload.statement}.`;
     }
+    if (pendingClarification.pending_intent === "when_question" && pendingClarification.missing_field === "fact_choice") {
+      const payload = JSON.parse(pendingClarification.payload_json) as { factIds?: string[] };
+      const choice = text.trim().match(/^(\d+)\.?$/)?.[1];
+      if (!choice || !payload.factIds || Number(choice) < 1 || Number(choice) > payload.factIds.length) {
+        const nextTurn = pendingClarification.turn_count + 1;
+        if (nextTurn >= config.maxClarificationTurns) {
+          await cancelClarification(db, personId, conversationId);
+          return "I couldn’t determine which fact you meant. Please ask again with more detail.";
+        }
+        await incrementClarificationTurn(db, pendingClarification.id);
+        return `Please reply with a number from 1 to ${payload.factIds?.length ?? 0}, or say cancel.`;
+      }
+      const selectedId = payload.factIds[Number(choice) - 1];
+      const selected = (await listFacts(db, personId)).find((fact) => fact.id === selectedId);
+      await completeClarification(db, pendingClarification.id);
+      return selected ? formatFact(selected) : config.noMatchingFactReply;
+    }
     await incrementClarificationTurn(db, pendingClarification.id);
     return "Please answer the pending clarification, or say cancel.";
   }
@@ -387,7 +404,11 @@ export async function buildMemoryReply(
     const matches = matchResult.matches;
     if (matches.length === 0) return config.noMatchingFactReply;
     if (matches.length > 1) {
-      return renderReply(config.ambiguousFactReply, { matches: matches.map(formatFact).join("; ") });
+      await createClarificationState(
+        db, personId, conversationId, "when_question", "fact_choice",
+        { factIds: matches.map((fact) => fact.id) }, sourceMessageId, config.clarificationTtlMinutes,
+      );
+      return ["I found more than one matching fact:", ...matches.map((fact, index) => `${index + 1}. ${formatFact(fact)}`), "Which one do you mean? Reply with a number or say cancel."].join("\\n");
     }
     return formatFact(matches[0]);
   }
