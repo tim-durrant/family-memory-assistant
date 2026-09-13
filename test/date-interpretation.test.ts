@@ -5,7 +5,7 @@ import { interpretMessage } from "../src/interpretation/deterministic.js";
 const config = {
   ...DEFAULT_DETERMINISTIC_CONFIG,
   politeFillers: ["please"],
-  timezone: "Australia/Sydney",
+  timezone: "Australia/Brisbane",
 };
 const now = new Date("2026-09-10T02:00:00.000Z");
 

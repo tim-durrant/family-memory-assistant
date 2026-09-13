@@ -11,16 +11,21 @@ migrations_dir = "migrations"
 
 [vars]
 ENVIRONMENT = "production"
-FAMILY_TIMEZONE = "Australia/Sydney"
+FAMILY_TIMEZONE = "Australia/Brisbane"
 DATE_LOCALE = "en-AU"
 AMBIGUOUS_NUMERIC_DATE_POLICY = "clarify"
 WHATSAPP_TRANSPORT = "twilio"
+EMERGENCY_NOTIFICATION_MODE = "disabled"
 DETERMINISTIC_MIN_TOPIC_TERM_LENGTH = "3"
 DETERMINISTIC_ENABLE_WAITING_FACTS = "true"
 DETERMINISTIC_ENABLE_FACT_RESOLUTION = "true"
 DETERMINISTIC_ENABLE_REMINDER_CREATION = "false"
+DETERMINISTIC_FACT_CONFLICT_POLICY = "confirm"
+DETERMINISTIC_FACT_DELETE_POLICY = "confirm"
+DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES = "30"
 DETERMINISTIC_POLITE_FILLERS = "please,kindly"
 DETERMINISTIC_TOPIC_STOP_WORDS = "a,an,are,at,for,in,is,my,on,the,to,was,were"
+DETERMINISTIC_PERSON_ATTRIBUTES = "hair=hair_length,eyes=eye_colour"
 
 # The Compose development command selects this environment so local-only
 # routes and the Dojo adapter are available without changing production vars.
@@ -35,13 +40,17 @@ migrations_dir = "migrations"
 
 [env.local.vars]
 ENVIRONMENT = "development"
-FAMILY_TIMEZONE = "Australia/Sydney"
+FAMILY_TIMEZONE = "Australia/Brisbane"
 DATE_LOCALE = "en-AU"
-AMBIGUOUS_NUMERIC_DATE_POLICY = "clarify"
+[env.meta-test.vars]
 WHATSAPP_TRANSPORT = "dojo"
 DETERMINISTIC_MIN_TOPIC_TERM_LENGTH = "3"
 DETERMINISTIC_ENABLE_WAITING_FACTS = "true"
 DETERMINISTIC_ENABLE_FACT_RESOLUTION = "true"
 DETERMINISTIC_ENABLE_REMINDER_CREATION = "false"
+DETERMINISTIC_FACT_CONFLICT_POLICY = "confirm"
+DETERMINISTIC_FACT_DELETE_POLICY = "confirm"
+DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES = "30"
 DETERMINISTIC_POLITE_FILLERS = "please,kindly"
 DETERMINISTIC_TOPIC_STOP_WORDS = "a,an,are,at,for,in,is,my,on,the,to,was,were"
+DETERMINISTIC_PERSON_ATTRIBUTES = "hair=hair_length,eyes=eye_colour"

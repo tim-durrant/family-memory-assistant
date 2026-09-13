@@ -8,6 +8,13 @@ WHATSAPP_WABA_ID=replace-with-business-account-id
 TWILIO_ACCOUNT_SID=replace-with-twilio-account-sid
 TWILIO_AUTH_TOKEN=replace-with-twilio-auth-token
 TWILIO_WHATSAPP_NUMBER=whatsapp:+61400000000
+# Required for emergency SMS delivery; use an SMS-capable Twilio number.
+TWILIO_SMS_NUMBER=+61400000000
+# Emergency notification safety mode: disabled, dry-run, or live.
+EMERGENCY_NOTIFICATION_MODE=dry-run
+# Unknown sender behavior: ignore (default) or reply, with one reply per number per 24 hours.
+UNAUTHORIZED_SENDER_RESPONSE_MODE=ignore
+UNAUTHORIZED_SENDER_REPLY=This number is not authorised to use this service.
 # Optional deterministic behaviour overrides; defaults are documented in src/config.ts.
 DATE_LOCALE=en-AU
 AMBIGUOUS_NUMERIC_DATE_POLICY=clarify
@@ -15,7 +22,13 @@ DETERMINISTIC_MIN_TOPIC_TERM_LENGTH=3
 DETERMINISTIC_ENABLE_WAITING_FACTS=true
 DETERMINISTIC_ENABLE_FACT_RESOLUTION=true
 DETERMINISTIC_ENABLE_REMINDER_CREATION=false
+DETERMINISTIC_FACT_CONFLICT_POLICY=confirm
+DETERMINISTIC_FACT_DELETE_POLICY=confirm
+DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES=30
 DETERMINISTIC_POLITE_FILLERS=please,kindly
 DETERMINISTIC_TOPIC_STOP_WORDS=a,an,are,at,for,in,is,my,on,the,to,was,were
+# Explicit person attributes: alias=stored-key pairs; use | for multiple aliases.
+DETERMINISTIC_PERSON_ATTRIBUTES=hair=hair_length
+# Explicit person registration is required before attributes can be stored.
 # Optional confirmed aliases, formatted as alias=canonical pairs separated by commas.
 # DETERMINISTIC_TOPIC_ALIASES=driving appointment=driving test

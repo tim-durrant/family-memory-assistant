@@ -572,47 +572,77 @@ interpretation/
 
 ## 8. Recommended project structure
 
+The target structure is deliberately modular. `index.ts` is only the Worker composition root; it must not contain business logic.
+
 ```text
 src/
-  index.ts                 # Worker composition root and HTTP routes
-  config.ts
+  index.ts                         # compact Worker entry point
+  application/
+    create-application.ts          # dependency composition root
   transport/
-    whatsapp.ts            # Dojo adapter and MessageSender boundary
-    normalize.ts           # transport event -> InboundMessage
-  interpretation/
-    interpreter.ts         # shared contracts
-    deterministic.ts       # current deterministic interpreter
-    rules.ts               # json-rules-engine routing rules
-    registry.ts            # interpreter/provider selection
-    privacy-gateway.ts     # future redaction boundary
-    ai.ts                  # future provider adapter
-    local-helper.ts        # future provider adapter
-  capabilities/
-    types.ts               # capability contracts
-    registry.ts
-    memory.ts
-    reminders.ts
-    people.ts
-    schedule.ts
-  repositories/
-    messages.ts
-    facts.ts
-    reminders.ts
-    people.ts
-    audit.ts
-  storage.ts               # D1 adapter for Dojo
+    whatsapp-webhook.ts            # provider-specific HTTP/webhook adapter
+    whatsapp-client.ts             # outbound provider port/adapter
+    types.ts                       # transport boundary types
+  pipeline/
+    process-inbound-message.ts     # application orchestration only
+  contracts/
+    inbound-message.ts
+    classification.ts
+    structured-request.ts
+    capability.ts
+    response.ts
+  modules/
+    message-normaliser/
+      normalise.ts                 # text/format normalisation only
+      types.ts
+    intent-classifier/
+      classify.ts                  # untrusted intent classification
+      features.ts
+      model.ts
+      types.ts
+    structured-request-builder/
+      build-request.ts             # classification -> typed request
+      types.ts
+    identity-resolver/
+      resolve-people.ts            # names/roles/patient/delegate resolution
+    validation-gate/
+      validate-request.ts           # validation and permission decisions
+    capabilities/
+      memory.ts
+      people.ts
+      permissions.ts
+      health.ts
+      documents.ts
+    response-planner/
+      plan-response.ts
+    response-renderer/
+      render-response.ts
+  repositories/                     # domain-facing repository ports/adapters
+  infrastructure/
+    d1/                             # D1 implementations only
+    whatsapp/                       # Twilio/Meta implementations only
+  config.ts
   fixture.ts
 migrations/
-  0001_initial.sql
-  0002_people_and_audit.sql
- test/
-  transport.test.ts
-  interpretation.test.ts
-  capabilities.test.ts
-  repositories.test.ts
+intent-lab/                          # offline evaluation/training only
+test/
+  contracts/
+  pipeline/
+  modules/
+  infrastructure/
 ```
 
-This is a target layout, not a requirement to move every current file immediately. The current `memory.ts` can first become the deterministic interpreter plus memory repository/capability code, then be split when the boundaries are tested.
+Dependency direction must point inward:
+
+```text
+index -> application -> pipeline -> modules -> contracts
+                                  modules -> repository/infrastructure interfaces
+infrastructure -> contracts/interfaces
+```
+
+Modules must not import `index.ts`, transport payload types, or concrete D1 implementations. They receive narrow interfaces through constructors/functions. A classifier never writes data, a capability never parses natural language, and a renderer never queries D1.
+
+This is a target layout, not a request to move every current file immediately. Migrate one vertical slice at a time, beginning with the existing fact lookup/record flow. Preserve compatibility exports while tests move to the new contracts. `src/index.ts` should become compact only after the pipeline owns the extracted orchestration; reducing its line count without moving responsibility would merely hide coupling.
 
 ## 9. Technologies and features not to introduce in V1
 

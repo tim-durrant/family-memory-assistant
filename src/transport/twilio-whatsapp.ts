@@ -50,9 +50,16 @@ export class TwilioWhatsAppTransport implements WhatsAppTransport {
   }
 
   async sendText(input: { to: string; body: string; replyTo?: string }): Promise<OutboundMessage> {
+    return this.sendTwilioText(input, toWhatsAppAddress(this.env.TWILIO_WHATSAPP_NUMBER!), toWhatsAppAddress(input.to));
+  }
+
+  async sendSms(input: { to: string; body: string }): Promise<OutboundMessage> {
+    if (!this.env.TWILIO_SMS_NUMBER) throw new Error("Twilio SMS notifications require TWILIO_SMS_NUMBER");
+    return this.sendTwilioText(input, this.env.TWILIO_SMS_NUMBER, normalizePhoneNumber(input.to));
+  }
+
+  private async sendTwilioText(input: { to: string; body: string; replyTo?: string }, from: string, to: string): Promise<OutboundMessage> {
     const accountSid = this.env.TWILIO_ACCOUNT_SID!;
-    const from = toWhatsAppAddress(this.env.TWILIO_WHATSAPP_NUMBER!);
-    const to = toWhatsAppAddress(input.to);
     const body = new URLSearchParams({
       To: to,
       From: from,

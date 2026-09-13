@@ -13,7 +13,7 @@ migrations_dir = "migrations"
 
 [vars]
 ENVIRONMENT = "development"
-FAMILY_TIMEZONE = "Australia/Sydney"
+FAMILY_TIMEZONE = "Australia/Brisbane"
 WHATSAPP_TRANSPORT = "meta"
 WHATSAPP_PHONE_NUMBER_ID = "1212645291941864"
 WHATSAPP_WABA_ID = "1741108257635191"

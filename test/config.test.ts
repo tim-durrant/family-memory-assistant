@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import {
   DEFAULT_DETERMINISTIC_CONFIG,
   getDeterministicConfig,
+  getDeterministicConfigForPerson,
+  unauthorizedSenderResponseMode,
   type Env,
 } from "../src/config.js";
 
@@ -30,6 +32,9 @@ describe("deterministic configuration", () => {
       DETERMINISTIC_ENABLE_WAITING_FACTS: "false",
       DETERMINISTIC_ENABLE_FACT_RESOLUTION: "false",
       DETERMINISTIC_ENABLE_REMINDER_CREATION: "true",
+      DETERMINISTIC_FACT_CONFLICT_POLICY: "confirm",
+      DETERMINISTIC_FACT_DELETE_POLICY: "confirm",
+      DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES: "45",
       DETERMINISTIC_POLITE_FILLERS: "please, if you can",
       DETERMINISTIC_TOPIC_STOP_WORDS: "the,my,is",
       DETERMINISTIC_TOPIC_ALIASES: "driving appointment=driving test,mri results=mri result",
@@ -41,6 +46,9 @@ describe("deterministic configuration", () => {
       enableWaitingFacts: false,
       enableFactResolution: false,
       enableReminderCreation: true,
+      factConflictPolicy: "confirm",
+      factDeletePolicy: "confirm",
+      factConfirmationTtlMinutes: 45,
       politeFillers: ["please", "if you can"],
       topicStopWords: ["the", "my", "is"],
       topicAliases: [
@@ -51,9 +59,32 @@ describe("deterministic configuration", () => {
     });
   });
 
+  it("applies validated D1 family settings over deployment defaults", async () => {
+    const env = environment({
+      DB: {
+        prepare: () => ({ bind: () => ({ all: async () => ({ results: [
+          { setting_key: "enableFactResolution", setting_value: "false", value_type: "boolean" },
+          { setting_key: "factConfirmationTtlMinutes", setting_value: "45", value_type: "positive_integer" },
+        ] }) }) }),
+      } as unknown as D1Database,
+    });
+    await expect(getDeterministicConfigForPerson(env, "owner-1")).resolves.toMatchObject({
+      enableFactResolution: false,
+      factConfirmationTtlMinutes: 45,
+    });
+  });
+
+  it("defaults unauthorized senders to ignore and validates opt-in replies", () => {
+    expect(unauthorizedSenderResponseMode(undefined)).toBe("ignore");
+    expect(unauthorizedSenderResponseMode("reply")).toBe("reply");
+    expect(() => unauthorizedSenderResponseMode("always")).toThrow(/ignore or reply/);
+  });
+
   it("rejects malformed numeric, boolean, and empty string overrides", () => {
     expect(() => getDeterministicConfig(environment({ DETERMINISTIC_MIN_TOPIC_TERM_LENGTH: "0" }))).toThrow(/positive integer/);
     expect(() => getDeterministicConfig(environment({ DETERMINISTIC_ENABLE_WAITING_FACTS: "yes" }))).toThrow(/true or false/);
+    expect(() => getDeterministicConfig(environment({ DETERMINISTIC_FACT_CONFLICT_POLICY: "overwrite" }))).toThrow(/must be confirm/);
+    expect(() => getDeterministicConfig(environment({ DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES: "0" }))).toThrow(/positive integer/);
     expect(() => getDeterministicConfig(environment({ FAMILY_TIMEZONE: " " }))).toThrow(/must not be empty/);
   });
 });

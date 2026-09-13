@@ -23,6 +23,7 @@ describe("deterministic memory interpretation", () => {
       kind: "record_fact",
       effectiveDate: "2026-10-12",
       needsYear: false,
+      topic: "driving test",
     });
   });
 
@@ -32,6 +33,31 @@ describe("deterministic memory interpretation", () => {
       kind: "record_fact",
       category: "health",
       status: "waiting",
+    });
+  });
+
+  it("recognises explicit person attributes and their queries", () => {
+    expect(interpretMessage("Melody has long hair")).toEqual({
+      kind: "record_person_attribute",
+      personName: "Melody",
+      attributeKey: "hair_length",
+      attributeLabel: "hair",
+      value: "long",
+      normalizedValue: "long",
+    });
+    expect(interpretMessage("What hair does Melody have?")).toEqual({
+      kind: "query_person_attribute",
+      personName: "Melody",
+      attributeKey: "hair_length",
+      attributeLabel: "hair",
+      requestedValue: null,
+    });
+    expect(interpretMessage("Does Melody have short hair?")).toEqual({
+      kind: "query_person_attribute",
+      personName: "Melody",
+      attributeKey: "hair_length",
+      attributeLabel: "hair",
+      requestedValue: "short",
     });
   });
 
@@ -55,6 +81,10 @@ describe("deterministic memory interpretation", () => {
     expect(interpretMessage("Mark the MRI results as resolved")).toEqual({
       kind: "resolve_fact",
       topic: "mri results",
+    });
+    expect(interpretMessage("Forget the old appointment")).toEqual({
+      kind: "forget_fact",
+      topic: "old appointment",
     });
   });
 
