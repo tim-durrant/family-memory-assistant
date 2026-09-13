@@ -11,6 +11,7 @@ export type MemoryIntent =
       effectiveDate: string | null;
       needsYear: boolean;
       dateIssue: "none" | "ambiguous" | "invalid";
+      dateParts?: { day: number; month: number };
       topic: string;
     }
   | {
@@ -147,6 +148,7 @@ export function interpretMessage(
     effectiveDate: date.isoDate,
     needsYear: date.needsYear,
     dateIssue: date.issue,
+    ...(date.day !== undefined && date.month !== undefined ? { dateParts: { day: date.day, month: date.month } } : {}),
     topic: inferFactTopic(statement),
   };
 }
@@ -304,6 +306,8 @@ type DateResult = {
   isoDate: string | null;
   needsYear: boolean;
   issue: "none" | "ambiguous" | "invalid";
+  day?: number;
+  month?: number;
 };
 
 function extractDate(
@@ -329,6 +333,7 @@ function extractDate(
       isoDate: year === null ? null : isoDate(year, month, day),
       needsYear: year === null,
       issue: "none",
+      ...(year === null ? { day, month } : {}),
     };
   }
 

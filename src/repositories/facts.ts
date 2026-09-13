@@ -41,17 +41,35 @@ export async function recordFact(
   personId: string,
   sourceMessageId: string,
   intent: Extract<MemoryIntent, { kind: "record_fact" }>,
-): Promise<void> {
+): Promise<string> {
   const now = new Date().toISOString();
+  const factId = crypto.randomUUID();
   await db.prepare(
     `INSERT INTO facts
      (id, person_id, statement, category, status, importance, source_message_id,
       effective_date, expiry_date, resolved_at, created_at, updated_at, last_change_message_id)
      VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, NULL, NULL, ?9, ?9, NULL)`,
   ).bind(
-    crypto.randomUUID(), personId, intent.statement, intent.category, intent.status,
+    factId, personId, intent.statement, intent.category, intent.status,
     intent.category === "health" ? "high" : "normal", sourceMessageId, intent.effectiveDate, now,
   ).run();
+  return factId;
+}
+
+export async function updateFactEffectiveDate(
+  db: D1Database,
+  personId: string,
+  factId: string,
+  year: number,
+  day: number,
+  month: number,
+  changeMessageId: string,
+): Promise<boolean> {
+  const result = await db.prepare(
+    `UPDATE facts SET effective_date = ?1, updated_at = ?2, last_change_message_id = ?3
+     WHERE id = ?4 AND person_id = ?5 AND status NOT IN ('resolved', 'superseded', 'deleted')`,
+  ).bind(`${year}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`, new Date().toISOString(), changeMessageId, factId, personId).run();
+  return result.meta.changes === 1;
 }
 
 export async function createPendingFactAction(

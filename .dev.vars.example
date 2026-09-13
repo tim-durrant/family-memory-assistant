@@ -18,6 +18,7 @@ UNAUTHORIZED_SENDER_REPLY=This number is not authorised to use this service.
 # Optional deterministic behaviour overrides; defaults are documented in src/config.ts.
 DATE_LOCALE=en-AU
 AMBIGUOUS_NUMERIC_DATE_POLICY=clarify
+CLARIFICATION_TTL_MINUTES=30
 DETERMINISTIC_MIN_TOPIC_TERM_LENGTH=3
 DETERMINISTIC_ENABLE_WAITING_FACTS=true
 DETERMINISTIC_ENABLE_FACT_RESOLUTION=true

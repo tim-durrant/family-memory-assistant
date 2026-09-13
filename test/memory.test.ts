@@ -15,6 +15,7 @@ describe("deterministic memory interpretation", () => {
       status: "confirmed",
       effectiveDate: null,
       needsYear: true,
+      dateParts: { day: 12, month: 10 },
     });
   });
 

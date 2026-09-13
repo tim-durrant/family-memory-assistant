@@ -14,7 +14,15 @@ import {
   matchFacts,
   recordFact,
   resolveFact,
+  updateFactEffectiveDate,
 } from "../repositories/facts.js";
+import {
+  completeClarification,
+  createClarificationState,
+  getPendingClarification,
+  incrementClarificationTurn,
+  cancelClarification,
+} from "../repositories/clarification.js";
 import {
   findPersonByName,
   listActivePersonAttributes,
@@ -70,9 +78,34 @@ export async function buildMemoryReply(
   config: DeterministicConfig = DEFAULT_DETERMINISTIC_CONFIG,
   onPersonAdded?: (personId: string, displayName: string) => Promise<void>,
   onEmergencyTrigger?: (alertId: string, recipients: string[], body: string) => Promise<{ whatsappSent: boolean; smsSent: boolean; simulated?: boolean }>,
+  conversationId = personId,
 ): Promise<string | undefined> {
   const pending = await getPendingFactAction(db, personId);
   const confirmation = confirmationDecision(text);
+  const pendingClarification = await getPendingClarification(db, personId, conversationId);
+  if (pendingClarification) {
+    if (/^(?:cancel|stop|never mind|nevermind)$/i.test(text.trim())) {
+      await cancelClarification(db, personId, conversationId);
+      return "Okay, I cancelled that clarification.";
+    }
+    if (pendingClarification.pending_intent === "record_fact" && pendingClarification.missing_field === "year") {
+      const year = text.trim().match(/^(?:19|20)\\d{2}$/)?.[0];
+      if (!year) {
+        await incrementClarificationTurn(db, pendingClarification.id);
+        return "Please reply with the four-digit year, or say cancel.";
+      }
+      const payload = JSON.parse(pendingClarification.payload_json) as { factId?: string; day?: number; month?: number; statement?: string };
+      if (!payload.factId || !payload.day || !payload.month || !payload.statement) {
+        await cancelClarification(db, personId, conversationId);
+        return optionalReply(config.unknownIntentReply);
+      }
+      const updated = await updateFactEffectiveDate(db, personId, payload.factId, Number(year), payload.day, payload.month, sourceMessageId);
+      await completeClarification(db, pendingClarification.id);
+      return updated ? `Saved: ${payload.statement}.` : config.noMatchingFactReply;
+    }
+    await incrementClarificationTurn(db, pendingClarification.id);
+    return "Please answer the pending clarification, or say cancel.";
+  }
   const pendingNoteChoice = await getPendingNoteChoice(db, personId);
   const choiceNumber = text.trim().match(/^(\d+)\.?$/)?.[1];
   if (pendingNoteChoice && choiceNumber) {
@@ -319,10 +352,16 @@ export async function buildMemoryReply(
       await createPendingFactAction(db, personId, sourceMessageId, "replace", conflicts[0], intent, config.factConfirmationTtlMinutes);
       return renderReply(config.factConflictReply, { existing: formatFact(conflicts[0]), statement: intent.statement });
     }
-    await recordFact(db, personId, sourceMessageId, intent);
-    return intent.needsYear
-      ? renderReply(config.missingYearReply, { statement: intent.statement })
-      : `Saved: ${intent.statement}.`;
+    const factId = await recordFact(db, personId, sourceMessageId, intent);
+    if (intent.needsYear && intent.dateParts) {
+      await createClarificationState(
+        db, personId, conversationId, "record_fact", "year",
+        { factId, day: intent.dateParts.day, month: intent.dateParts.month, statement: intent.statement },
+        sourceMessageId, config.clarificationTtlMinutes,
+      );
+      return renderReply(config.missingYearReply, { statement: intent.statement });
+    }
+    return `Saved: ${intent.statement}.`;
   }
 
   if (intent.kind === "forget_fact") {

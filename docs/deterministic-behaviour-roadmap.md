@@ -453,6 +453,8 @@ Does Melody have short hair?
 
 ## Phase 9 — Add clarification state
 
+**Status: IN PROGRESS** — Persisted, sender- and conversation-scoped clarification state is now implemented for missing-year fact follow-ups. Ambiguous-topic and relationship follow-ups remain to be added.
+
 ### Tasks
 
 Model clarification as persisted, short-lived conversation state rather than hidden parser memory.
