@@ -103,6 +103,32 @@ export async function buildMemoryReply(
       await completeClarification(db, pendingClarification.id);
       return `Saved: ${payload.statement}.`;
     }
+    if (pendingClarification.pending_intent === "relationship" && pendingClarification.missing_field === "relationship") {
+      const payload = JSON.parse(pendingClarification.payload_json) as { entityId?: string; noteId?: string; displayName?: string };
+      const relationship = text.trim().toLowerCase().replace(/[.!?]+$/, "");
+      const validRelationship = relationship === "family member" || relationship === "doctor" || /^[a-z][a-z -]{0,40}$/i.test(relationship) && relationship.split(/\s+/).length <= 3;
+      if (!validRelationship || !payload.entityId || !payload.noteId || !payload.displayName) {
+        const nextTurn = pendingClarification.turn_count + 1;
+        if (nextTurn >= config.maxClarificationTurns) {
+          await cancelClarification(db, personId, conversationId);
+          return `I couldn’t classify ${payload.displayName ?? "that person"}. The note is still saved.`;
+        }
+        await incrementClarificationTurn(db, pendingClarification.id);
+        return `Please reply with family member, doctor, or a short relationship for ${payload.displayName ?? "that person"}, or say cancel.`;
+      }
+      const pendingEntityForClassification = await getPendingEntityClarification(db, personId);
+      if (!pendingEntityForClassification || pendingEntityForClassification.entity_id !== payload.entityId || pendingEntityForClassification.note_id !== payload.noteId) {
+        await cancelClarification(db, personId, conversationId);
+        return config.noteNotFoundReply;
+      }
+      if (relationship === "family member") await createPendingSubject(db, payload.displayName, personId, sourceMessageId);
+      await classifyPendingEntity(db, pendingEntityForClassification, personId, relationship, sourceMessageId);
+      await completeClarification(db, pendingClarification.id);
+      await createPendingNoteShare(db, payload.noteId, personId);
+      return relationship === "family member"
+        ? `I’ve started the family-member approval process for ${payload.displayName}. I have saved the note for you. Save for anyone else?`
+        : `${renderReply(config.entityRelationshipSavedReply, { person: payload.displayName, relationship })}\n\nI have saved the note for you. Save for anyone else?`;
+    }
     if (pendingClarification.pending_intent === "when_question" && pendingClarification.missing_field === "fact_choice") {
       const payload = JSON.parse(pendingClarification.payload_json) as { factIds?: string[] };
       const choice = text.trim().match(/^(\d+)\.?$/)?.[1];
@@ -269,7 +295,17 @@ export async function buildMemoryReply(
       const mention = await recordEntityMention(db, candidate, noteId, sourceMessageId, personId);
       firstClarificationName ??= mention.clarificationCreated ? mention.displayName : undefined;
     }
-    if (firstClarificationName) return `${config.noteSavedReply}\n\n${renderReply(config.entityRelationshipReply, { person: firstClarificationName })}`;
+    if (firstClarificationName) {
+      const pendingEntityForState = await getPendingEntityClarification(db, personId);
+      if (pendingEntityForState?.display_name === firstClarificationName) {
+        await createClarificationState(
+          db, personId, conversationId, "relationship", "relationship",
+          { entityId: pendingEntityForState.entity_id, noteId: pendingEntityForState.note_id, displayName: pendingEntityForState.display_name },
+          sourceMessageId, config.clarificationTtlMinutes,
+        );
+      }
+      return `${config.noteSavedReply}\n\n${renderReply(config.entityRelationshipReply, { person: firstClarificationName })}`;
+    }
     if (intent.shareTarget === "self") {
       await createPendingNoteShare(db, noteId, personId);
       return "I have saved the note for you. Save for anyone else?";
