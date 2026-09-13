@@ -1,0 +1,374 @@
+{
+  "dataset_version": "intent-v1.4",
+  "generated_at": "2026-09-13T05:38:02.297099+00:00",
+  "training_examples": 347,
+  "test_examples": 74,
+  "models": {
+    "logistic_regression": {
+      "errors": [
+        {
+          "id": "intent-v1-0141",
+          "text": "I no longer need the reminder about the lunch.",
+          "actual": "needs_clarification",
+          "predicted": "forget_fact",
+          "confidence": 0.1621429127716668,
+          "alternatives": [
+            [
+              "forget_fact",
+              0.1621429127716668
+            ],
+            [
+              "resolve_fact",
+              0.15324561652696642
+            ],
+            [
+              "needs_clarification",
+              0.14793489676371224
+            ]
+          ],
+          "family_id": "resolve-fact-conversation",
+          "boundary": "resolve_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0038",
+          "text": "The family lunch.",
+          "actual": "needs_clarification",
+          "predicted": "record_fact",
+          "confidence": 0.1758044592205435,
+          "alternatives": [
+            [
+              "record_fact",
+              0.1758044592205435
+            ],
+            [
+              "query_fact",
+              0.1581288258043213
+            ],
+            [
+              "needs_clarification",
+              0.12887137422527448
+            ]
+          ],
+          "family_id": "bf-forget-04",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0062",
+          "text": "The concert.",
+          "actual": "needs_clarification",
+          "predicted": "record_fact",
+          "confidence": 0.1461268851495979,
+          "alternatives": [
+            [
+              "record_fact",
+              0.1461268851495979
+            ],
+            [
+              "needs_clarification",
+              0.14550932793506727
+            ],
+            [
+              "query_fact",
+              0.14431498548657126
+            ]
+          ],
+          "family_id": "bf-forget-07",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0134",
+          "text": "The birthday.",
+          "actual": "needs_clarification",
+          "predicted": "record_fact",
+          "confidence": 0.1947940808050899,
+          "alternatives": [
+            [
+              "record_fact",
+              0.1947940808050899
+            ],
+            [
+              "needs_clarification",
+              0.13770868081475754
+            ],
+            [
+              "record_note",
+              0.12540555645535306
+            ]
+          ],
+          "family_id": "bf-forget-16",
+          "boundary": "forget_fact-needs_clarification"
+        }
+      ],
+      "confusion": {
+        "needs_clarification \u2192 record_fact": 3,
+        "needs_clarification \u2192 forget_fact": 1
+      }
+    },
+    "multinomial_naive_bayes": {
+      "errors": [
+        {
+          "id": "intent-v1-0141",
+          "text": "I no longer need the reminder about the lunch.",
+          "actual": "needs_clarification",
+          "predicted": "forget_fact",
+          "confidence": 0.6676578140212734,
+          "alternatives": [
+            [
+              "forget_fact",
+              0.6676578140212734
+            ],
+            [
+              "resolve_fact",
+              0.2035650693180925
+            ],
+            [
+              "needs_clarification",
+              0.07770224386650879
+            ]
+          ],
+          "family_id": "resolve-fact-conversation",
+          "boundary": "resolve_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0013",
+          "text": "Forget the soccer game.",
+          "actual": "forget_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.48024793483475475,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.48024793483475475
+            ],
+            [
+              "forget_fact",
+              0.41105564481426093
+            ],
+            [
+              "query_fact",
+              0.07950119773687132
+            ]
+          ],
+          "family_id": "bf-forget-01",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0038",
+          "text": "The family lunch.",
+          "actual": "needs_clarification",
+          "predicted": "record_fact",
+          "confidence": 0.47321962182047766,
+          "alternatives": [
+            [
+              "record_fact",
+              0.47321962182047766
+            ],
+            [
+              "query_fact",
+              0.28313427110501954
+            ],
+            [
+              "needs_clarification",
+              0.181385858677848
+            ]
+          ],
+          "family_id": "bf-forget-04",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0062",
+          "text": "The concert.",
+          "actual": "needs_clarification",
+          "predicted": "record_fact",
+          "confidence": 0.5678634268676095,
+          "alternatives": [
+            [
+              "record_fact",
+              0.5678634268676095
+            ],
+            [
+              "needs_clarification",
+              0.23305946601577118
+            ],
+            [
+              "unknown",
+              0.08557639237822301
+            ]
+          ],
+          "family_id": "bf-forget-07",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0086",
+          "text": "The barbecue.",
+          "actual": "needs_clarification",
+          "predicted": "record_note",
+          "confidence": 0.2349330993060644,
+          "alternatives": [
+            [
+              "record_note",
+              0.2349330993060644
+            ],
+            [
+              "record_fact",
+              0.17719511550183203
+            ],
+            [
+              "resolve_fact",
+              0.16711503317231657
+            ]
+          ],
+          "family_id": "bf-forget-10",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0097",
+          "text": "Remember that the garden needs watering.",
+          "actual": "record_fact",
+          "predicted": "record_note",
+          "confidence": 0.9054202540841433,
+          "alternatives": [
+            [
+              "record_note",
+              0.9054202540841433
+            ],
+            [
+              "record_fact",
+              0.09336661311696248
+            ],
+            [
+              "query_fact",
+              0.0005927714177030117
+            ]
+          ],
+          "family_id": "bf-record-12",
+          "boundary": "record_fact-record_note"
+        },
+        {
+          "id": "intent-v1.1-0110",
+          "text": "The parcel.",
+          "actual": "needs_clarification",
+          "predicted": "record_note",
+          "confidence": 0.3426136313833238,
+          "alternatives": [
+            [
+              "record_note",
+              0.3426136313833238
+            ],
+            [
+              "query_note",
+              0.2957654359521874
+            ],
+            [
+              "needs_clarification",
+              0.2427047082771242
+            ]
+          ],
+          "family_id": "bf-forget-13",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0134",
+          "text": "The birthday.",
+          "actual": "needs_clarification",
+          "predicted": "record_fact",
+          "confidence": 0.7442603481994674,
+          "alternatives": [
+            [
+              "record_fact",
+              0.7442603481994674
+            ],
+            [
+              "needs_clarification",
+              0.10352574291150517
+            ],
+            [
+              "record_note",
+              0.10092291503967984
+            ]
+          ],
+          "family_id": "bf-forget-16",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0145",
+          "text": "Remember that the electrician will call after lunch.",
+          "actual": "record_fact",
+          "predicted": "record_note",
+          "confidence": 0.49326397181512077,
+          "alternatives": [
+            [
+              "record_note",
+              0.49326397181512077
+            ],
+            [
+              "record_fact",
+              0.36725997840323116
+            ],
+            [
+              "unknown",
+              0.07167101542645668
+            ]
+          ],
+          "family_id": "bf-record-18",
+          "boundary": "record_fact-record_note"
+        },
+        {
+          "id": "intent-v1.1-0158",
+          "text": "The family visit.",
+          "actual": "needs_clarification",
+          "predicted": "resolve_fact",
+          "confidence": 0.5807636882254484,
+          "alternatives": [
+            [
+              "resolve_fact",
+              0.5807636882254484
+            ],
+            [
+              "needs_clarification",
+              0.3797612545485287
+            ],
+            [
+              "query_fact",
+              0.013572380417651167
+            ]
+          ],
+          "family_id": "bf-forget-19",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.3-0373",
+          "text": "Look up the saved fact about the swimming lesson.",
+          "actual": "query_fact",
+          "predicted": "resolve_fact",
+          "confidence": 0.6422327709769754,
+          "alternatives": [
+            [
+              "resolve_fact",
+              0.6422327709769754
+            ],
+            [
+              "query_fact",
+              0.3280032716775019
+            ],
+            [
+              "forget_fact",
+              0.029508188406565525
+            ]
+          ],
+          "family_id": "v1.3-query_fact-04",
+          "boundary": "none"
+        }
+      ],
+      "confusion": {
+        "needs_clarification \u2192 record_fact": 3,
+        "needs_clarification \u2192 record_note": 2,
+        "record_fact \u2192 record_note": 2,
+        "needs_clarification \u2192 forget_fact": 1,
+        "forget_fact \u2192 needs_clarification": 1,
+        "needs_clarification \u2192 resolve_fact": 1,
+        "query_fact \u2192 resolve_fact": 1
+      }
+    }
+  }
+}

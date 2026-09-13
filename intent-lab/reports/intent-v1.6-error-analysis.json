@@ -1,0 +1,380 @@
+{
+  "dataset_version": "intent-v1.6",
+  "training_dataset": "intent-v1.4",
+  "evaluation_source": "synthetic-realistic",
+  "generated_at": "2026-09-13T10:20:51.974196+00:00",
+  "training_examples": 347,
+  "test_examples": 45,
+  "models": {
+    "logistic_regression": {
+      "errors": [
+        {
+          "id": "intent-v1.6-0001",
+          "text": "Can you keep Jacob's game somewhere",
+          "actual": "record_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.3578266876315484,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.3578266876315484
+            ],
+            [
+              "unknown",
+              0.11233946847319687
+            ],
+            [
+              "query_fact",
+              0.10806742589782216
+            ]
+          ],
+          "family_id": "wa-record-fact-01",
+          "boundary": "record_fact-record_note"
+        },
+        {
+          "id": "intent-v1.6-0004",
+          "text": "The school thing has moved to next Friday can you save it",
+          "actual": "record_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.19985545959115186,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.19985545959115186
+            ],
+            [
+              "record_fact",
+              0.1603729564671293
+            ],
+            [
+              "record_note",
+              0.1272843427560892
+            ]
+          ],
+          "family_id": "wa-record-fact-04",
+          "boundary": "record_fact-record_note"
+        },
+        {
+          "id": "intent-v1.6-0018",
+          "text": "Have I got anything written down about the holiday",
+          "actual": "query_note",
+          "predicted": "needs_clarification",
+          "confidence": 0.18918691212790642,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.18918691212790642
+            ],
+            [
+              "query_note",
+              0.18132847156218526
+            ],
+            [
+              "query_fact",
+              0.12065288452567668
+            ]
+          ],
+          "family_id": "wa-query-note-03",
+          "boundary": "query_fact-query_note"
+        },
+        {
+          "id": "intent-v1.6-0024",
+          "text": "Can we call the plumber thing finished now",
+          "actual": "resolve_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.18785956716247088,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.18785956716247088
+            ],
+            [
+              "resolve_fact",
+              0.1588985992044474
+            ],
+            [
+              "unknown",
+              0.12287499115531084
+            ]
+          ],
+          "family_id": "wa-resolve-04",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.6-0025",
+          "text": "I don't need that appointment thing anymore",
+          "actual": "needs_clarification",
+          "predicted": "record_fact",
+          "confidence": 0.20597849591365047,
+          "alternatives": [
+            [
+              "record_fact",
+              0.20597849591365047
+            ],
+            [
+              "forget_fact",
+              0.1764806238804185
+            ],
+            [
+              "needs_clarification",
+              0.17208195044310354
+            ]
+          ],
+          "family_id": "wa-resolve-05",
+          "boundary": "resolve_fact-forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.6-0040",
+          "text": "Can you sort that out for me",
+          "actual": "needs_clarification",
+          "predicted": "unknown",
+          "confidence": 0.21519057158535015,
+          "alternatives": [
+            [
+              "unknown",
+              0.21519057158535015
+            ],
+            [
+              "help",
+              0.16586171138544836
+            ],
+            [
+              "record_fact",
+              0.1573525137461611
+            ]
+          ],
+          "family_id": "wa-clarify-06",
+          "boundary": "needs_clarification-unknown"
+        },
+        {
+          "id": "intent-v1.6-0041",
+          "text": "What colour is the moon actually",
+          "actual": "unknown",
+          "predicted": "query_fact",
+          "confidence": 0.36960954201169777,
+          "alternatives": [
+            [
+              "query_fact",
+              0.36960954201169777
+            ],
+            [
+              "unknown",
+              0.1292310056939903
+            ],
+            [
+              "record_fact",
+              0.10535269557106819
+            ]
+          ],
+          "family_id": "wa-unknown-01",
+          "boundary": "none"
+        }
+      ],
+      "confusion": {
+        "record_fact \u2192 needs_clarification": 2,
+        "query_note \u2192 needs_clarification": 1,
+        "resolve_fact \u2192 needs_clarification": 1,
+        "needs_clarification \u2192 record_fact": 1,
+        "needs_clarification \u2192 unknown": 1,
+        "unknown \u2192 query_fact": 1
+      }
+    },
+    "multinomial_naive_bayes": {
+      "errors": [
+        {
+          "id": "intent-v1.6-0001",
+          "text": "Can you keep Jacob's game somewhere",
+          "actual": "record_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.9984713296076027,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.9984713296076027
+            ],
+            [
+              "record_fact",
+              0.000767919285377485
+            ],
+            [
+              "query_fact",
+              0.0005766020029793067
+            ]
+          ],
+          "family_id": "wa-record-fact-01",
+          "boundary": "record_fact-record_note"
+        },
+        {
+          "id": "intent-v1.6-0004",
+          "text": "The school thing has moved to next Friday can you save it",
+          "actual": "record_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.5140815645557627,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.5140815645557627
+            ],
+            [
+              "record_fact",
+              0.31927914213966785
+            ],
+            [
+              "record_note",
+              0.10739720048944383
+            ]
+          ],
+          "family_id": "wa-record-fact-04",
+          "boundary": "record_fact-record_note"
+        },
+        {
+          "id": "intent-v1.6-0010",
+          "text": "When's that appointment thing again",
+          "actual": "query_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.6832255719327425,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.6832255719327425
+            ],
+            [
+              "forget_fact",
+              0.17290841195407677
+            ],
+            [
+              "query_fact",
+              0.13353615809896976
+            ]
+          ],
+          "family_id": "wa-query-fact-05",
+          "boundary": "query_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.6-0024",
+          "text": "Can we call the plumber thing finished now",
+          "actual": "resolve_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.6911153303911682,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.6911153303911682
+            ],
+            [
+              "resolve_fact",
+              0.21346540530858876
+            ],
+            [
+              "unknown",
+              0.03350894426705746
+            ]
+          ],
+          "family_id": "wa-resolve-04",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.6-0025",
+          "text": "I don't need that appointment thing anymore",
+          "actual": "needs_clarification",
+          "predicted": "forget_fact",
+          "confidence": 0.58700412939293,
+          "alternatives": [
+            [
+              "forget_fact",
+              0.58700412939293
+            ],
+            [
+              "needs_clarification",
+              0.353348188224367
+            ],
+            [
+              "record_fact",
+              0.0545000565546814
+            ]
+          ],
+          "family_id": "wa-resolve-05",
+          "boundary": "resolve_fact-forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.6-0029",
+          "text": "Could you remove the family lunch detail",
+          "actual": "forget_fact",
+          "predicted": "query_fact",
+          "confidence": 0.5472968246833615,
+          "alternatives": [
+            [
+              "query_fact",
+              0.5472968246833615
+            ],
+            [
+              "forget_fact",
+              0.4383538579490467
+            ],
+            [
+              "unknown",
+              0.00484156299231215
+            ]
+          ],
+          "family_id": "wa-forget-04",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.6-0040",
+          "text": "Can you sort that out for me",
+          "actual": "needs_clarification",
+          "predicted": "help",
+          "confidence": 0.4162390671512612,
+          "alternatives": [
+            [
+              "help",
+              0.4162390671512612
+            ],
+            [
+              "unknown",
+              0.3466219236407216
+            ],
+            [
+              "needs_clarification",
+              0.1806711255979803
+            ]
+          ],
+          "family_id": "wa-clarify-06",
+          "boundary": "needs_clarification-unknown"
+        },
+        {
+          "id": "intent-v1.6-0041",
+          "text": "What colour is the moon actually",
+          "actual": "unknown",
+          "predicted": "query_fact",
+          "confidence": 0.9540271317884685,
+          "alternatives": [
+            [
+              "query_fact",
+              0.9540271317884685
+            ],
+            [
+              "unknown",
+              0.02958622804041983
+            ],
+            [
+              "query_note",
+              0.006008775300383
+            ]
+          ],
+          "family_id": "wa-unknown-01",
+          "boundary": "none"
+        }
+      ],
+      "confusion": {
+        "record_fact \u2192 needs_clarification": 2,
+        "query_fact \u2192 needs_clarification": 1,
+        "resolve_fact \u2192 needs_clarification": 1,
+        "needs_clarification \u2192 forget_fact": 1,
+        "forget_fact \u2192 query_fact": 1,
+        "needs_clarification \u2192 help": 1,
+        "unknown \u2192 query_fact": 1
+      }
+    }
+  }
+}

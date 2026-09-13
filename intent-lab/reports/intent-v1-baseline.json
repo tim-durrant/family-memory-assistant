@@ -1,0 +1,385 @@
+{
+  "dataset_version": "intent-v1",
+  "generated_at": "2026-09-13T04:17:09.027843+00:00",
+  "split_sizes": {
+    "train": 108,
+    "dev": 55,
+    "test": 39
+  },
+  "labels": [
+    "record_fact",
+    "query_fact",
+    "record_note",
+    "query_note",
+    "resolve_fact",
+    "forget_fact",
+    "help",
+    "needs_clarification",
+    "unknown"
+  ],
+  "feature_policy": {
+    "word_ngrams": [
+      1,
+      2
+    ],
+    "character_ngrams": [
+      3,
+      5
+    ],
+    "fit_on": "train_only"
+  },
+  "models": [
+    {
+      "name": "logistic_regression",
+      "accuracy": 0.4358974358974359,
+      "average_max_probability": 0.19457905234490702,
+      "low_confidence_below_0_70": 39,
+      "classification_report": {
+        "record_fact": {
+          "precision": 0.25,
+          "recall": 0.5,
+          "f1-score": 0.3333333333333333,
+          "support": 4.0
+        },
+        "query_fact": {
+          "precision": 0.2,
+          "recall": 1.0,
+          "f1-score": 0.3333333333333333,
+          "support": 1.0
+        },
+        "record_note": {
+          "precision": 0.5,
+          "recall": 0.75,
+          "f1-score": 0.6,
+          "support": 4.0
+        },
+        "query_note": {
+          "precision": 0.6666666666666666,
+          "recall": 0.2857142857142857,
+          "f1-score": 0.4,
+          "support": 7.0
+        },
+        "resolve_fact": {
+          "precision": 0.5714285714285714,
+          "recall": 1.0,
+          "f1-score": 0.7272727272727273,
+          "support": 4.0
+        },
+        "forget_fact": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 6.0
+        },
+        "help": {
+          "precision": 0.5714285714285714,
+          "recall": 1.0,
+          "f1-score": 0.7272727272727273,
+          "support": 4.0
+        },
+        "needs_clarification": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 5.0
+        },
+        "unknown": {
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1-score": 0.4,
+          "support": 4.0
+        },
+        "accuracy": 0.4358974358974359,
+        "macro avg": {
+          "precision": 0.4177248677248677,
+          "recall": 0.5317460317460317,
+          "f1-score": 0.39124579124579123,
+          "support": 39.0
+        },
+        "weighted avg": {
+          "precision": 0.42148962148962144,
+          "recall": 0.4358974358974359,
+          "f1-score": 0.3662781662781663,
+          "support": 39.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          2,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "multinomial_naive_bayes",
+      "accuracy": 0.48717948717948717,
+      "average_max_probability": 0.7589477664914636,
+      "low_confidence_below_0_70": 14,
+      "classification_report": {
+        "record_fact": {
+          "precision": 0.4,
+          "recall": 0.5,
+          "f1-score": 0.4444444444444444,
+          "support": 4.0
+        },
+        "query_fact": {
+          "precision": 0.2,
+          "recall": 1.0,
+          "f1-score": 0.3333333333333333,
+          "support": 1.0
+        },
+        "record_note": {
+          "precision": 0.375,
+          "recall": 0.75,
+          "f1-score": 0.5,
+          "support": 4.0
+        },
+        "query_note": {
+          "precision": 0.75,
+          "recall": 0.42857142857142855,
+          "f1-score": 0.5454545454545454,
+          "support": 7.0
+        },
+        "resolve_fact": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1-score": 0.8,
+          "support": 4.0
+        },
+        "forget_fact": {
+          "precision": 0.5,
+          "recall": 0.16666666666666666,
+          "f1-score": 0.25,
+          "support": 6.0
+        },
+        "help": {
+          "precision": 0.5714285714285714,
+          "recall": 1.0,
+          "f1-score": 0.7272727272727273,
+          "support": 4.0
+        },
+        "needs_clarification": {
+          "precision": 0.5,
+          "recall": 0.2,
+          "f1-score": 0.2857142857142857,
+          "support": 5.0
+        },
+        "unknown": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 4.0
+        },
+        "accuracy": 0.48717948717948717,
+        "macro avg": {
+          "precision": 0.44034391534391537,
+          "recall": 0.5605820105820106,
+          "f1-score": 0.4318021484688151,
+          "support": 39.0
+        },
+        "weighted avg": {
+          "precision": 0.4872405372405373,
+          "recall": 0.48717948717948717,
+          "f1-score": 0.43505013505013507,
+          "support": 39.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          2,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          3,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ]
+    }
+  ]
+}

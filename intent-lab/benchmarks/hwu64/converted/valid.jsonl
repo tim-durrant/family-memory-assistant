@@ -1,0 +1,1076 @@
+{"id":"hwu64-valid-000001","text":"do i have alarms set before six in the morning","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000002","text":"what alarms do i all have set","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000003","text":"can you tell me about the alarm called bed","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000004","text":"olly find any alarms i have set for today","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000005","text":"what alarms are upcoming","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000006","text":"are there any alarms for today","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000007","text":"tell me my alarms","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000008","text":"let me know the alarm time","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000009","text":"what are my alarms","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000010","text":"is there any alarm active","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000011","text":"did you set the alarm for five am","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000012","text":"what alarms do i have scheduled for tomorrow","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000013","text":"i need to set an alarm how many do i have set","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000014","text":"let me know the alarm time","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000015","text":"is there any alarm active","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000016","text":"all alarms","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000017","text":"check if default alarm is set","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000018","text":"list all the alarms","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000019","text":"would like to know the alarm you sent","benchmark":"hwu64","benchmark_intent":"alarm_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000020","text":"remove my six am alarm","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000021","text":"i need to delete the alarm for church on sundays at eleven am","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000022","text":"will you turn the alarm off for me","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000023","text":"turn off eight am alarm","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000024","text":"remove alarm of seven thirty am on monday","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000025","text":"turn off the six am alarm for wednesday","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000026","text":"disable the alarm at ten am","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000027","text":"delete my six am alarm","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000028","text":"delete my six am alarm","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000029","text":"set the alarm off","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000030","text":"turn off my alarms","benchmark":"hwu64","benchmark_intent":"alarm_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000031","text":"please set the alarm for seven","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000032","text":"set alarm tomorrow at six am","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000033","text":"set an alarm for five am","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000034","text":"please set the alarm for seven","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000035","text":"repeat alarm","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000036","text":"make an alarm for the morning","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000037","text":"create an alarm for five pm","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000038","text":"ensure i have to get up at six in morning","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000039","text":"confirm that the alarm is set for tomorrow","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000040","text":"confirm that the alarm is set for tomorrow","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000041","text":"wake me up at six thirty","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000042","text":"please set alarm to my mobile phones","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000043","text":"set an alarm for one pm","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000044","text":"make an alarm for the meeting with bob at seven today","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000045","text":"please set an alarm for seven hundred and thirty am tomorrow","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000046","text":"set a wake up call for ten am","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000047","text":"please set the alarm for next morning to seven am","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000048","text":"send me a wake up alert at seven am tomorrow morning","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000049","text":"repeat alarm","benchmark":"hwu64","benchmark_intent":"alarm_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000050","text":"decrease the volume to ten percent","benchmark":"hwu64","benchmark_intent":"audio_volume_down","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000051","text":"decrease the volume to ten percent","benchmark":"hwu64","benchmark_intent":"audio_volume_down","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000052","text":"turn the music lower","benchmark":"hwu64","benchmark_intent":"audio_volume_down","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000053","text":"softer","benchmark":"hwu64","benchmark_intent":"audio_volume_down","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000054","text":"turn the speakers down to five percent","benchmark":"hwu64","benchmark_intent":"audio_volume_down","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000055","text":"can you speak quieter please","benchmark":"hwu64","benchmark_intent":"audio_volume_down","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000056","text":"no no turn it down","benchmark":"hwu64","benchmark_intent":"audio_volume_down","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000057","text":"please lower music volume","benchmark":"hwu64","benchmark_intent":"audio_volume_down","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000058","text":"make the volume to zero","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000059","text":"don't talk","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000060","text":"please do not answer","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000061","text":"turn off the speakers","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000062","text":"please mute the speakers","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000063","text":"can you please stop speaking","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000064","text":"enter silence mode","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000065","text":"set mute until said otherwise","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000066","text":"turn the sound off","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000067","text":"i dont want sound","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000068","text":"turn off sound","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000069","text":"i dont want sound","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000070","text":"shut down the sound","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000071","text":"please be quiet","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000072","text":"mute immediately","benchmark":"hwu64","benchmark_intent":"audio_volume_mute","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000073","text":"please turn the music volume up","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000074","text":"speak loudly","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000075","text":"audio up","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000076","text":"turn up the sound","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000077","text":"the music volume should increase to ninety","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000078","text":"please turn the music up","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000079","text":"turn volume up to highest level","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000080","text":"volume up","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000081","text":"turn up the speakers","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000082","text":"made media volume louder","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000083","text":"increase the volume to max please","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000084","text":"loudly","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000085","text":"turn up the volume on my speakers","benchmark":"hwu64","benchmark_intent":"audio_volume_up","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000086","text":"is the anniversary event on twenty second of this month true","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000087","text":"can you tell me about my meetings next week","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000088","text":"how the list of upcoming events","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000089","text":"what is my afternoon schedule tomorrow","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000090","text":"was my meeting today rescheduled","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000091","text":"where is my meeting at nine am","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000092","text":"do i have any appointments scheduled for march twenty four two thousand and seventeen","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000093","text":"meetings from twenty to twenty five june","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000094","text":"what is next in my calendar","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000095","text":"open my calendar","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000096","text":"do i have any appointments coming up","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000097","text":"show up the events for me today","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000098","text":"how the list of upcoming events","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000099","text":"please tell me what day this event reminder is set for","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000100","text":"am i free between six to seven pm","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000101","text":"when will the match start","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000102","text":"show up the events for me today","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000103","text":"list out my meetings today","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000104","text":"within the past three months how many meetings did i have with mr richards","benchmark":"hwu64","benchmark_intent":"calendar_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000105","text":"clear my next event","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000106","text":"please delete the meeting i have with john tonight","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000107","text":"remove my car payment on the fifteenth from my calendar","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000108","text":"clear all data from calendar","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000109","text":"erase all events","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000110","text":"delete all the events of today","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000111","text":"please clear my calendar for tomorrow","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000112","text":"erase that from my calendar","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000113","text":"please delete next meeting with rajesh","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000114","text":"whatever the next event is in the calendar delete it","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000115","text":"delete all my calendar events","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000116","text":"clear up my calendar","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000117","text":"delete lunch tomorrow","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000118","text":"erase my appointment with ted","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000119","text":"remove all my engagements from calendar for tomorrow","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000120","text":"delete an last event reminder of twenty ninth of march twenty seventeen","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000121","text":"delete that","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000122","text":"delete my dinner tomorrow","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000123","text":"clear all events for this month","benchmark":"hwu64","benchmark_intent":"calendar_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000124","text":"march fifth is john's birthday please place this on the calendar","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000125","text":"set generic calendar event for next saturday at ten am","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000126","text":"i need you to mark next monday","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000127","text":"remind me to pay the electricity bill on this weekend at nine am","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000128","text":"set on second january about soccer match of manchester","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000129","text":"please block off friday at eight am on my calendar","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000130","text":"give me an update on the election in one hour","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000131","text":"remind me tomorrow at four about an event","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000132","text":"put my brother's birthday in my calendar for july fourth","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000133","text":"schedule a meeting with al on tuesday","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000134","text":"remind me the upcoming meeting at four am today","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000135","text":"open calendar and make an event reminder","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000136","text":"flag two day after this day as my holiday","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000137","text":"latest reminder about meeting","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000138","text":"set a reminder alert for saturday nine am towards payment of electricity bill","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000139","text":"remind me to move so there is no weight gain","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000140","text":"set a meeting with tom tomorrow at seven pm","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000141","text":"i need you to mark next monday","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000142","text":"remind me off about my tomorrow meeting sharply at ten","benchmark":"hwu64","benchmark_intent":"calendar_set","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000143","text":"crockpot recipe for chicken alfredo","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000144","text":"what is the best recipe for tacos","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000145","text":"show me how to cook lasagna","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000146","text":"how to make sausage","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000147","text":"show the method to prepare icecream","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000148","text":"tell me how to cook meatballs","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000149","text":"recipe for spaghetti","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000150","text":"how do you pan sear a porterhouse steak","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000151","text":"please explain the rice recipe","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000152","text":"what's the best way to cook pasta","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000153","text":"how many eggs should i put in my cake mixture","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000154","text":"what can i substitute butter with","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000155","text":"how to make chicken tikka","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000156","text":"how do i make tuna casserole from scratch","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000157","text":"please explain the rice recipe","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000158","text":"what should i make for dinner","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000159","text":"show me the recipe of tandoori chicken","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000160","text":"do you know how to cook risotto","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000161","text":"freezing","benchmark":"hwu64","benchmark_intent":"cooking_recipe","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000162","text":"convert one oh two from gtm four thirty to g. m. t. one thirty","benchmark":"hwu64","benchmark_intent":"datetime_convert","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000163","text":"time zone between india and us","benchmark":"hwu64","benchmark_intent":"datetime_convert","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000164","text":"what is the time at singapore when our time is five pm","benchmark":"hwu64","benchmark_intent":"datetime_convert","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000165","text":"time between us and canada","benchmark":"hwu64","benchmark_intent":"datetime_convert","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000166","text":"what is the time difference between here and there","benchmark":"hwu64","benchmark_intent":"datetime_convert","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000167","text":"what is the time difference between pacific and central","benchmark":"hwu64","benchmark_intent":"datetime_convert","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000168","text":"convert time zone to ist","benchmark":"hwu64","benchmark_intent":"datetime_convert","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000169","text":"can you tell how many hours of difference are between boston and los angeles","benchmark":"hwu64","benchmark_intent":"datetime_convert","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000170","text":"whats today","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000171","text":"what is the date and time","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000172","text":"can i get the time","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000173","text":"what day of the month is it","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000174","text":"new york time","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000175","text":"what time is it in a city","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000176","text":"can you tell me the time at san francisco","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000177","text":"what's the time in china right now","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000178","text":"do you know what day it is","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000179","text":"show me what time it is","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000180","text":"tell me the time","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000181","text":"what does the clock say","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000182","text":"the time in cairo please","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000183","text":"what is the correct time","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000184","text":"hey what time is it in london now","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000185","text":"would like to see the time zone","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000186","text":"what time is it in akron","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000187","text":"new york time","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000188","text":"tell me the current time in san paulo brazil","benchmark":"hwu64","benchmark_intent":"datetime_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000189","text":"add something@gmail dot com to my contacts","benchmark":"hwu64","benchmark_intent":"email_addcontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000190","text":"make a new contact with this email","benchmark":"hwu64","benchmark_intent":"email_addcontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000191","text":"put sam@gmail dot com in my email contacts list","benchmark":"hwu64","benchmark_intent":"email_addcontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000192","text":"please create a new contact information about jo","benchmark":"hwu64","benchmark_intent":"email_addcontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000193","text":"add lowes hardware to my contact emails located in cleveland ohio","benchmark":"hwu64","benchmark_intent":"email_addcontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000194","text":"add this email to my contact list","benchmark":"hwu64","benchmark_intent":"email_addcontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000195","text":"please add an email to my contacts","benchmark":"hwu64","benchmark_intent":"email_addcontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000196","text":"can you look up and add john's old email to my contacts again","benchmark":"hwu64","benchmark_intent":"email_addcontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000197","text":"check for all emails from tom brady","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000198","text":"check my email","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000199","text":"please alert me when john emails me","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000200","text":"how many emails do i have from work today","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000201","text":"any incoming emails in the last five minutes","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000202","text":"read email","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000203","text":"jane doe emails","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000204","text":"check email from john","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000205","text":"read me new messages from name","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000206","text":"all new mail","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000207","text":"show me emails from my friends","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000208","text":"how many emails today","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000209","text":"who's emailed me recently","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000210","text":"any recent emails","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000211","text":"any new emails after five pm","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000212","text":"list new emails","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000213","text":"give a last minute update on incoming emails please","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000214","text":"check for all emails from tom brady","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000215","text":"can you see if john has replied to my email yet","benchmark":"hwu64","benchmark_intent":"email_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000216","text":"when is john's birthday","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000217","text":"show johns office number","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000218","text":"locate information on john smith about his work location","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000219","text":"how many phone numbers do i have for brenden","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000220","text":"how old is joanne","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000221","text":"open derek's contact information","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000222","text":"check mom's number","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000223","text":"open contacts and find john smith","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000224","text":"where does john smith live and what is his phone number","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000225","text":"how many phone numbers do i have for brenden","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000226","text":"send a text to alice","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000227","text":"please open my contact list","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000228","text":"did sara tried to call me","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000229","text":"where does joe joe live","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000230","text":"show john's contact information","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000231","text":"find john smith from alabama","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000232","text":"do you have the mailing address for the electric company","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000233","text":"what is john's last name","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000234","text":"tell me the landline number","benchmark":"hwu64","benchmark_intent":"email_querycontact","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000235","text":"write email to family member and read it back","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000236","text":"can you reply to the email","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000237","text":"reply to the email received from mark","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000238","text":"send a birthday email to my boss","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000239","text":"i want to email my supervisor","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000240","text":"pleas reply to the mail of allen","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000241","text":"create an email that needs to go out to my family","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000242","text":"you can send the email to abc@gmail dot com this is my new email address","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000243","text":"send an email to mom subject weather body what is the weather like there this week","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000244","text":"send an email to dad about the weather for the week","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000245","text":"send an email to my family wishing them a happy holiday","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000246","text":"send email to daddy i'll be going to the birthday party","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000247","text":"send a reply to robert for his email received today morning","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000248","text":"compose a new email to ray","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000249","text":"please send the email to abc@gmail dot com instead of xyz@gmail dot com","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000250","text":"reply to the latest email","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000251","text":"please send a reminder email to peter and ask him how long he will be taking to prepare the presentation ppt","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000252","text":"open a reply message","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000253","text":"create an email to my brother asking him what time he will be over for dinner","benchmark":"hwu64","benchmark_intent":"email_sendemail","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000254","text":"yeah it's confirmed.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000255","text":"command was confirmed.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000256","text":"yeah that is perfect.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000257","text":"yes that is confirmed.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000258","text":"excellent response to the command.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000259","text":"yeap you have gotten the command perfectly.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000260","text":"yeap you have got my instructions exactly.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000261","text":"excellent.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000262","text":"that is correct.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000263","text":"you understood command exactly.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000264","text":"you've got the answer perfectly.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000265","text":"got it correcly.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000266","text":"yeap excellent response.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000267","text":"it's right.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000268","text":"yes correct response.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000269","text":"yes fantastic.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000270","text":"yeap that was wonderful.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000271","text":"yeah great response.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000272","text":"yeah it's good.","benchmark":"hwu64","benchmark_intent":"general_affirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000273","text":"olly please could you shut down.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000274","text":"please cancel.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000275","text":"i like you stop.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000276","text":"that is all, just cancel.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000277","text":"could you just cancel.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000278","text":"that is enough, just cancel it.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000279","text":"could you stop please.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000280","text":"that's all, stop.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000281","text":"could you stop please.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000282","text":"olly shut down.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000283","text":"i like you just cancel it.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000284","text":"olly could you just cancel please.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000285","text":"olly i want you cancel it.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000286","text":"olly please could you shut down.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000287","text":"that's enough, just stop it.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000288","text":"olly just stop please.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000289","text":"olly please can you shut off.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000290","text":"cancel.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000291","text":"would you shut up.","benchmark":"hwu64","benchmark_intent":"general_commandstop","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000292","text":"check the command.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000293","text":"can you please check and confirm what just said.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000294","text":"please would you check and confirm it.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000295","text":"would you check my last command.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000296","text":"please will you check and confirm my last instruction.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000297","text":"check and confirm the instruction.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000298","text":"please can you check the last thing i said.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000299","text":"please could you check question.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000300","text":"i like you confirm my last command please.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000301","text":"confirm the question please.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000302","text":"check detail please.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000303","text":"please will you check my last instruction.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000304","text":"please confirm it.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000305","text":"i like you to confirm detail please.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000306","text":"check and confirm what i said please.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000307","text":"please will you check and confirm what i just said.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000308","text":"could you please check what said.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000309","text":"i want you to check what just said please.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000310","text":"could you please confirm what i just said.","benchmark":"hwu64","benchmark_intent":"general_confirm","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000311","text":"whatever will be okay for me.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000312","text":"doesn't really matter to me.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000313","text":"i would not really mind, olly.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000314","text":"i don't mind for any one, olly.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000315","text":"i don't really care.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000316","text":"whatever, olly.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000317","text":"whatever will be okay for me.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000318","text":"any one would be okay with me, olly.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000319","text":"i don't care, olly.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000320","text":"do not really mind for any one.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000321","text":"that is unimportant with me.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000322","text":"any one will be good to me.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000323","text":"anything is good to me.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000324","text":"i wouldn't bother.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000325","text":"this does not matter to me, olly.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000326","text":"i don't really care.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000327","text":"that does not matter with me.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000328","text":"that does not really matter with me, olly.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000329","text":"wouldn't know.","benchmark":"hwu64","benchmark_intent":"general_dontcare","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000330","text":"elaborate further on what you've just said to me please.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000331","text":"what did you mean by that.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000332","text":"i can't get that.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000333","text":"would you elaborate your words once again to me please.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000334","text":"s1, could you rephrase further on what you have said to me please.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000335","text":"i was not clear about your answer.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000336","text":"could you please once again elaborate to me.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000337","text":"once again explain it to me.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000338","text":"s1, please elaborate further on it to me.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000339","text":"would you explain further on it to me please.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000340","text":"what you have said was not so clear to me.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000341","text":"i was not so clear about what you've said.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000342","text":"s1, please elaborate me on your answer further.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000343","text":"s2, i could not get that.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000344","text":"s1, would you explain me about what you have just said once again.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000345","text":"would you elaborate again to me please.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000346","text":"s2, could not get what you have said.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000347","text":"please can you rephrase me further on your answers.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000348","text":"s1, can you please explain more on what you've said to me.","benchmark":"hwu64","benchmark_intent":"general_explain","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000349","text":"open jokes","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000350","text":"say a joke","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000351","text":"i would like to hear some good funny jokes","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000352","text":"hey olly tell me a joke","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000353","text":"i would like a joke","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000354","text":"tell me a joke","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000355","text":"make me happy","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000356","text":"give me a joke","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000357","text":"provide a joke","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000358","text":"knock knock","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000359","text":"sarcastic jokes","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000360","text":"i want to hear a yo mama joke","benchmark":"hwu64","benchmark_intent":"general_joke","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000361","text":"uh no, i did not ask for that command.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000362","text":"uhh no, i did not say that.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000363","text":"that's not the right answer.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000364","text":"hmm, you gave me not correct information.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000365","text":"dammit, this isn't what i just said.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000366","text":"oh no, you've done the task wrong.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000367","text":"i am sorry but this was not the correct command.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000368","text":"sorry but i think you have messed up with command.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000369","text":"i am sorry but you have messed up with my request.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000370","text":"nope, i didn't say this.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000371","text":"i am sorry but you did not interpret command right.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000372","text":"shit, not correct response.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000373","text":"it seems like the answer was not correct.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000374","text":"shit, you made a mistake, please correct this.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000375","text":"i think you have made a mistake, please rectify this.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000376","text":"i think this was not the correct answer.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000377","text":"shit, that isn't what i wanted.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000378","text":"i don't think thats right.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000379","text":"dammit, i think incorrect response.","benchmark":"hwu64","benchmark_intent":"general_negate","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000380","text":"you have done that correctly thanks.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000381","text":"wonderful work, you did well, olly.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000382","text":"you are star, thank you so much.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000383","text":"thanks for reminding me, olly.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000384","text":"you are my hero,.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000385","text":"you are helpful, appreciated.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000386","text":"ah that was great work.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000387","text":"awesome work, you did well.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000388","text":"thank you very much for reminding me of that.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000389","text":"it's helpful, thank you.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000390","text":"it was helpful, musch appreciated.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000391","text":"thank you.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000392","text":"ah that was great work.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000393","text":"thank you, olly.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000394","text":"ah it's awesome, olly.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000395","text":"it's good one, appreciated.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000396","text":"you rock, musch appreciated.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000397","text":"thanks for the answer.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000398","text":"you did nice job, appreciated, olly.","benchmark":"hwu64","benchmark_intent":"general_praise","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000399","text":"are you real","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000400","text":"tell me about economy and gdp about india versus china","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000401","text":"i need to keep two toddlers busy tell me what to do","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000402","text":"when is the first seventy degree day forecast","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000403","text":"do i need my tire pressure checked","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000404","text":"good morning isn't it a great day","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000405","text":"cheering me up","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000406","text":"today was a hard day","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000407","text":"is there life on other planets","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000408","text":"my day was great","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000409","text":"i took my truck to the shop","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000410","text":"what is your mother language","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000411","text":"today was a hard day","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000412","text":"its very tough one","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000413","text":"are you happy today","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000414","text":"can i tell you about my day","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000415","text":"what is your mother language","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000416","text":"hey whatsapp","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000417","text":"today wore me out","benchmark":"hwu64","benchmark_intent":"general_quirky","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000418","text":"would you do it again.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000419","text":"please will you speak once again.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000420","text":"i need to hear again.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000421","text":"please tell me that message spoke once more.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000422","text":"please try the things one more again.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000423","text":"tell me once more.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000424","text":"can you say it one more time again please.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000425","text":"would you do it again.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000426","text":"will you replay please.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000427","text":"do it again please.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000428","text":"would you tell me what i said one more time again.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000429","text":"can you say what you have said one more again.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000430","text":"please will you replay.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000431","text":"say what you've said one more time again please.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000432","text":"speak the last words one more time please.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000433","text":"i want to hear what i've said again.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000434","text":"i would like to hear the last you just said again.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000435","text":"please would you repeat what you've said.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000436","text":"what did you say in the last conversation.","benchmark":"hwu64","benchmark_intent":"general_repeat","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000437","text":"i need you to turn on the vacuum cleaner","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000438","text":"start irobot","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000439","text":"turn my iroomba on","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000440","text":"initiate the robot vacuum cleaner","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000441","text":"start my robot vacuum cleaner","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000442","text":"take it in hand","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000443","text":"initiate vacuum cleaner","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000444","text":"robot do the whole house now","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000445","text":"i want the robot vacuum cleaner to start at one pm today","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000446","text":"start my robot vacuum cleaner","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000447","text":"start a vacuum cleaner","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000448","text":"turn on the vacuum now","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000449","text":"start vacuum cleaner now","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000450","text":"start the robot roomba","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000451","text":"start the vacuum cleaner","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000452","text":"start the robotic vacuum","benchmark":"hwu64","benchmark_intent":"iot_cleaning","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000453","text":"i cup of joe would be nice right now","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000454","text":"please set my coffee machine to start at four pm time","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000455","text":"i want coffee everyday","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000456","text":"make a coffee please","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000457","text":"please make a coffee for me","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000458","text":"i need coffee please preferably hot","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000459","text":"brew me a cup of coffee","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000460","text":"make coffee at three","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000461","text":"can you set my coffee machine to make me coffee at seven am","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000462","text":"make a coffee","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000463","text":"order one coffee from nearest coffee shop","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000464","text":"please start the coffee pot","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000465","text":"i need some coffee made","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000466","text":"make me a strong cup of coffee","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000467","text":"set my coffee machine","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000468","text":"prepare a cup of coffee for me","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000469","text":"access coffee maker begin process","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000470","text":"i will need my filter coffee in ten minutes please ask the coffee maker accordingly","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000471","text":"make me some coffee","benchmark":"hwu64","benchmark_intent":"iot_coffee","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000472","text":"turn the lights to red color","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000473","text":"i'd like some red lighting","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000474","text":"change the lights in the kitchen to blue","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000475","text":"switch the lights to blue","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000476","text":"change the light in the bathroom to yellow","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000477","text":"make the bedroom lights red and the hall lights normal color please","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000478","text":"house lights blue","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000479","text":"change the color of the lights in my bedroom to red","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000480","text":"give me red lights","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000481","text":"make the lights blue in here","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000482","text":"change the lighting to blue","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000483","text":"can this room have green light","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000484","text":"set colour blue for all lights of my house","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000485","text":"set the living room lights to fifty percent","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000486","text":"make the lights blue in here","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000487","text":"turn the living room lights to one percent","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000488","text":"i want blue lighting","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000489","text":"give me red lights","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000490","text":"change the color of the lights","benchmark":"hwu64","benchmark_intent":"iot_hue_lightchange","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000491","text":"lower the light to forty percent","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000492","text":"make the lights less bright","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000493","text":"minimize the light power","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000494","text":"reduce the strength of the bedroom lights","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000495","text":"reduce the light power","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000496","text":"lower the intensity of light","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000497","text":"dim the lights in the hall","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000498","text":"could you dim the lights","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000499","text":"please turn down the lights in the house","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000500","text":"decrease lighting","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000501","text":"these lights are too bright please lower them","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000502","text":"turn down the lights","benchmark":"hwu64","benchmark_intent":"iot_hue_lightdim","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000503","text":"please turn off the lights in patio","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000504","text":"turn the light off","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000505","text":"please turn off all the lights in the house","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000506","text":"please turn the lights off in the bathroom","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000507","text":"time to sleep","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000508","text":"please turn off all the lights in the house","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000509","text":"turn off light in bedroom","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000510","text":"shut off the lights in the bedroom","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000511","text":"can you please turn off the lights in this room","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000512","text":"turn my bedroom lights off","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000513","text":"please turn off kitchen light","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000514","text":"turn lights off in bedroom","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000515","text":"turn off the lights please","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000516","text":"turn house lights off","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000517","text":"cut the lights off","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000518","text":"please turn off the lights in bedroom","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000519","text":"shut down the garage light and set the den light to orange please","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000520","text":"please turn off the light of my son's room","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000521","text":"turn off lights in bedroom","benchmark":"hwu64","benchmark_intent":"iot_hue_lightoff","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000522","text":"switch on light","benchmark":"hwu64","benchmark_intent":"iot_hue_lighton","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000523","text":"turn the lights on brighter","benchmark":"hwu64","benchmark_intent":"iot_hue_lighton","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000524","text":"turn the lights on brighter","benchmark":"hwu64","benchmark_intent":"iot_hue_lighton","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000525","text":"make lights brightener","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000526","text":"can the lights be turned up","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000527","text":"increase the brightness of the light it is hard to see down here","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000528","text":"please turn up the screen brightness all the way","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000529","text":"i can't see let's make it brighter","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000530","text":"brighten the light of hall","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000531","text":"turn the lights up","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000532","text":"please turn up the lights in this room","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000533","text":"brighten more light","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000534","text":"make the ceiling lights brighter","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000535","text":"it's a bit dark increase lighting","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000536","text":"make lights brightener","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000537","text":"raise the brightness of the lights","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000538","text":"brighten up the room","benchmark":"hwu64","benchmark_intent":"iot_hue_lightup","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000539","text":"i would love the wemo socket to not be active right now","benchmark":"hwu64","benchmark_intent":"iot_wemo_off","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000540","text":"please power down","benchmark":"hwu64","benchmark_intent":"iot_wemo_off","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000541","text":"turn off the wemo plug socket","benchmark":"hwu64","benchmark_intent":"iot_wemo_off","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000542","text":"please turn socket off","benchmark":"hwu64","benchmark_intent":"iot_wemo_off","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000543","text":"disable wemo socket","benchmark":"hwu64","benchmark_intent":"iot_wemo_off","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000544","text":"wemo plug socket off","benchmark":"hwu64","benchmark_intent":"iot_wemo_off","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000545","text":"power off please","benchmark":"hwu64","benchmark_intent":"iot_wemo_off","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000546","text":"please power down","benchmark":"hwu64","benchmark_intent":"iot_wemo_off","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000547","text":"please turn off wemo socket","benchmark":"hwu64","benchmark_intent":"iot_wemo_off","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000548","text":"turn on the fan socket","benchmark":"hwu64","benchmark_intent":"iot_wemo_on","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000549","text":"please turn on my wemo plug socket","benchmark":"hwu64","benchmark_intent":"iot_wemo_on","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000550","text":"switch the smart plug socket","benchmark":"hwu64","benchmark_intent":"iot_wemo_on","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000551","text":"flip the wemo on","benchmark":"hwu64","benchmark_intent":"iot_wemo_on","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000552","text":"please turn on my wemo plug socket","benchmark":"hwu64","benchmark_intent":"iot_wemo_on","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000553","text":"wemo plug socket on","benchmark":"hwu64","benchmark_intent":"iot_wemo_on","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000554","text":"if switch is on then turn on else turn off","benchmark":"hwu64","benchmark_intent":"iot_wemo_on","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000555","text":"enter this to a list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000556","text":"please put bread on the grocery list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000557","text":"open a new list for me","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000558","text":"add wine to list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000559","text":"put the item on the list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000560","text":"add appointment to list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000561","text":"reopen groceries and add milk","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000562","text":"create new list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000563","text":"put wash the car to my to do list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000564","text":"add juice to my grocery list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000565","text":"add appointment to list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000566","text":"add juice to my grocery list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000567","text":"i need to create a new to do list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000568","text":"generate fresh list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000569","text":"delete the old playlist and create new","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000570","text":"begin new list of lottery numbers","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000571","text":"add appointment in the list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000572","text":"include meeting in the list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000573","text":"put shoes on my list","benchmark":"hwu64","benchmark_intent":"lists_createoradd","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000574","text":"what kind of lists do i have","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000575","text":"what lists are available","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000576","text":"refresh my list and tell me whats on it","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000577","text":"do i have banana in my shopping list","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000578","text":"what lists do i have queried","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000579","text":"can i know what i on the list","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000580","text":"please provide the contents of the list","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000581","text":"what is on my shopping list today","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000582","text":"make sure bread is on my grocery list","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000583","text":"refresh my list and tell me whats on it","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000584","text":"what are all the lists i have available","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000585","text":"lists i have","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000586","text":"make sure bread is on my grocery list","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000587","text":"which lists are present in the notes app","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000588","text":"please tell me what lists i have","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000589","text":"what lists do you have on you right now","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000590","text":"what is on my to do list today","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000591","text":"what do i need to complete first from the list","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000592","text":"read out my list for today","benchmark":"hwu64","benchmark_intent":"lists_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000593","text":"remove that item","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000594","text":"remove eric name","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000595","text":"get rid of a list","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000596","text":"trash the open list google","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000597","text":"remove any kind of list","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000598","text":"please remove item a from my list","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000599","text":"open lists remove list","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000600","text":"delete that item","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000601","text":"remove the list called party time","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000602","text":"please remove list","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000603","text":"erase shopping list","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000604","text":"remove the milk from the shopping list","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000605","text":"delete the list brads appointments","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000606","text":"delete the list item about the meeting","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000607","text":"clear my activities list for today","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000608","text":"please remove the list","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000609","text":"delete my to do's for this week","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000610","text":"delete from playlist my old english songs list","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000611","text":"delete this item","benchmark":"hwu64","benchmark_intent":"lists_remove","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000612","text":"i like top twenty music","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000613","text":"i love that song","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000614","text":"i have to done it on the post important music file","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000615","text":"please save my rating on this song it is five stars please","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000616","text":"save this song","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000617","text":"add bruno mars to my favorites","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000618","text":"i like justin beibers music please play it","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000619","text":"add my opinion to this song great","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000620","text":"save information about love of beyonc","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000621","text":"i like the background song","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000622","text":"i like this song please save","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000623","text":"yes i like to save opinion on song playing and which player support that song","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000624","text":"filter all arijit singh sad song and save or create playlist of sad songs of arijit singh","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000625","text":"my favourite music band is queen","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000626","text":"save my opinion about the current song playing","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000627","text":"love me some brad paisley","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000628","text":"favorite this music","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000629","text":"i like music from when i was a teenager in the","benchmark":"hwu64","benchmark_intent":"music_likeness","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000630","text":"what music is playing right now","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000631","text":"i am interested in what emotions are conveyed in grateful dead music","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000632","text":"who is the singer","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000633","text":"recommend artists similar to rihanna","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000634","text":"what is the title and artist of this song","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000635","text":"tell me the details of the music playing","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000636","text":"what is the title of this song and please shuffle songs from the artist that sang it","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000637","text":"please tell me the name of this band","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000638","text":"who sings the song about a long black train","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000639","text":"tell me the name of this song","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000640","text":"what are my favorite types of music","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000641","text":"who wrote this song","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000642","text":"tell artist and title of this song","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000643","text":"please tell me the name of this band","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000644","text":"please tell me the name of this song that is currently playing","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000645","text":"who wrote this song","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000646","text":"tell me the singer of this track","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000647","text":"what album is this song on","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000648","text":"title of song","benchmark":"hwu64","benchmark_intent":"music_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000649","text":"loop this track","benchmark":"hwu64","benchmark_intent":"music_settings","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000650","text":"shuffle music by aaron carter","benchmark":"hwu64","benchmark_intent":"music_settings","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000651","text":"shuffle music by aaron carter","benchmark":"hwu64","benchmark_intent":"music_settings","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000652","text":"please repeat the last song","benchmark":"hwu64","benchmark_intent":"music_settings","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000653","text":"please repeat the last song","benchmark":"hwu64","benchmark_intent":"music_settings","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000654","text":"change the music mode to rock","benchmark":"hwu64","benchmark_intent":"music_settings","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000655","text":"display volume strength on current track","benchmark":"hwu64","benchmark_intent":"music_settings","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000656","text":"what's going on in the world these days","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000657","text":"what's going on in new york","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000658","text":"open the local news app","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000659","text":"hackernews","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000660","text":"what is happening in the world right now","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000661","text":"what is new news for today","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000662","text":"tell me if an earthquake happens in the world","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000663","text":"olly please read me today's news","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000664","text":"can you get me news from ny times","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000665","text":"open cnn app","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000666","text":"show me articles about the new iphone eight","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000667","text":"read me the most updated news on bbc","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000668","text":"what is happening in the world right now","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000669","text":"tell me the news about jallikattu in tamil nadu","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000670","text":"what is happening in the world right now","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000671","text":"what is the news today in polk county florida","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000672","text":"breaking news fox news","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000673","text":"get me news on trump","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000674","text":"search for the latest news about iphone","benchmark":"hwu64","benchmark_intent":"news_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000675","text":"resume story","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000676","text":"play animal farm","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000677","text":"continue the smurfs book","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000678","text":"play sam harris audiobook","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000679","text":"read to me","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000680","text":"resume play where i left off in book on audible","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000681","text":"resume war and peace","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000682","text":"open audiobook","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000683","text":"resume harry potter book four","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000684","text":"resume the art of war","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000685","text":"start playing the hobbit","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000686","text":"go back to the midnight series","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000687","text":"play little women","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000688","text":"open the two towers and play","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000689","text":"start playing from where i left off on the goblet of fire","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000690","text":"i want to resume where i last left off in my audio book","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000691","text":"start the audiobook file for where i left off in a tale of two cities","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000692","text":"book swan play","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000693","text":"play album audiobook","benchmark":"hwu64","benchmark_intent":"play_audiobook","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000694","text":"play my game","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000695","text":"how about a game of snakes and ladders","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000696","text":"let's play a game how about tic tac toe","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000697","text":"play mindsweeper with me","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000698","text":"open solitaire play with me","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000699","text":"launch game","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000700","text":"start play road rash","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000701","text":"play mindsweeper with me","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000702","text":"i'd like to play monopoly","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000703","text":"would you like to play never have i ever","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000704","text":"open this game","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000705","text":"start up league of legends for me","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000706","text":"let's play canasta","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000707","text":"start play spider","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000708","text":"play rummy","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000709","text":"tag you're it","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000710","text":"angry bird","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000711","text":"i want to play rock paper scissors let's play","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000712","text":"do you want to play solitaire","benchmark":"hwu64","benchmark_intent":"play_game","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000713","text":"song next","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000714","text":"play a song that will make me smile","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000715","text":"find and queue all songs of kate perry and play all without shuffling","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000716","text":"can you play my music file","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000717","text":"play all songs by martina mcbride","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000718","text":"will you put on the music","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000719","text":"i want to listen to electric slide","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000720","text":"please play the early franks sinatra stuff i have","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000721","text":"skip to the next song","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000722","text":"start my jazz playlist","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000723","text":"find and queue all songs of kate perry and play all without shuffling","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000724","text":"now playing","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000725","text":"play something random from google play","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000726","text":"resume last playlist","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000727","text":"can you play call me by aretha franklin after this song is finished playing","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000728","text":"please i want to hear we will rock you from queen","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000729","text":"play for me jazz music","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000730","text":"play random music","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000731","text":"play my playlist","benchmark":"hwu64","benchmark_intent":"play_music","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000732","text":"i want to listen to podcast","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000733","text":"next episode","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000734","text":"please start the podcast","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000735","text":"skip ahead to the next podcast","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000736","text":"find me the latest podcast about president trump and his immigration ban","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000737","text":"play favorited podcasts on fishing","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000738","text":"let me hear that podcast","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000739","text":"play the podcast of barack obama saved in device","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000740","text":"play podcast a","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000741","text":"i want to listen to a new podcast on healthcare","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000742","text":"play the next episode of adele's podcast","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000743","text":"can you play the next episode please","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000744","text":"play the next show on podcast","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000745","text":"network podcast","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000746","text":"skip to next episode","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000747","text":"please play the podcast from happypeoplecom","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000748","text":"play next reason podcast","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000749","text":"play that podcast please","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000750","text":"play cindi's favorite podcast","benchmark":"hwu64","benchmark_intent":"play_podcasts","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000751","text":"play the radio station","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000752","text":"lets hear wgrr one hundred and three point five","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000753","text":"begin radio play","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000754","text":"set radio","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000755","text":"switch on the radio","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000756","text":"rj raunak programme play on ninety two point seven fm","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000757","text":"play bbc radio four","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000758","text":"play power one oh two point three","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000759","text":"play sam harris please","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000760","text":"tune into my selected station","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000761","text":"can you play beats one radio","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000762","text":"turn on radio now","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000763","text":"activate the radio please","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000764","text":"activate the radio please","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000765","text":"what are the new rock radio stations","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000766","text":"please play red fm","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000767","text":"turn on pdr am","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000768","text":"have remainder of the program to listen","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000769","text":"change the station to eighty two point four","benchmark":"hwu64","benchmark_intent":"play_radio","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000770","text":"what's the rate between the u. s. d. and ukraine's currency","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000771","text":"how much is dollar worth in persos","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000772","text":"what is the exchange of euro to dollars","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000773","text":"exchange rate from cad to u. s. d.","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000774","text":"how many dollars are there in a g. b. p.","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000775","text":"convert the american dollar to the euro","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000776","text":"how much is the dollar verus the pound","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000777","text":"how much is two thousand yen in u. s. d.","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000778","text":"how many dollars are in a pound","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000779","text":"how many euros are in a dollar","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000780","text":"currency converter please","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000781","text":"dollar rate of philippiness peso","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000782","text":"how many euros for one u. s. d.","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000783","text":"current forex rates","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000784","text":"if i have twenty dollars how many francs is that","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000785","text":"tell me the exchange rate us versus indian rupees","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000786","text":"how much yens per u. s. d. today","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000787","text":"what is exchange for the us and euro","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000788","text":"whats the currency exchange rate from dollars to euros","benchmark":"hwu64","benchmark_intent":"qa_currency","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000789","text":"define forensic","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000790","text":"look up what this word means","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000791","text":"what is photosynthesis","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000792","text":"define what a wizard is","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000793","text":"define television","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000794","text":"what is a monitor","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000795","text":"can you tell me what haggis looks like","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000796","text":"could you explain the meaning of exorbitant for me please","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000797","text":"please tell me what a crankshaft is","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000798","text":"describe what a sphere is","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000799","text":"hey what's a book","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000800","text":"what does it look like","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000801","text":"define transcendet","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000802","text":"what is a monitor","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000803","text":"google the word","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000804","text":"what does tacobell stand for","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000805","text":"what does formidable mean","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000806","text":"what does it look like","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000807","text":"define transcendet","benchmark":"hwu64","benchmark_intent":"qa_definition","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000808","text":"how many tablespoons are there in a cup","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000809","text":"why are whales big","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000810","text":"tell me distance between sun and moon","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000811","text":"how deep is the deepest point of the grand canyon","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000812","text":"what is the birthday of hemingway","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000813","text":"where is kansas located","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000814","text":"is keith richards dead","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000815","text":"what is the financial capital of canada","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000816","text":"why did gotse shoot mahatma gandhi","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000817","text":"how far does my dollar go in japan","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000818","text":"what high school did halley barry go to","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000819","text":"what tv show is jennifer aniston on","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000820","text":"when was einstein's birthday","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000821","text":"who is the better half of obama","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000822","text":"i need to know about the height of mount everest","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000823","text":"what color is a dragon fruit","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000824","text":"do you know actor surya","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000825","text":"can cats eat fish","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000826","text":"how old is carrie underwood","benchmark":"hwu64","benchmark_intent":"qa_factoid","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000827","text":"whats two hundred divided by five","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000828","text":"what is two hundred divided by thirteen","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000829","text":"solve the calculation","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000830","text":"what is two hundred divided by thirteen","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000831","text":"how do you subtract numbers","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000832","text":"what is twelve plus one hundred and ninety six","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000833","text":"solve the calculation","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000834","text":"how do you subtract numbers","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000835","text":"what is the answer to four plus four","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000836","text":"how do you subtract numbers","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000837","text":"how much is one plus one","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000838","text":"four divided by two equals two","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000839","text":"what is the square root of ten","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000840","text":"what is five over three","benchmark":"hwu64","benchmark_intent":"qa_maths","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000841","text":"i want to know the stocks of amazon","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000842","text":"what's going on on wall street this week","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000843","text":"i want to figure out the stock on microsoft","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000844","text":"what is the closing price of apple today","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000845","text":"list the current price of microsoft shares","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000846","text":"give me the opening stock price of acer computers","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000847","text":"please find today's stock prices for samsung company","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000848","text":"current price of coca cola stock","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000849","text":"what is the stock for hp company","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000850","text":"what are i. b. m.'s stock prices","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000851","text":"mention the stock price of hdfc","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000852","text":"please tell me what is the stock price of dew in ny market","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000853","text":"how much does bde cost","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000854","text":"set notification for news on the stock market","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000855","text":"which stock markets have lowered in the past three hours","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000856","text":"what's the stock price of this","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000857","text":"give me the average five year stock price of home depot","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000858","text":"stock please","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000859","text":"please find today's stock prices for samsung company","benchmark":"hwu64","benchmark_intent":"qa_stock","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000860","text":"events in me area","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000861","text":"local events","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000862","text":"what is worth doing around here","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000863","text":"what is going on in south tampa today","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000864","text":"is there anything happening on jazz scene around edinburgh","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000865","text":"search events and meetups for central park west","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000866","text":"tell me about the events going on around my location","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000867","text":"find events in local area","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000868","text":"i need all the local events for this area that are being held this weekend","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000869","text":"searching for any special holidays for us country","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000870","text":"what is the event name going in me area","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000871","text":"what kind of event is happening around me","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000872","text":"is there any concerts taking place in new york today","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000873","text":"what is happening in delhi today","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000874","text":"what is happening in delhi today","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000875","text":"where is the food festival tonight","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000876","text":"hockey","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000877","text":"which teams are playing this weekend","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000878","text":"what is this event is called which happening my area","benchmark":"hwu64","benchmark_intent":"recommendation_events","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000879","text":"where is a petrol station in five mile radius","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000880","text":"i want to know what supermarket near me has the best price on gluten free bread","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000881","text":"please give me all shop names in a two mile radius","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000882","text":"what's the best clothes store here","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000883","text":"i need to find a gift what stores are within a one mile radius","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000884","text":"where can i eat along route sixty six","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000885","text":"find me a nice restaurant for dinner","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000886","text":"where is a nearby park where i can go running","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000887","text":"recommend a local steak restaurant","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000888","text":"find me the cheapest place to buy a new backpack","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000889","text":"what chinese restaurants are in my area","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000890","text":"i want to know what supermarket near me has the best price on gluten free bread","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000891","text":"where is the nearest restaurant here","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000892","text":"where can i go shopping here","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000893","text":"where monet's exhibition takes place","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000894","text":"tell me chinese restaurants in the area","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000895","text":"where's the closest zoo to where i'm at","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000896","text":"list of the nearby restaurant","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000897","text":"where is the best mechanic in eagle point","benchmark":"hwu64","benchmark_intent":"recommendation_locations","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000898","text":"what is a good movie to see right now","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000899","text":"any good movies","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000900","text":"can you tell me what movies are playing at the movies tonight","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000901","text":"show me nearest theatre","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000902","text":"can you tell me what movies are playing at the movies tonight","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000903","text":"show me nearest theatre","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000904","text":"what movies are playing tonight","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000905","text":"what movies are playing tonight","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000906","text":"what movies are playing in columbia","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000907","text":"what is a movie like star wars","benchmark":"hwu64","benchmark_intent":"recommendation_movies","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000908","text":"tweet i am doing well on twitter","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000909","text":"tweet comcast and tell them that their service is down again","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000910","text":"tweet consumer service that the quantity is wrong","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000911","text":"tweet walmart and tell them their customer service is horrible","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000912","text":"tweet for me the complaint about drainage work","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000913","text":"write a complaint to best buy","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000914","text":"new twitter message","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000915","text":"tweet consumer service that the quantity is wrong","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000916","text":"tweet long wait time and unprofessional employees","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000917","text":"tweet your waiting time sucks tag koc","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000918","text":"tell them that their lines were too long","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000919","text":"send a tweet about sonys volume issues","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000920","text":"please retweet this post on twitter","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000921","text":"tell my facebook group that i've arrived","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000922","text":"complain to philips","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000923","text":"log a complaint about smart tv to sony customer service","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000924","text":"tell my facebook group that i've arrived","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000925","text":"tweet for me the complaint about drainage work","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000926","text":"tweet something for me","benchmark":"hwu64","benchmark_intent":"social_post","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000927","text":"check my last post on facebook","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000928","text":"anything new on social media","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000929","text":"what are the latest tweets on my twitter account","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000930","text":"tell me what's happening on instagram","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000931","text":"hi there tell me latest updates of times of india page in facebook","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000932","text":"latest tweets","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000933","text":"check my twitter account","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000934","text":"what is currently trending on twitter","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000935","text":"what was last sent to me in my social media feed","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000936","text":"tell me if anything important is happening on social media today","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000937","text":"what going on","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000938","text":"what are the latest updates on my facebook account","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000939","text":"what's trending on twitter","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000940","text":"check my twitter account","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000941","text":"tell me what's going on with facebook","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000942","text":"is there anything new on reddit","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000943","text":"tell me what's going on with facebook","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000944","text":"hi there tell me latest updates of times of india page in facebook","benchmark":"hwu64","benchmark_intent":"social_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000945","text":"i need to order some food from papa john's","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000946","text":"order takeout from pizza restaurant","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000947","text":"i want to order some pizza","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000948","text":"call china king chinese restaurant","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000949","text":"please order some sushi for dinner","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000950","text":"food order from grubhub","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000951","text":"who delivers near here","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000952","text":"i need to order some food from papa john's","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000953","text":"please order me lo mein and egg rolls from panda express now","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000954","text":"order one burger","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000955","text":"takeaway noodles one pack","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000956","text":"i would like to order takeaway","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000957","text":"macdonald shops","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000958","text":"order a double bacon cheeseburger with bacon an white american cheese","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000959","text":"near pizza shops","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000960","text":"order pizza from domino's","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000961","text":"order food from applebees","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000962","text":"can i order take out from licari's","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000963","text":"order me some chinese food","benchmark":"hwu64","benchmark_intent":"takeaway_order","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000964","text":"i just ordered food call and see it has been delivered","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000965","text":"i want to know if the olive garden provides takeaway","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000966","text":"what's up with my order","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000967","text":"charges of delivery","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000968","text":"please takeaway of giving required of the restaurant","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000969","text":"does pings have takeaway","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000970","text":"when is my order arriving","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000971","text":"can i get delivery from dominos","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000972","text":"could you please confirm if paradise does takeaway","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000973","text":"do the restaurant deliver","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000974","text":"does mcdonalds do takeaway","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000975","text":"when can i pick up my chinese food","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000976","text":"ask peking garden when my food will arrive","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000977","text":"who takes less of duration of time for delivery","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000978","text":"when will my chinese food arrive","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000979","text":"search if the restaurant does take out","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000980","text":"does peking garden do orders online","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000981","text":"does panda garden deliver","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000982","text":"is there a takeaway in chipotle restaurant","benchmark":"hwu64","benchmark_intent":"takeaway_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000983","text":"display trains going to antwerp after two pm saturday","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000984","text":"from where can i get a train ticket for athens","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000985","text":"what time are the trains going to chennai leaving","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000986","text":"tell me the train ticket price of california to chicago","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000987","text":"find ny train time","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000988","text":"what time does the train arrive","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000989","text":"are there any trips to location a provided by the train","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000990","text":"can you give me the train times to nyc","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000991","text":"when is the next train arriving to union station from grand central station","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000992","text":"when is the last train today","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000993","text":"how far is the distance to rccg ikoyi lagos from here by train","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000994","text":"what is the quickest way to my work downtown without hitting any traffic","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000995","text":"how do i go to athens by train","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000996","text":"how to go to multi specialty hospital","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000997","text":"i need a train ticket to denver","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000998","text":"tell me if i should use the train or bus to get across town today","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-000999","text":"how to go to multi specialty hospital","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001000","text":"show me the path of nearest railway station","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001001","text":"what time does the last train arrive in dallas","benchmark":"hwu64","benchmark_intent":"transport_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001002","text":"just book for me a lyft taxi to bardonia","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001003","text":"get me a ride to hospital","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001004","text":"i need you to book a taxi for me","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001005","text":"book me a taxi","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001006","text":"call a cab","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001007","text":"i need a taxi ride now","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001008","text":"book a taxi for tomorrow morning","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001009","text":"book a cab in the evening for me","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001010","text":"i am in need of a taxi right now","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001011","text":"book a cab for new york","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001012","text":"book me a taxi to the mall of america please","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001013","text":"what's the closest taxi to me","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001014","text":"book an uber for me","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001015","text":"tell taxi to pick me up at four pm","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001016","text":"call an uber for me","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001017","text":"call taxi","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001018","text":"open lyft","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001019","text":"please reserve an uber right now","benchmark":"hwu64","benchmark_intent":"transport_taxi","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001020","text":"ticket for new york","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001021","text":"book train ticket for this time","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001022","text":"can you book a train ticket to berkeley for me","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001023","text":"please purchase a train ticket for this weekend","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001024","text":"buy a train ticket to","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001025","text":"book my train ticket from las vegas to los angeles","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001026","text":"book for me a train ticket to california","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001027","text":"book a train ticket to charleston west virginia eight am","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001028","text":"book a train ticket for tomorrow going to new york","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001029","text":"book a ticket to ny by train","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001030","text":"i need a ticket on the train to new york city tomorrow","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001031","text":"can you please buy me a train ticket","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001032","text":"book me a train ticket to newcastle","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001033","text":"can you please book train tickets for two for this friday","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001034","text":"book a ticket for the ethan allen express to vermont","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001035","text":"i need to book a train for tomorrow to go to new york","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001036","text":"help me buy a train ticket to denver for next tuesday morning","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001037","text":"book my train ticket from las vegas to los angeles","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001038","text":"book me a train ticket to barcelona please","benchmark":"hwu64","benchmark_intent":"transport_ticket","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001039","text":"which route has less traffic today","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001040","text":"what's the traffic on eighty today","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001041","text":"what is level of traffic at washington","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001042","text":"give me a current traffic report","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001043","text":"give me a traffic update","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001044","text":"is the traffic free in some particular road","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001045","text":"how is the traffic presently near central park road","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001046","text":"give me a current traffic report","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001047","text":"what is the current traffic in washington town","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001048","text":"are there any accidents on the four hundred and five","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001049","text":"is there any traffic right now","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001050","text":"is there any traffic on my way to work","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001051","text":"what is the fastest route to town","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001052","text":"how long will it take to drive to long beach","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001053","text":"give me a current traffic report","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001054","text":"how is the traffic near me","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001055","text":"what is the traffic like","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001056","text":"which route has less traffic today","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001057","text":"check the traffic to our home","benchmark":"hwu64","benchmark_intent":"transport_traffic","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001058","text":"will i be able to get away with shorts today","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001059","text":"please confirm the weather for the thirteenth of this month","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001060","text":"is it snowing in california","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001061","text":"weather this week","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001062","text":"find weather report","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001063","text":"it is cloudy today","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001064","text":"when is the next time it will rain","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001065","text":"home town weather","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001066","text":"how me the highest weather this week","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001067","text":"tell me the weather for this week","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001068","text":"how is the weather of this place","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001069","text":"weather this week","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001070","text":"tell me the weather for new york city","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001071","text":"current weather forecast","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001072","text":"do i need a rain coat today","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001073","text":"weather in chicago please","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001074","text":"what is the weather going to be like on march twentieth two thousand and seventeen","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001075","text":"how is the weather down in orange tx","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}
+{"id":"hwu64-valid-001076","text":"what degree is it outside","benchmark":"hwu64","benchmark_intent":"weather_query","split":"valid","source":"hwu64"}

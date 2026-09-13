@@ -1,0 +1,309 @@
+{
+  "dataset_version": "intent-v1.7",
+  "training_dataset": "intent-v1.4",
+  "evaluation_source": "synthetic-realistic",
+  "generated_at": "2026-09-13T10:23:56.211906+00:00",
+  "training_examples": 372,
+  "test_examples": 45,
+  "models": {
+    "logistic_regression": {
+      "errors": [
+        {
+          "id": "intent-v1.6-0001",
+          "text": "Can you keep Jacob's game somewhere",
+          "actual": "record_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.3014938075189942,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.3014938075189942
+            ],
+            [
+              "record_fact",
+              0.14775261392165545
+            ],
+            [
+              "unknown",
+              0.1128482531483702
+            ]
+          ],
+          "family_id": "wa-record-fact-01",
+          "boundary": "record_fact-record_note"
+        },
+        {
+          "id": "intent-v1.6-0008",
+          "text": "Do you know what time the plumber's coming",
+          "actual": "query_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.2350058502299181,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.2350058502299181
+            ],
+            [
+              "query_fact",
+              0.21761564742802011
+            ],
+            [
+              "record_fact",
+              0.1143657539433979
+            ]
+          ],
+          "family_id": "wa-query-fact-03",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.6-0010",
+          "text": "When's that appointment thing again",
+          "actual": "query_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.2814648099744327,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.2814648099744327
+            ],
+            [
+              "query_fact",
+              0.14712096524984525
+            ],
+            [
+              "forget_fact",
+              0.13077056308295074
+            ]
+          ],
+          "family_id": "wa-query-fact-05",
+          "boundary": "query_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.6-0024",
+          "text": "Can we call the plumber thing finished now",
+          "actual": "resolve_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.29434142634335037,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.29434142634335037
+            ],
+            [
+              "resolve_fact",
+              0.18370586054843865
+            ],
+            [
+              "unknown",
+              0.09497938255543752
+            ]
+          ],
+          "family_id": "wa-resolve-04",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.6-0027",
+          "text": "Can you take the soccer game out of memory",
+          "actual": "forget_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.26819019653990633,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.26819019653990633
+            ],
+            [
+              "forget_fact",
+              0.21742213079756378
+            ],
+            [
+              "query_fact",
+              0.12295162837284933
+            ]
+          ],
+          "family_id": "wa-forget-02",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.6-0039",
+          "text": "What was I meant to ask about the school thing",
+          "actual": "needs_clarification",
+          "predicted": "query_note",
+          "confidence": 0.210470469429368,
+          "alternatives": [
+            [
+              "query_note",
+              0.210470469429368
+            ],
+            [
+              "needs_clarification",
+              0.181791610859848
+            ],
+            [
+              "record_note",
+              0.13403788754068827
+            ]
+          ],
+          "family_id": "wa-clarify-05",
+          "boundary": "query_fact-query_note-needs_clarification"
+        }
+      ],
+      "confusion": {
+        "query_fact \u2192 needs_clarification": 2,
+        "record_fact \u2192 needs_clarification": 1,
+        "resolve_fact \u2192 needs_clarification": 1,
+        "forget_fact \u2192 needs_clarification": 1,
+        "needs_clarification \u2192 query_note": 1
+      }
+    },
+    "multinomial_naive_bayes": {
+      "errors": [
+        {
+          "id": "intent-v1.6-0001",
+          "text": "Can you keep Jacob's game somewhere",
+          "actual": "record_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.986182736513095,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.986182736513095
+            ],
+            [
+              "record_fact",
+              0.011689650508412915
+            ],
+            [
+              "query_fact",
+              0.001634533313610472
+            ]
+          ],
+          "family_id": "wa-record-fact-01",
+          "boundary": "record_fact-record_note"
+        },
+        {
+          "id": "intent-v1.6-0010",
+          "text": "When's that appointment thing again",
+          "actual": "query_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.9827122483234549,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.9827122483234549
+            ],
+            [
+              "forget_fact",
+              0.015813254588994147
+            ],
+            [
+              "record_fact",
+              0.0006191363415490072
+            ]
+          ],
+          "family_id": "wa-query-fact-05",
+          "boundary": "query_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.6-0024",
+          "text": "Can we call the plumber thing finished now",
+          "actual": "resolve_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.683722586452236,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.683722586452236
+            ],
+            [
+              "resolve_fact",
+              0.3113907162141405
+            ],
+            [
+              "record_note",
+              0.0018791071191086473
+            ]
+          ],
+          "family_id": "wa-resolve-04",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.6-0027",
+          "text": "Can you take the soccer game out of memory",
+          "actual": "forget_fact",
+          "predicted": "needs_clarification",
+          "confidence": 0.6563551737480734,
+          "alternatives": [
+            [
+              "needs_clarification",
+              0.6563551737480734
+            ],
+            [
+              "forget_fact",
+              0.27004261058301177
+            ],
+            [
+              "query_fact",
+              0.07284736077724997
+            ]
+          ],
+          "family_id": "wa-forget-02",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.6-0029",
+          "text": "Could you remove the family lunch detail",
+          "actual": "forget_fact",
+          "predicted": "query_fact",
+          "confidence": 0.8819475979760582,
+          "alternatives": [
+            [
+              "query_fact",
+              0.8819475979760582
+            ],
+            [
+              "forget_fact",
+              0.11707692501531333
+            ],
+            [
+              "record_fact",
+              0.0006161206869522661
+            ]
+          ],
+          "family_id": "wa-forget-04",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.6-0039",
+          "text": "What was I meant to ask about the school thing",
+          "actual": "needs_clarification",
+          "predicted": "record_note",
+          "confidence": 0.3384470004334323,
+          "alternatives": [
+            [
+              "record_note",
+              0.3384470004334323
+            ],
+            [
+              "needs_clarification",
+              0.33422231728934904
+            ],
+            [
+              "query_note",
+              0.27780885919945847
+            ]
+          ],
+          "family_id": "wa-clarify-05",
+          "boundary": "query_fact-query_note-needs_clarification"
+        }
+      ],
+      "confusion": {
+        "record_fact \u2192 needs_clarification": 1,
+        "query_fact \u2192 needs_clarification": 1,
+        "resolve_fact \u2192 needs_clarification": 1,
+        "forget_fact \u2192 needs_clarification": 1,
+        "forget_fact \u2192 query_fact": 1,
+        "needs_clarification \u2192 record_note": 1
+      }
+    }
+  }
+}

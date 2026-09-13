@@ -1,0 +1,523 @@
+{
+  "dataset_version": "intent-v1.3",
+  "generated_at": "2026-09-13T05:30:56.697220+00:00",
+  "split_sizes": {
+    "train": 322,
+    "dev": 69,
+    "test": 69
+  },
+  "thresholds": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "calibration_method": "sigmoid cross-validation fitted on training data only",
+  "models": {
+    "logistic_regression": {
+      "raw": {
+        "dev": {
+          "accuracy": 0.855072463768116,
+          "average_max_probability": 0.46156465063782187,
+          "expected_calibration_error": 0.4147673053203712,
+          "reliability_bins": [
+            {
+              "lower": 0.0,
+              "upper": 0.2,
+              "count": 4,
+              "average_confidence": 0.1833631201394142,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "count": 15,
+              "average_confidence": 0.2958933253512539,
+              "accuracy": 0.6
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.6000000000000001,
+              "count": 43,
+              "average_confidence": 0.507554566785753,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "count": 7,
+              "average_confidence": 0.6930374516279799,
+              "accuracy": 1.0
+            }
+          ],
+          "thresholds": {
+            "0.5": {
+              "selected": 31,
+              "coverage": 0.4492753623188406,
+              "accuracy_when_selected": 1.0
+            },
+            "0.6": {
+              "selected": 7,
+              "coverage": 0.10144927536231885,
+              "accuracy_when_selected": 1.0
+            },
+            "0.7": {
+              "selected": 3,
+              "coverage": 0.043478260869565216,
+              "accuracy_when_selected": 1.0
+            },
+            "0.8": {
+              "selected": 0,
+              "coverage": 0.0,
+              "accuracy_when_selected": null
+            },
+            "0.9": {
+              "selected": 0,
+              "coverage": 0.0,
+              "accuracy_when_selected": null
+            }
+          }
+        },
+        "test": {
+          "accuracy": 0.8840579710144928,
+          "average_max_probability": 0.4411412004290486,
+          "expected_calibration_error": 0.4429167705854442,
+          "reliability_bins": [
+            {
+              "lower": 0.0,
+              "upper": 0.2,
+              "count": 6,
+              "average_confidence": 0.15978425817186862,
+              "accuracy": 0.5
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "count": 18,
+              "average_confidence": 0.28037619508024786,
+              "accuracy": 0.7222222222222222
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.6000000000000001,
+              "count": 35,
+              "average_confidence": 0.5150650247178465,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "count": 10,
+              "average_confidence": 0.6405989904004049,
+              "accuracy": 1.0
+            }
+          ],
+          "thresholds": {
+            "0.5": {
+              "selected": 33,
+              "coverage": 0.4782608695652174,
+              "accuracy_when_selected": 1.0
+            },
+            "0.6": {
+              "selected": 10,
+              "coverage": 0.14492753623188406,
+              "accuracy_when_selected": 1.0
+            },
+            "0.7": {
+              "selected": 1,
+              "coverage": 0.014492753623188406,
+              "accuracy_when_selected": 1.0
+            },
+            "0.8": {
+              "selected": 0,
+              "coverage": 0.0,
+              "accuracy_when_selected": null
+            },
+            "0.9": {
+              "selected": 0,
+              "coverage": 0.0,
+              "accuracy_when_selected": null
+            }
+          }
+        },
+        "selected_threshold_from_dev": 0.5,
+        "test_at_selected_threshold": {
+          "selected": 33,
+          "coverage": 0.4782608695652174,
+          "accuracy_when_selected": 1.0
+        }
+      },
+      "sigmoid_calibrated": {
+        "dev": {
+          "accuracy": 0.8695652173913043,
+          "average_max_probability": 0.7065815317806571,
+          "expected_calibration_error": 0.1699258593435048,
+          "reliability_bins": [
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "count": 5,
+              "average_confidence": 0.34644363910864684,
+              "accuracy": 0.4
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.6000000000000001,
+              "count": 12,
+              "average_confidence": 0.5199587494819645,
+              "accuracy": 0.5
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "count": 30,
+              "average_confidence": 0.7286776762794875,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.8,
+              "upper": 1.0,
+              "count": 22,
+              "average_confidence": 0.8600941915979038,
+              "accuracy": 1.0
+            }
+          ],
+          "thresholds": {
+            "0.5": {
+              "selected": 60,
+              "coverage": 0.8695652173913043,
+              "accuracy_when_selected": 0.95
+            },
+            "0.6": {
+              "selected": 52,
+              "coverage": 0.7536231884057971,
+              "accuracy_when_selected": 1.0
+            },
+            "0.7": {
+              "selected": 42,
+              "coverage": 0.6086956521739131,
+              "accuracy_when_selected": 1.0
+            },
+            "0.8": {
+              "selected": 22,
+              "coverage": 0.3188405797101449,
+              "accuracy_when_selected": 1.0
+            },
+            "0.9": {
+              "selected": 5,
+              "coverage": 0.07246376811594203,
+              "accuracy_when_selected": 1.0
+            }
+          }
+        },
+        "test": {
+          "accuracy": 0.8840579710144928,
+          "average_max_probability": 0.6659729146686122,
+          "expected_calibration_error": 0.21912771525415117,
+          "reliability_bins": [
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "count": 7,
+              "average_confidence": 0.29085310461933395,
+              "accuracy": 0.2857142857142857
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.6000000000000001,
+              "count": 17,
+              "average_confidence": 0.5011964446315123,
+              "accuracy": 0.8235294117647058
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "count": 26,
+              "average_confidence": 0.7377520905688384,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.8,
+              "upper": 1.0,
+              "count": 19,
+              "average_confidence": 0.8533823929617579,
+              "accuracy": 1.0
+            }
+          ],
+          "thresholds": {
+            "0.5": {
+              "selected": 51,
+              "coverage": 0.7391304347826086,
+              "accuracy_when_selected": 1.0
+            },
+            "0.6": {
+              "selected": 45,
+              "coverage": 0.6521739130434783,
+              "accuracy_when_selected": 1.0
+            },
+            "0.7": {
+              "selected": 38,
+              "coverage": 0.5507246376811594,
+              "accuracy_when_selected": 1.0
+            },
+            "0.8": {
+              "selected": 19,
+              "coverage": 0.2753623188405797,
+              "accuracy_when_selected": 1.0
+            },
+            "0.9": {
+              "selected": 4,
+              "coverage": 0.057971014492753624,
+              "accuracy_when_selected": 1.0
+            }
+          }
+        },
+        "selected_threshold_from_dev": 0.5,
+        "test_at_selected_threshold": {
+          "selected": 51,
+          "coverage": 0.7391304347826086,
+          "accuracy_when_selected": 1.0
+        }
+      }
+    },
+    "multinomial_naive_bayes": {
+      "raw": {
+        "dev": {
+          "accuracy": 0.8115942028985508,
+          "average_max_probability": 0.9273399058617654,
+          "expected_calibration_error": 0.12803181117499757,
+          "reliability_bins": [
+            {
+              "lower": 0.4,
+              "upper": 0.6000000000000001,
+              "count": 5,
+              "average_confidence": 0.5152258533386973,
+              "accuracy": 0.6
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "count": 4,
+              "average_confidence": 0.7279360718476499,
+              "accuracy": 0.25
+            },
+            {
+              "lower": 0.8,
+              "upper": 1.0,
+              "count": 60,
+              "average_confidence": 0.9749763325062953,
+              "accuracy": 0.8666666666666667
+            }
+          ],
+          "thresholds": {
+            "0.5": {
+              "selected": 67,
+              "coverage": 0.9710144927536232,
+              "accuracy_when_selected": 0.8059701492537313
+            },
+            "0.6": {
+              "selected": 64,
+              "coverage": 0.927536231884058,
+              "accuracy_when_selected": 0.828125
+            },
+            "0.7": {
+              "selected": 63,
+              "coverage": 0.9130434782608695,
+              "accuracy_when_selected": 0.8412698412698413
+            },
+            "0.8": {
+              "selected": 60,
+              "coverage": 0.8695652173913043,
+              "accuracy_when_selected": 0.8666666666666667
+            },
+            "0.9": {
+              "selected": 58,
+              "coverage": 0.8405797101449275,
+              "accuracy_when_selected": 0.896551724137931
+            }
+          }
+        },
+        "test": {
+          "accuracy": 0.855072463768116,
+          "average_max_probability": 0.902298878170957,
+          "expected_calibration_error": 0.09195864484766829,
+          "reliability_bins": [
+            {
+              "lower": 0.4,
+              "upper": 0.6000000000000001,
+              "count": 5,
+              "average_confidence": 0.4913476099306925,
+              "accuracy": 0.8
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "count": 11,
+              "average_confidence": 0.7331809267557756,
+              "accuracy": 0.5454545454545454
+            },
+            {
+              "lower": 0.8,
+              "upper": 1.0,
+              "count": 53,
+              "average_confidence": 0.9761678179213027,
+              "accuracy": 0.9245283018867925
+            }
+          ],
+          "thresholds": {
+            "0.5": {
+              "selected": 65,
+              "coverage": 0.9420289855072463,
+              "accuracy_when_selected": 0.8615384615384616
+            },
+            "0.6": {
+              "selected": 64,
+              "coverage": 0.927536231884058,
+              "accuracy_when_selected": 0.859375
+            },
+            "0.7": {
+              "selected": 60,
+              "coverage": 0.8695652173913043,
+              "accuracy_when_selected": 0.8833333333333333
+            },
+            "0.8": {
+              "selected": 53,
+              "coverage": 0.7681159420289855,
+              "accuracy_when_selected": 0.9245283018867925
+            },
+            "0.9": {
+              "selected": 47,
+              "coverage": 0.6811594202898551,
+              "accuracy_when_selected": 0.9787234042553191
+            }
+          }
+        },
+        "selected_threshold_from_dev": 0.9,
+        "test_at_selected_threshold": {
+          "selected": 47,
+          "coverage": 0.6811594202898551,
+          "accuracy_when_selected": 0.9787234042553191
+        }
+      },
+      "sigmoid_calibrated": {
+        "dev": {
+          "accuracy": 0.7971014492753623,
+          "average_max_probability": 0.6218585361355851,
+          "expected_calibration_error": 0.17524291313977725,
+          "reliability_bins": [
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "count": 6,
+              "average_confidence": 0.3645830410756597,
+              "accuracy": 0.5
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.6000000000000001,
+              "count": 25,
+              "average_confidence": 0.5080458529757369,
+              "accuracy": 0.56
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "count": 38,
+              "average_confidence": 0.7373577479607366,
+              "accuracy": 1.0
+            }
+          ],
+          "thresholds": {
+            "0.5": {
+              "selected": 52,
+              "coverage": 0.7536231884057971,
+              "accuracy_when_selected": 0.8653846153846154
+            },
+            "0.6": {
+              "selected": 38,
+              "coverage": 0.5507246376811594,
+              "accuracy_when_selected": 1.0
+            },
+            "0.7": {
+              "selected": 32,
+              "coverage": 0.463768115942029,
+              "accuracy_when_selected": 1.0
+            },
+            "0.8": {
+              "selected": 0,
+              "coverage": 0.0,
+              "accuracy_when_selected": null
+            },
+            "0.9": {
+              "selected": 0,
+              "coverage": 0.0,
+              "accuracy_when_selected": null
+            }
+          }
+        },
+        "test": {
+          "accuracy": 0.782608695652174,
+          "average_max_probability": 0.614084913219711,
+          "expected_calibration_error": 0.18540981203082302,
+          "reliability_bins": [
+            {
+              "lower": 0.2,
+              "upper": 0.4,
+              "count": 8,
+              "average_confidence": 0.3228210026429283,
+              "accuracy": 0.25
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.6000000000000001,
+              "count": 24,
+              "average_confidence": 0.5225962483584669,
+              "accuracy": 0.6666666666666666
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.8,
+              "count": 37,
+              "average_confidence": 0.7364048927138767,
+              "accuracy": 0.972972972972973
+            }
+          ],
+          "thresholds": {
+            "0.5": {
+              "selected": 56,
+              "coverage": 0.8115942028985508,
+              "accuracy_when_selected": 0.9107142857142857
+            },
+            "0.6": {
+              "selected": 37,
+              "coverage": 0.5362318840579711,
+              "accuracy_when_selected": 0.972972972972973
+            },
+            "0.7": {
+              "selected": 30,
+              "coverage": 0.43478260869565216,
+              "accuracy_when_selected": 1.0
+            },
+            "0.8": {
+              "selected": 0,
+              "coverage": 0.0,
+              "accuracy_when_selected": null
+            },
+            "0.9": {
+              "selected": 0,
+              "coverage": 0.0,
+              "accuracy_when_selected": null
+            }
+          }
+        },
+        "selected_threshold_from_dev": 0.6,
+        "test_at_selected_threshold": {
+          "selected": 37,
+          "coverage": 0.5362318840579711,
+          "accuracy_when_selected": 0.972972972972973
+        }
+      }
+    }
+  }
+}

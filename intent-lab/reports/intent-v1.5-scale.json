@@ -1,0 +1,91 @@
+{
+  "dataset_version": "intent-v1.5",
+  "generated_at": "2026-09-13T05:44:35.849853+00:00",
+  "split_sizes": {
+    "train": 630,
+    "dev": 90,
+    "test": 180
+  },
+  "styles": {
+    "train": [
+      "conversational",
+      "direct",
+      "indirect",
+      "informal",
+      "polite",
+      "question",
+      "terse"
+    ],
+    "dev": [
+      "filler"
+    ],
+    "test": [
+      "adversarial",
+      "heldout-natural"
+    ]
+  },
+  "full": {
+    "logistic_regression": {
+      "dev": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "test": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      }
+    },
+    "multinomial_naive_bayes": {
+      "dev": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "test": {
+        "accuracy": 0.9944444444444445,
+        "macro_f1": 0.9944409700507263
+      }
+    }
+  },
+  "learning_curve": {
+    "10": {
+      "logistic_regression": {
+        "accuracy": 0.9944444444444445,
+        "macro_f1": 0.9944409700507263
+      },
+      "multinomial_naive_bayes": {
+        "accuracy": 0.9888888888888889,
+        "macro_f1": 0.9888819401014524
+      }
+    },
+    "25": {
+      "logistic_regression": {
+        "accuracy": 0.9944444444444445,
+        "macro_f1": 0.9944409700507263
+      },
+      "multinomial_naive_bayes": {
+        "accuracy": 0.9888888888888889,
+        "macro_f1": 0.9888819401014524
+      }
+    },
+    "50": {
+      "logistic_regression": {
+        "accuracy": 0.9944444444444445,
+        "macro_f1": 0.9944409700507263
+      },
+      "multinomial_naive_bayes": {
+        "accuracy": 0.9944444444444445,
+        "macro_f1": 0.9944409700507263
+      }
+    },
+    "70": {
+      "logistic_regression": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "multinomial_naive_bayes": {
+        "accuracy": 0.9944444444444445,
+        "macro_f1": 0.9944409700507263
+      }
+    }
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "dataset_version": "intent-v1.3",
+  "generated_at": "2026-09-13T05:31:47.450236+00:00",
+  "training_examples": 322,
+  "test_examples": 69,
+  "models": {
+    "logistic_regression": {
+      "errors": [
+        {
+          "id": "intent-v1-0097",
+          "text": "Do you remember when Mum is visiting?",
+          "actual": "query_fact",
+          "predicted": "record_fact",
+          "confidence": 0.2528754371542772,
+          "alternatives": [
+            [
+              "record_fact",
+              0.2528754371542772
+            ],
+            [
+              "query_fact",
+              0.20999166356691273
+            ],
+            [
+              "needs_clarification",
+              0.16890295886647474
+            ]
+          ],
+          "family_id": "query-fact-conversation",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1-0141",
+          "text": "I no longer need the reminder about the lunch.",
+          "actual": "needs_clarification",
+          "predicted": "forget_fact",
+          "confidence": 0.1697645241319762,
+          "alternatives": [
+            [
+              "forget_fact",
+              0.1697645241319762
+            ],
+            [
+              "needs_clarification",
+              0.16657686748574604
+            ],
+            [
+              "resolve_fact",
+              0.15086253409538244
+            ]
+          ],
+          "family_id": "resolve-fact-conversation",
+          "boundary": "resolve_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0030",
+          "text": "The library book.",
+          "actual": "needs_clarification",
+          "predicted": "resolve_fact",
+          "confidence": 0.17416865489961453,
+          "alternatives": [
+            [
+              "resolve_fact",
+              0.17416865489961453
+            ],
+            [
+              "record_fact",
+              0.1565378728761638
+            ],
+            [
+              "unknown",
+              0.11996884109397693
+            ]
+          ],
+          "family_id": "bf-forget-03",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0102",
+          "text": "The garden work.",
+          "actual": "needs_clarification",
+          "predicted": "unknown",
+          "confidence": 0.14002985498623055,
+          "alternatives": [
+            [
+              "unknown",
+              0.14002985498623055
+            ],
+            [
+              "needs_clarification",
+              0.13727042874805712
+            ],
+            [
+              "record_note",
+              0.11904279994765686
+            ]
+          ],
+          "family_id": "bf-forget-12",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0150",
+          "text": "The electrician.",
+          "actual": "needs_clarification",
+          "predicted": "unknown",
+          "confidence": 0.20051779060259656,
+          "alternatives": [
+            [
+              "unknown",
+              0.20051779060259656
+            ],
+            [
+              "query_note",
+              0.12297473814416407
+            ],
+            [
+              "record_note",
+              0.11985329040212242
+            ]
+          ],
+          "family_id": "bf-forget-18",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.3-0377",
+          "text": "Add an entry saying that the swimming lesson was discussed.",
+          "actual": "record_note",
+          "predicted": "record_fact",
+          "confidence": 0.20853166276168297,
+          "alternatives": [
+            [
+              "record_fact",
+              0.20853166276168297
+            ],
+            [
+              "record_note",
+              0.15303813963538823
+            ],
+            [
+              "query_note",
+              0.14010001516298715
+            ]
+          ],
+          "family_id": "v1.3-record_note-02",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.3-0453",
+          "text": "What is the tallest mountain? please",
+          "actual": "unknown",
+          "predicted": "query_fact",
+          "confidence": 0.26482984018463585,
+          "alternatives": [
+            [
+              "query_fact",
+              0.26482984018463585
+            ],
+            [
+              "unknown",
+              0.25269351750274266
+            ],
+            [
+              "help",
+              0.08785954280378513
+            ]
+          ],
+          "family_id": "v1.3-unknown-01",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.3-0459",
+          "text": "What is the tallest mountain? for me",
+          "actual": "unknown",
+          "predicted": "query_fact",
+          "confidence": 0.2752166173236899,
+          "alternatives": [
+            [
+              "query_fact",
+              0.2752166173236899
+            ],
+            [
+              "unknown",
+              0.16528864422884954
+            ],
+            [
+              "help",
+              0.1208387918345345
+            ]
+          ],
+          "family_id": "v1.3-unknown-01",
+          "boundary": "none"
+        }
+      ],
+      "confusion": {
+        "needs_clarification \u2192 unknown": 2,
+        "unknown \u2192 query_fact": 2,
+        "query_fact \u2192 record_fact": 1,
+        "needs_clarification \u2192 forget_fact": 1,
+        "needs_clarification \u2192 resolve_fact": 1,
+        "record_note \u2192 record_fact": 1
+      }
+    },
+    "multinomial_naive_bayes": {
+      "errors": [
+        {
+          "id": "intent-v1-0097",
+          "text": "Do you remember when Mum is visiting?",
+          "actual": "query_fact",
+          "predicted": "record_fact",
+          "confidence": 0.7821904503075077,
+          "alternatives": [
+            [
+              "record_fact",
+              0.7821904503075077
+            ],
+            [
+              "needs_clarification",
+              0.12493706554735329
+            ],
+            [
+              "query_fact",
+              0.09131143664353228
+            ]
+          ],
+          "family_id": "query-fact-conversation",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1-0141",
+          "text": "I no longer need the reminder about the lunch.",
+          "actual": "needs_clarification",
+          "predicted": "forget_fact",
+          "confidence": 0.7989223009387295,
+          "alternatives": [
+            [
+              "forget_fact",
+              0.7989223009387295
+            ],
+            [
+              "needs_clarification",
+              0.09319414818640606
+            ],
+            [
+              "resolve_fact",
+              0.08116377378708976
+            ]
+          ],
+          "family_id": "resolve-fact-conversation",
+          "boundary": "resolve_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0030",
+          "text": "The library book.",
+          "actual": "needs_clarification",
+          "predicted": "resolve_fact",
+          "confidence": 0.45673200686753535,
+          "alternatives": [
+            [
+              "resolve_fact",
+              0.45673200686753535
+            ],
+            [
+              "record_fact",
+              0.3062022036505021
+            ],
+            [
+              "forget_fact",
+              0.07764045032528905
+            ]
+          ],
+          "family_id": "bf-forget-03",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.1-0042",
+          "text": "Save this note: The car registration is due in june.",
+          "actual": "record_note",
+          "predicted": "record_fact",
+          "confidence": 0.6358042579328587,
+          "alternatives": [
+            [
+              "record_fact",
+              0.6358042579328587
+            ],
+            [
+              "record_note",
+              0.3504042229009142
+            ],
+            [
+              "query_fact",
+              0.011879311557389246
+            ]
+          ],
+          "family_id": "bf-record-05",
+          "boundary": "record_fact-record_note"
+        },
+        {
+          "id": "intent-v1.1-0150",
+          "text": "The electrician.",
+          "actual": "needs_clarification",
+          "predicted": "unknown",
+          "confidence": 0.8798166989470066,
+          "alternatives": [
+            [
+              "unknown",
+              0.8798166989470066
+            ],
+            [
+              "record_note",
+              0.07329719032149025
+            ],
+            [
+              "needs_clarification",
+              0.023349385673407295
+            ]
+          ],
+          "family_id": "bf-forget-18",
+          "boundary": "forget_fact-needs_clarification"
+        },
+        {
+          "id": "intent-v1.3-0366",
+          "text": "Put down that the swimming lesson has been booked.",
+          "actual": "record_fact",
+          "predicted": "resolve_fact",
+          "confidence": 0.8943551558002986,
+          "alternatives": [
+            [
+              "resolve_fact",
+              0.8943551558002986
+            ],
+            [
+              "record_fact",
+              0.10449246193689576
+            ],
+            [
+              "record_note",
+              0.0007087669226649106
+            ]
+          ],
+          "family_id": "v1.3-record_fact-03",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.3-0416",
+          "text": "Forget the saved fact about the swimming lesson.",
+          "actual": "forget_fact",
+          "predicted": "resolve_fact",
+          "confidence": 0.8966995445782169,
+          "alternatives": [
+            [
+              "resolve_fact",
+              0.8966995445782169
+            ],
+            [
+              "forget_fact",
+              0.10322042876936671
+            ],
+            [
+              "query_fact",
+              6.195296738792032e-05
+            ]
+          ],
+          "family_id": "v1.3-forget_fact-00",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.3-0422",
+          "text": "Forget the saved fact about the utility bill.",
+          "actual": "forget_fact",
+          "predicted": "resolve_fact",
+          "confidence": 0.9143681176066599,
+          "alternatives": [
+            [
+              "resolve_fact",
+              0.9143681176066599
+            ],
+            [
+              "forget_fact",
+              0.0856310687196885
+            ],
+            [
+              "query_fact",
+              7.692095558469326e-07
+            ]
+          ],
+          "family_id": "v1.3-forget_fact-00",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.3-0455",
+          "text": "Tell me something interesting. please",
+          "actual": "unknown",
+          "predicted": "help",
+          "confidence": 0.7681784077275184,
+          "alternatives": [
+            [
+              "help",
+              0.7681784077275184
+            ],
+            [
+              "unknown",
+              0.19675811392237638
+            ],
+            [
+              "needs_clarification",
+              0.03368218327431284
+            ]
+          ],
+          "family_id": "v1.3-unknown-03",
+          "boundary": "none"
+        },
+        {
+          "id": "intent-v1.3-0459",
+          "text": "What is the tallest mountain? for me",
+          "actual": "unknown",
+          "predicted": "query_fact",
+          "confidence": 0.6723402235204199,
+          "alternatives": [
+            [
+              "query_fact",
+              0.6723402235204199
+            ],
+            [
+              "unknown",
+              0.26114303026295405
+            ],
+            [
+              "help",
+              0.03854988587734968
+            ]
+          ],
+          "family_id": "v1.3-unknown-01",
+          "boundary": "none"
+        }
+      ],
+      "confusion": {
+        "forget_fact \u2192 resolve_fact": 2,
+        "query_fact \u2192 record_fact": 1,
+        "needs_clarification \u2192 forget_fact": 1,
+        "needs_clarification \u2192 resolve_fact": 1,
+        "record_note \u2192 record_fact": 1,
+        "needs_clarification \u2192 unknown": 1,
+        "record_fact \u2192 resolve_fact": 1,
+        "unknown \u2192 help": 1,
+        "unknown \u2192 query_fact": 1
+      }
+    }
+  }
+}

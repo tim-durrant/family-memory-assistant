@@ -1,0 +1,10 @@
+# Generated model binaries and local caches
+models/*
+!models/.gitkeep
+__pycache__/
+*.pyc
+
+# Local/private datasets
+data/private/
+*.sqlite3
+.env

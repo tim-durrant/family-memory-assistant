@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Intent lab labelled example",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "text", "intent", "sensitivity", "requires_clarification", "source", "dataset_version"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "text": { "type": "string", "minLength": 1 },
+    "intent": {
+      "type": "string",
+      "enum": ["record_fact", "query_fact", "record_note", "query_note", "resolve_fact", "forget_fact", "help", "needs_clarification", "unknown"]
+    },
+    "sensitivity": { "type": "string", "enum": ["ordinary", "sensitive", "restricted"] },
+    "requires_clarification": { "type": "boolean" },
+    "source": { "type": "string", "enum": ["synthetic", "synthetic-realistic", "reviewed-deidentified"] },
+    "review_status": { "type": "string", "enum": ["not-reviewed", "human-approved", "human-corrected", "rejected"] },
+    "review_notes": { "type": "string" },
+    "dataset_version": { "type": "string", "pattern": "^intent-v[0-9]+(?:\\.[0-9]+)?$" },
+    "family_id": { "type": "string" },
+    "notes": { "type": "string" },
+        "boundary": { "type": "string" },
+            "policy_version": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "source": { "const": "synthetic-realistic" } } },
+      "then": { "required": ["review_status"] }
+    }
+  ]
+}
