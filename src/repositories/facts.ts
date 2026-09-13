@@ -42,6 +42,33 @@ export async function recordFact(
   sourceMessageId: string,
   intent: Extract<MemoryIntent, { kind: "record_fact" }>,
 ): Promise<string> {
+  return insertFact(db, personId, sourceMessageId, intent.statement, intent.category, intent.status, intent.category === "health" ? "high" : "normal", intent.effectiveDate);
+}
+
+export async function recordFactWithDate(
+  db: D1Database,
+  personId: string,
+  sourceMessageId: string,
+  statement: string,
+  category: string,
+  status: string,
+  day: number,
+  month: number,
+  year: number,
+): Promise<string> {
+  return insertFact(db, personId, sourceMessageId, statement, category, status, category === "health" ? "high" : "normal", `${year}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`);
+}
+
+async function insertFact(
+  db: D1Database,
+  personId: string,
+  sourceMessageId: string,
+  statement: string,
+  category: string,
+  status: string,
+  importance: string,
+  effectiveDate: string | null,
+): Promise<string> {
   const now = new Date().toISOString();
   const factId = crypto.randomUUID();
   await db.prepare(
@@ -49,28 +76,10 @@ export async function recordFact(
      (id, person_id, statement, category, status, importance, source_message_id,
       effective_date, expiry_date, resolved_at, created_at, updated_at, last_change_message_id)
      VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, NULL, NULL, ?9, ?9, NULL)`,
-  ).bind(
-    factId, personId, intent.statement, intent.category, intent.status,
-    intent.category === "health" ? "high" : "normal", sourceMessageId, intent.effectiveDate, now,
-  ).run();
+  ).bind(factId, personId, statement, category, status, importance, sourceMessageId, effectiveDate, now).run();
   return factId;
 }
 
-export async function updateFactEffectiveDate(
-  db: D1Database,
-  personId: string,
-  factId: string,
-  year: number,
-  day: number,
-  month: number,
-  changeMessageId: string,
-): Promise<boolean> {
-  const result = await db.prepare(
-    `UPDATE facts SET effective_date = ?1, updated_at = ?2, last_change_message_id = ?3
-     WHERE id = ?4 AND person_id = ?5 AND status NOT IN ('resolved', 'superseded', 'deleted')`,
-  ).bind(`${year}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`, new Date().toISOString(), changeMessageId, factId, personId).run();
-  return result.meta.changes === 1;
-}
 
 export async function createPendingFactAction(
   db: D1Database,

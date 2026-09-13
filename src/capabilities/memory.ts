@@ -13,8 +13,8 @@ import {
   listFacts,
   matchFacts,
   recordFact,
+  recordFactWithDate,
   resolveFact,
-  updateFactEffectiveDate,
 } from "../repositories/facts.js";
 import {
   completeClarification,
@@ -89,19 +89,19 @@ export async function buildMemoryReply(
       return "Okay, I cancelled that clarification.";
     }
     if (pendingClarification.pending_intent === "record_fact" && pendingClarification.missing_field === "year") {
-      const year = text.trim().match(/^(?:19|20)\\d{2}$/)?.[0];
+      const year = text.trim().match(/^(?:19|20)\d{2}$/)?.[0];
       if (!year) {
         await incrementClarificationTurn(db, pendingClarification.id);
         return "Please reply with the four-digit year, or say cancel.";
       }
-      const payload = JSON.parse(pendingClarification.payload_json) as { factId?: string; day?: number; month?: number; statement?: string };
-      if (!payload.factId || !payload.day || !payload.month || !payload.statement) {
+      const payload = JSON.parse(pendingClarification.payload_json) as { statement?: string; category?: string; status?: string; day?: number; month?: number };
+      if (!payload.statement || !payload.category || !payload.status || !payload.day || !payload.month) {
         await cancelClarification(db, personId, conversationId);
         return optionalReply(config.unknownIntentReply);
       }
-      const updated = await updateFactEffectiveDate(db, personId, payload.factId, Number(year), payload.day, payload.month, sourceMessageId);
+      await recordFactWithDate(db, personId, sourceMessageId, payload.statement, payload.category, payload.status, payload.day, payload.month, Number(year));
       await completeClarification(db, pendingClarification.id);
-      return updated ? `Saved: ${payload.statement}.` : config.noMatchingFactReply;
+      return `Saved: ${payload.statement}.`;
     }
     await incrementClarificationTurn(db, pendingClarification.id);
     return "Please answer the pending clarification, or say cancel.";
@@ -352,15 +352,15 @@ export async function buildMemoryReply(
       await createPendingFactAction(db, personId, sourceMessageId, "replace", conflicts[0], intent, config.factConfirmationTtlMinutes);
       return renderReply(config.factConflictReply, { existing: formatFact(conflicts[0]), statement: intent.statement });
     }
-    const factId = await recordFact(db, personId, sourceMessageId, intent);
     if (intent.needsYear && intent.dateParts) {
       await createClarificationState(
         db, personId, conversationId, "record_fact", "year",
-        { factId, day: intent.dateParts.day, month: intent.dateParts.month, statement: intent.statement },
+        { day: intent.dateParts.day, month: intent.dateParts.month, statement: intent.statement, category: intent.category, status: intent.status },
         sourceMessageId, config.clarificationTtlMinutes,
       );
       return renderReply(config.missingYearReply, { statement: intent.statement });
     }
+    await recordFact(db, personId, sourceMessageId, intent);
     return `Saved: ${intent.statement}.`;
   }
 
