@@ -191,22 +191,7 @@ export async function buildMemoryReply(
     if (delivery.whatsappSent) return "Your trusted contacts were notified by WhatsApp, but SMS delivery is not configured or failed.";
     return "I couldn’t confirm emergency notification delivery.";
   }
-  const pendingEntity = await getPendingEntityClarification(db, personId);
-  if (pendingEntity && !confirmation) {
-    const relationship = text.trim().toLowerCase().replace(/[.!?]+$/, "");
-    if (/^(?:family member|doctor|.+)$/.test(relationship) && relationship.split(/\s+/).length <= 3) {
-      if (relationship === "family member") {
-        await createPendingSubject(db, pendingEntity.display_name, personId, sourceMessageId);
-        await classifyPendingEntity(db, pendingEntity, personId, relationship, sourceMessageId);
-        await createPendingNoteShare(db, pendingEntity.note_id, personId);
-        return `I’ve started the family-member approval process for ${pendingEntity.display_name}. I have saved the note for you. Save for anyone else?`;
-      }
-      await classifyPendingEntity(db, pendingEntity, personId, relationship, sourceMessageId);
-      await createPendingNoteShare(db, pendingEntity.note_id, personId);
-      return `${renderReply(config.entityRelationshipSavedReply, { person: pendingEntity.display_name, relationship })}\n\nI have saved the note for you. Save for anyone else?`;
-    }
-    return `Please reply with family member, doctor, or a short relationship for ${pendingEntity.display_name}.`;
-  }
+
   const pendingPersonApproval = await getPendingApprovalForVoter(db, personId);
   if (pendingPersonApproval && confirmation) {
     const decision = confirmation === "yes" ? "approved" : "declined";
