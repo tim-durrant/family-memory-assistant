@@ -15,7 +15,7 @@ export const ACTIONS: readonly ActionDefinition[] = [
   { key: "person.attribute", label: "save or query an explicit person attribute", examples: ["Melody has long hair"], status: "available" },
   { key: "reminder.create", label: "create a reminder", examples: ["Remind me on 15 November 2026 at 9:00 to call Mum"], status: "available" },
   { key: "reminder.read", label: "list pending reminders", examples: ["List my reminders"], status: "available" },
-  { key: "reminder.cancel", label: "cancel a reminder", examples: ["Cancel reminder <id>"], status: "available" },
+  { key: "reminder.cancel", label: "cancel a reminder", examples: ["Cancel reminder 47K"], status: "available" },
   { key: "family.permission", label: "grant or revoke family permissions (administrator only)", examples: ["Grant Sven read access to my health information", "Revoke Sven's access to my health information"], status: "available" },
   { key: "emergency.configure", label: "configure trusted emergency contacts", examples: [], status: "planned" },
   { key: "emergency.trigger", label: "send a configured safe-word alert", examples: [], status: "planned" },

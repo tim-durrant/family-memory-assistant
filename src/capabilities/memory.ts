@@ -231,17 +231,17 @@ export async function buildMemoryReply(
 
   if (intent.kind === "create_reminder") {
     if (!config.enableReminderCreation) return optionalReply(config.unknownIntentReply);
-    const id = await createReminder(db, personId, sourceMessageId, intent.reminderText, intent.dueAt, config.timezone);
-    return `Reminder ${id} created for ${formatDateTime(intent.dueAt, config.timezone)}: ${intent.reminderText}`;
+    const reminder = await createReminder(db, personId, sourceMessageId, intent.reminderText, intent.dueAt, config.timezone);
+    return `Reminder ${reminder.publicCode} created for ${formatDateTime(intent.dueAt, config.timezone)}: ${intent.reminderText}`;
   }
   if (intent.kind === "list_reminders") {
     const reminders = await listReminders(db, personId);
     if (reminders.length === 0) return "You have no pending reminders.";
-    return ["Your pending reminders:", ...reminders.map((reminder) => `${reminder.id}: ${formatDateTime(reminder.due_at, reminder.timezone)} — ${reminder.reminder_text}`)].join("\\n");
+    return ["Your pending reminders:", ...reminders.map((reminder) => `${reminder.public_code ?? "reference unavailable"}: ${formatDateTime(reminder.due_at, reminder.timezone)} — ${reminder.reminder_text}`)].join("\\n");
   }
   if (intent.kind === "cancel_reminder") {
-    return await cancelReminder(db, personId, intent.reminderId)
-      ? `Cancelled reminder ${intent.reminderId}.`
+    return await cancelReminder(db, personId, intent.reminderCode)
+      ? `Cancelled reminder ${intent.reminderCode}.`
       : "I couldn’t find a pending reminder with that ID.";
   }
 

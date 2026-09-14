@@ -1,7 +1,8 @@
 export type Reminder = {
   id: string;
   person_id: string;
-  source_message_id: string;
+  source_message_id: string | null;
+  public_code: string | null;
   reminder_text: string;
   due_at: string;
   timezone: string;
@@ -21,37 +22,45 @@ export async function createReminder(
   reminderText: string,
   dueAt: string,
   timezone: string,
-): Promise<string> {
-  const id = crypto.randomUUID();
-  const now = new Date().toISOString();
-  await db.prepare(
-    `INSERT INTO reminders
-     (id, person_id, source_message_id, reminder_text, due_at, timezone, status, created_at, updated_at)
-     VALUES (?1, ?2, ?3, ?4, ?5, ?6, 'pending', ?7, ?7)`,
-  ).bind(id, personId, sourceMessageId, reminderText, dueAt, timezone, now).run();
-  return id;
+): Promise<{ id: string; publicCode: string }> {
+  for (let attempt = 0; attempt < 10; attempt += 1) {
+    const id = crypto.randomUUID();
+    const publicCode = randomReminderCode();
+    const now = new Date().toISOString();
+    try {
+      await db.prepare(
+        `INSERT INTO reminders
+         (id, person_id, source_message_id, public_code, reminder_text, due_at, timezone, status, created_at, updated_at)
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, 'pending', ?8, ?8)`,
+      ).bind(id, personId, sourceMessageId, publicCode, reminderText, dueAt, timezone, now).run();
+      return { id, publicCode };
+    } catch (error) {
+      if (attempt === 9) throw error;
+    }
+  }
+  throw new Error("Could not allocate a reminder reference");
 }
 
 export async function listReminders(db: D1Database, personId: string): Promise<Reminder[]> {
   const result = await db.prepare(
-    `SELECT id, person_id, source_message_id, reminder_text, due_at, timezone, status,
+    `SELECT id, person_id, source_message_id, public_code, reminder_text, due_at, timezone, status,
             claim_token, claimed_at, sent_at, last_error, created_at, updated_at
      FROM reminders WHERE person_id = ?1 AND status IN ('pending', 'claimed') ORDER BY due_at`,
   ).bind(personId).all<Reminder>();
   return result.results;
 }
 
-export async function cancelReminder(db: D1Database, personId: string, reminderId: string): Promise<boolean> {
+export async function cancelReminder(db: D1Database, personId: string, reminderCode: string): Promise<boolean> {
   const result = await db.prepare(
     `UPDATE reminders SET status = 'cancelled', updated_at = ?1
-     WHERE id = ?2 AND person_id = ?3 AND status IN ('pending', 'claimed')`,
-  ).bind(new Date().toISOString(), reminderId, personId).run();
+     WHERE public_code = ?2 AND person_id = ?3 AND status IN ('pending', 'claimed')`,
+  ).bind(new Date().toISOString(), reminderCode, personId).run();
   return result.meta.changes === 1;
 }
 
 export async function claimDueReminders(db: D1Database, now = new Date().toISOString()): Promise<Reminder[]> {
   const result = await db.prepare(
-    `SELECT id, person_id, source_message_id, reminder_text, due_at, timezone, status,
+    `SELECT id, person_id, source_message_id, public_code, reminder_text, due_at, timezone, status,
             claim_token, claimed_at, sent_at, last_error, created_at, updated_at
      FROM reminders WHERE status = 'pending' AND due_at <= ?1 ORDER BY due_at LIMIT 50`,
   ).bind(now).all<Reminder>();
@@ -80,4 +89,10 @@ export async function markReminderFailed(db: D1Database, reminderId: string, cla
     `UPDATE reminders SET status = 'failed', last_error = ?1, updated_at = ?2
      WHERE id = ?3 AND claim_token = ?4 AND status = 'claimed'`,
   ).bind(error.slice(0, 500), new Date().toISOString(), reminderId, claimToken).run();
+}
+
+function randomReminderCode(): string {
+  const values = new Uint32Array(2);
+  crypto.getRandomValues(values);
+  return `${values[0] % 100}`.padStart(2, "0") + String.fromCharCode(65 + (values[1] % 26));
 }

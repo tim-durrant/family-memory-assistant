@@ -111,7 +111,7 @@ export const INTENT_CATALOG: Readonly<Record<SupportedIntentKind, IntentDefiniti
   },
   cancel_reminder: {
     description: "Cancel one reminder by its displayed identifier.",
-    examples: ["Cancel reminder rem-123"],
+    examples: ["Cancel reminder 47K"],
     counterexamples: ["Cancel my clarification"],
   },
   revoke_permission: {

@@ -8,6 +8,7 @@ type ReminderRow = {
   id: string;
   person_id: string;
   source_message_id: string;
+  public_code: string | null;
   reminder_text: string;
   due_at: string;
   timezone: string;
@@ -38,8 +39,8 @@ function database(reminders: ReminderRow[] = []) {
               if (sql.includes("INSERT INTO reminders")) {
                 const now = new Date().toISOString();
                 reminders.push({
-                  id: String(params[0]), person_id: String(params[1]), source_message_id: String(params[2]), reminder_text: String(params[3]),
-                  due_at: String(params[4]), timezone: String(params[5]), status: "pending", claim_token: null, claimed_at: null,
+                  id: String(params[0]), person_id: String(params[1]), source_message_id: String(params[2]), public_code: String(params[3]), reminder_text: String(params[4]),
+                  due_at: String(params[5]), timezone: String(params[6]), status: "pending", claim_token: null, claimed_at: null,
                   sent_at: null, last_error: null, created_at: now, updated_at: now,
                 });
               }
@@ -83,24 +84,24 @@ describe("deterministic reminders", () => {
     const reminders: ReminderRow[] = [];
     const db = database(reminders);
     await expect(buildMemoryReply(db, "person-1", "message-1", "Remind me on 15 November 2026 at 9:00 to call Mum", enabledConfig))
-      .resolves.toMatch(/^Reminder [0-9a-f-]+ created for/);
+      .resolves.toMatch(/^Reminder \d{2}[A-Z] created for/);
     expect(reminders).toHaveLength(1);
     expect(reminders[0].reminder_text).toBe("call Mum");
 
     const listed = [{
-      id: "reminder-1", person_id: "person-1", source_message_id: "message-1", reminder_text: "call Mum",
-      due_at: "2026-11-14T22:00:00.000Z", timezone: "Australia/Brisbane", status: "pending" as const,
+      id: "reminder-1", person_id: "person-1", source_message_id: "message-1", public_code: "47K", reminder_text: "call Mum",
+      due_at: "2026-11-14T23:00:00.000Z", timezone: "Australia/Brisbane", status: "pending" as const,
       claim_token: null, claimed_at: null, sent_at: null, last_error: null, created_at: "2026-01-01T00:00:00.000Z", updated_at: "2026-01-01T00:00:00.000Z",
     }];
     await expect(buildMemoryReply(database(listed), "person-1", "message-2", "List my reminders"))
-      .resolves.toContain("reminder-1");
-    await expect(buildMemoryReply(database(listed), "person-1", "message-3", "Cancel reminder reminder-1"))
-      .resolves.toBe("Cancelled reminder reminder-1.");
+      .resolves.toContain("47K");
+    await expect(buildMemoryReply(database(listed), "person-1", "message-3", "Cancel reminder 47K"))
+      .resolves.toBe("Cancelled reminder 47K.");
   });
 
   it("claims each due reminder once", async () => {
     const reminder: ReminderRow = {
-      id: "reminder-1", person_id: "person-1", source_message_id: "message-1", reminder_text: "call Mum",
+      id: "reminder-1", person_id: "person-1", source_message_id: "message-1", public_code: "47K", reminder_text: "call Mum",
       due_at: "2026-01-01T00:00:00.000Z", timezone: "UTC", status: "pending", claim_token: null,
       claimed_at: null, sent_at: null, last_error: null, created_at: "2026-01-01T00:00:00.000Z", updated_at: "2026-01-01T00:00:00.000Z",
     };

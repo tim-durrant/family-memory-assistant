@@ -38,7 +38,7 @@ export type MemoryIntent =
   | { kind: Extract<SupportedIntentKind, "grant_permission" | "revoke_permission">; personName: string; permission: "read" | "write" | "read_write"; category: string }
   | { kind: Extract<SupportedIntentKind, "create_reminder">; dueAt: string; reminderText: string }
   | { kind: Extract<SupportedIntentKind, "list_reminders"> }
-  | { kind: Extract<SupportedIntentKind, "cancel_reminder">; reminderId: string }
+  | { kind: Extract<SupportedIntentKind, "cancel_reminder">; reminderCode: string }
   | { kind: Extract<SupportedIntentKind, "when_question">; topic: string }
   | { kind: Extract<SupportedIntentKind, "waiting_question"> }
   | { kind: Extract<SupportedIntentKind, "resolve_fact" | "forget_fact">; topic: string }
@@ -85,8 +85,8 @@ export function interpretMessage(
 
   if (/^(?:help|how do i use this|what can i do)\??$/i.test(statement)) return { kind: "help" };
   if (/^(?:list|show) my reminders\??$/i.test(statement)) return { kind: "list_reminders" };
-  const cancelReminder = statement.match(/^cancel reminder\s+([a-z0-9-]+)\??$/i);
-  if (cancelReminder?.[1]) return { kind: "cancel_reminder", reminderId: cancelReminder[1] };
+  const cancelReminder = statement.match(/^cancel reminder\s+(\d{2}[a-z])\??$/i);
+  if (cancelReminder?.[1]) return { kind: "cancel_reminder", reminderCode: cancelReminder[1].toUpperCase() };
   const reminder = statement.match(/^(?:remind me|set a reminder)\s+(?:on\s+)?(\d{1,2})\s+([a-z]+)\s+(\d{4})\s+at\s+(\d{1,2})(?::(\d{2}))?\s+to\s+(.+)$/i);
   if (reminder?.[1] && reminder[2] && reminder[3] && reminder[4] && reminder[6]) {
     const month = MONTHS.get(reminder[2].toLowerCase());
