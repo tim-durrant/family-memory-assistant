@@ -689,6 +689,8 @@ These capabilities should be implemented before or alongside AI work. They remai
 
 ### 5. Delivery status and WhatsApp read receipts
 
+**Status: COMPLETE** — Signed Twilio callbacks, monotonic D1 status tracking, outbound callback configuration, and production verification are implemented and deployed.
+
 - Configure a Twilio Status Callback URL for outbound WhatsApp and SMS messages where the provider supports it.
 - Add a provider-neutral delivery-status capability that records `queued`, `sent`, `delivered`, `read`, `undelivered`, and `failed` transitions where available.
 - Verify callback signatures, validate the provider message ID, and make status updates idempotent because callbacks can be retried or arrive out of order.
@@ -804,7 +806,7 @@ My favourite TV show is The Chosen
 
 ## Phase 10 — Add reminders through the same deterministic capabilities
 
-**Status: IN PROGRESS** — Strict local date/time reminder creation, D1 persistence, permission boundaries, Cron claiming, delivery auditing, and cancellation/listing are implemented. Production smoke testing and failure/retry verification remain before enabling reminder creation in production.
+**Status: COMPLETE** — Strict local date/time reminder creation, D1 persistence, permission boundaries, Cron claiming, delivery auditing, cancellation/listing, and production smoke testing are implemented and verified. Reminder creation is enabled in production.
 
 ### Tasks
 
