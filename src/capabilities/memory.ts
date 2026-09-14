@@ -82,11 +82,32 @@ export async function buildMemoryReply(
 ): Promise<string | undefined> {
   const pending = await getPendingFactAction(db, personId);
   const confirmation = confirmationDecision(text);
+  if (await isEmergencySafeWord(db, personId, text)) {
+    if (!(await authorize(db, { requesterPersonId: personId, capability: "emergency.trigger" }))) return config.permissionDeniedReply;
+    const recipients = await listEmergencyContacts(db, personId);
+    if (recipients.length === 0) return "Your emergency safe word is active, but no trusted contact is active yet.";
+    const alertId = await createEmergencyAlert(db, personId, sourceMessageId);
+    if (!alertId) return "This emergency alert was already received.";
+    const body = "This is an urgent support request. Please contact me as soon as possible.";
+    const delivery = await onEmergencyTrigger?.(alertId, recipients.map((recipient) => recipient.phone_number), body);
+    if (delivery?.simulated) return "Emergency notification was simulated. No WhatsApp or SMS messages were sent.";
+    if (!delivery || (delivery.whatsappSent && delivery.smsSent)) return "Your trusted contacts have been notified by WhatsApp and SMS.";
+    if (delivery.whatsappSent) return "Your trusted contacts were notified by WhatsApp, but SMS delivery is not configured or failed.";
+    return "I couldn’t confirm emergency notification delivery.";
+  }
   const pendingClarification = await getPendingClarification(db, personId, conversationId);
   if (pendingClarification) {
     if (/^(?:cancel|stop|never mind|nevermind)$/i.test(text.trim())) {
       await cancelClarification(db, personId, conversationId);
       return "Okay, I cancelled that clarification.";
+    }
+    const interruption = interpretMessage(text, config);
+    if (interruption.kind === "help") {
+      return `${helpReply(interruption.topic)}\n\n${clarificationPrompt(pendingClarification)}`;
+    }
+    if (interruption.kind !== "unknown"
+      && !(pendingClarification.pending_intent === "relationship" && interruption.kind === "record_fact")) {
+      return clarificationPrompt(pendingClarification);
     }
     if (pendingClarification.pending_intent === "record_fact" && pendingClarification.missing_field === "year") {
       const year = text.trim().match(/^(?:19|20)\d{2}$/)?.[0];
@@ -177,19 +198,6 @@ export async function buildMemoryReply(
     if (grantees.length === 0) return "Please reply with a listed person’s name, number, or ALL.";
     await grantNoteAccess(db, pendingNoteShare.id, pendingNoteShare.note_id, personId, grantees.map((person) => person.id));
     return `Retrieval is now allowed for ${grantees.length === people.length ? "everyone listed" : grantees.map((person) => person.display_name).join(", ")}.`;
-  }
-  if (await isEmergencySafeWord(db, personId, text)) {
-    if (!(await authorize(db, { requesterPersonId: personId, capability: "emergency.trigger" }))) return config.permissionDeniedReply;
-    const recipients = await listEmergencyContacts(db, personId);
-    if (recipients.length === 0) return "Your emergency safe word is active, but no trusted contact is active yet.";
-    const alertId = await createEmergencyAlert(db, personId, sourceMessageId);
-    if (!alertId) return "This emergency alert was already received.";
-    const body = "This is an urgent support request. Please contact me as soon as possible.";
-    const delivery = await onEmergencyTrigger?.(alertId, recipients.map((recipient) => recipient.phone_number), body);
-    if (delivery?.simulated) return "Emergency notification was simulated. No WhatsApp or SMS messages were sent.";
-    if (!delivery || (delivery.whatsappSent && delivery.smsSent)) return "Your trusted contacts have been notified by WhatsApp and SMS.";
-    if (delivery.whatsappSent) return "Your trusted contacts were notified by WhatsApp, but SMS delivery is not configured or failed.";
-    return "I couldn’t confirm emergency notification delivery.";
   }
 
   const pendingPersonApproval = await getPendingApprovalForVoter(db, personId);
@@ -516,6 +524,19 @@ function personStatusNotice(
   person: string,
 ): string {
   return status === "approved" ? "" : renderReply(config.personPendingNotice, { person, status });
+}
+
+function clarificationPrompt(state: { pending_intent: string; missing_field: string }): string {
+  if (state.pending_intent === "record_fact" && state.missing_field === "year") {
+    return "I’m still waiting for the four-digit year. Reply with the year, or say cancel.";
+  }
+  if (state.pending_intent === "when_question" && state.missing_field === "fact_choice") {
+    return "I’m still waiting for the number of the fact you mean. Reply with a number, or say cancel.";
+  }
+  if (state.pending_intent === "relationship" && state.missing_field === "relationship") {
+    return "I’m still waiting for the relationship. Reply with a relationship, or say cancel.";
+  }
+  return "I’m still waiting for your answer to the pending clarification. Reply with an answer, or say cancel.";
 }
 
 function optionalReply(reply: string): string | undefined {

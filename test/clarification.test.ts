@@ -25,7 +25,7 @@ type Clarification = {
   expires_at: string;
 };
 
-function database(options: { expired?: boolean } = {}) {
+function database(options: { expired?: boolean; emergency?: boolean } = {}) {
   const facts: Fact[] = [];
   let clarification: Clarification | null = null;
   const db = {
@@ -40,10 +40,17 @@ function database(options: { expired?: boolean } = {}) {
                 return clarification as T;
               }
               if (sql.includes("FROM pending_emergency_setups")) return null as T;
+              if (sql.includes("FROM emergency_settings")) {
+                if (!options.emergency) return null as T;
+                const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("sos"));
+                const hash = [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+                return { safe_word_hash: hash } as T;
+              }
               return null as T;
             },
             async all<T>() {
               if (sql.includes("FROM facts")) return { results: facts as T[] };
+              if (sql.includes("FROM emergency_contacts")) return { results: [{ id: "contact-1", phone_number: "+61400123456", label: "trusted" }] as T[] };
               return { results: [] as T[] };
             },
             async run() {
@@ -78,7 +85,16 @@ function database(options: { expired?: boolean } = {}) {
 }
 
 describe("persisted clarification state", () => {
-  it("defers an incomplete fact and completes it with a valid year", async () => {
+  it("allows an emergency safe word to interrupt without clearing clarification", async () => {
+    const { db, getClarification } = database({ emergency: true });
+    await buildMemoryReply(db, "person-1", "message-0", "My appointment is on 3 March", undefined, undefined, undefined, "conversation-1");
+    const trigger = async () => ({ whatsappSent: true, smsSent: true });
+    await expect(buildMemoryReply(db, "person-1", "message-1", "sos", undefined, undefined, trigger, "conversation-1"))
+      .resolves.toBe("Your trusted contacts have been notified by WhatsApp and SMS.");
+    expect(getClarification()?.status).toBe("pending");
+  });
+
+  it("persists an incomplete fact and completes it with a valid year", async () => {
     const { db, facts, getClarification } = database();
     await expect(buildMemoryReply(db, "person-1", "message-1", "My driving test is on 12 October", undefined, undefined, undefined, "conversation-1"))
       .resolves.toBe("Saved: My driving test is on 12 October. What year should I use?");
@@ -102,6 +118,34 @@ describe("persisted clarification state", () => {
     await expect(buildMemoryReply(db, "person-1", "message-3", "cancel", undefined, undefined, undefined, "conversation-1"))
       .resolves.toBe("Okay, I cancelled that clarification.");
     expect(getClarification()?.status).toBe("cancelled");
+  });
+
+  it("does not consume missing-year clarification for help or another supported request", async () => {
+    const { db, facts, getClarification } = database();
+    await buildMemoryReply(db, "person-1", "message-1", "My appointment is on 3 March", undefined, undefined, undefined, "conversation-1");
+
+    await expect(buildMemoryReply(db, "person-1", "message-2", "How do I save a note?", undefined, undefined, undefined, "conversation-1"))
+      .resolves.toMatch(/I can currently:.*four-digit year/s);
+    expect(getClarification()?.turn_count).toBe(0);
+    expect(facts).toHaveLength(0);
+
+    await expect(buildMemoryReply(db, "person-1", "message-3", "When is my appointment?", undefined, undefined, undefined, "conversation-1"))
+      .resolves.toBe("I’m still waiting for the four-digit year. Reply with the year, or say cancel.");
+    expect(getClarification()?.turn_count).toBe(0);
+    expect(facts).toHaveLength(0);
+  });
+
+  it("does not consume an ambiguous fact choice for another supported request", async () => {
+    const { db, facts, getClarification } = database();
+    facts.push(
+      { id: "fact-1", statement: "Dentist appointment on 12 October", category: "appointment", status: "confirmed", importance: "normal", effective_date: "2026-10-12" },
+      { id: "fact-2", statement: "Hospital appointment on 18 October", category: "appointment", status: "confirmed", importance: "normal", effective_date: "2026-10-18" },
+    );
+    await buildMemoryReply(db, "person-1", "message-1", "When is my appointment?", undefined, undefined, undefined, "conversation-1");
+    await expect(buildMemoryReply(db, "person-1", "message-2", "My new appointment is on 20 November 2026", undefined, undefined, undefined, "conversation-1"))
+      .resolves.toBe("I’m still waiting for the number of the fact you mean. Reply with a number, or say cancel.");
+    expect(getClarification()?.turn_count).toBe(0);
+    expect(facts).toHaveLength(2);
   });
 
   it("persists numbered fact choices and returns only the selected fact", async () => {

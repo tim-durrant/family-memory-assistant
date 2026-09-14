@@ -453,7 +453,7 @@ Does Melody have short hair?
 
 ## Phase 9 — Add clarification state
 
-**Status: IN PROGRESS** — Persisted, sender- and conversation-scoped clarification state is implemented for missing-year facts, ambiguous fact choices, and relationship follow-ups. Maximum-turn and broader interruption behavior remain to be completed and covered across all clarification types.
+**Status: COMPLETE** — Persisted, sender- and conversation-scoped clarification state is implemented for missing-year facts, ambiguous fact choices, and relationship follow-ups. Maximum-turn, expiry, cancellation, interruption, and emergency-priority behavior are covered across all clarification types.
 
 ### Tasks
 

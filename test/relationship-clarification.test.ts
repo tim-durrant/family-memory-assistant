@@ -88,6 +88,14 @@ describe("relationship clarification", () => {
     expect(getState()?.status).toBe("cancelled");
   });
 
+  it("keeps relationship clarification pending during help", async () => {
+    const { db, getState } = database({ relationship: "help" });
+    await expect(buildMemoryReply(db, "person-1", "message-2", "Help please", undefined, undefined, undefined, "conversation-1"))
+      .resolves.toMatch(/I can currently:.*still waiting for the relationship/s);
+    expect(getState()?.status).toBe("pending");
+    expect(getState()?.turn_count).toBe(0);
+  });
+
   it("supports explicit cancellation and protects scope and expiry", async () => {
     const cancelled = database({ relationship: "cancel" });
     await expect(buildMemoryReply(cancelled.db, "person-1", "message-2", "cancel", undefined, undefined, undefined, "conversation-1"))
