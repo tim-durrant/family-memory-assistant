@@ -9,6 +9,9 @@ database_name = "family-memory"
 database_id = "4000beb9-0ae2-412d-9b95-af0c468a8688"
 migrations_dir = "migrations"
 
+[triggers]
+crons = ["*/5 * * * *"]
+
 [vars]
 ENVIRONMENT = "production"
 FAMILY_TIMEZONE = "Australia/Brisbane"

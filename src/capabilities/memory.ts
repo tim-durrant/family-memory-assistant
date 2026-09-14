@@ -16,6 +16,7 @@ import {
   recordFactWithDate,
   resolveFact,
 } from "../repositories/facts.js";
+import { cancelReminder, createReminder, listReminders } from "../repositories/reminders.js";
 import {
   completeClarification,
   createClarificationState,
@@ -227,6 +228,22 @@ export async function buildMemoryReply(
   if (intent.kind === "unknown") return optionalReply(config.unknownIntentReply);
 
   if (intent.kind === "help") return helpReply(intent.topic);
+
+  if (intent.kind === "create_reminder") {
+    if (!config.enableReminderCreation) return optionalReply(config.unknownIntentReply);
+    const id = await createReminder(db, personId, sourceMessageId, intent.reminderText, intent.dueAt, config.timezone);
+    return `Reminder ${id} created for ${formatDateTime(intent.dueAt, config.timezone)}: ${intent.reminderText}`;
+  }
+  if (intent.kind === "list_reminders") {
+    const reminders = await listReminders(db, personId);
+    if (reminders.length === 0) return "You have no pending reminders.";
+    return ["Your pending reminders:", ...reminders.map((reminder) => `${reminder.id}: ${formatDateTime(reminder.due_at, reminder.timezone)} — ${reminder.reminder_text}`)].join("\\n");
+  }
+  if (intent.kind === "cancel_reminder") {
+    return await cancelReminder(db, personId, intent.reminderId)
+      ? `Cancelled reminder ${intent.reminderId}.`
+      : "I couldn’t find a pending reminder with that ID.";
+  }
 
   if (intent.kind === "grant_permission" || intent.kind === "revoke_permission") {
     return (await manageFamilyPermission(
@@ -481,6 +498,9 @@ function capabilityForIntent(kind: SupportedIntentKind): CapabilityName | undefi
     case "confirm_emergency_safe_word": return "emergency.contact.configure";
     case "grant_permission": return "family.permission.manage";
     case "revoke_permission": return "family.permission.manage";
+    case "create_reminder": return "reminder.create";
+    case "list_reminders": return "reminder.read";
+    case "cancel_reminder": return "reminder.cancel";
     case "help": return undefined;
     case "unknown": return undefined;
   }

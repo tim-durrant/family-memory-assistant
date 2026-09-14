@@ -12,8 +12,32 @@ import { emergencyNotificationMode } from "./emergency-notifications.js";
 import { D1Adapter } from "./storage.js";
 import { unauthorizedSenderResponseMode } from "./config.js";
 import { acceptWhatsAppLinkCode, extractWhatsAppLinkCode } from "./repositories/whatsapp-links.js";
+import { claimDueReminders, markReminderFailed, markReminderSent } from "./repositories/reminders.js";
 
 export default {
+  async scheduled(_event: ScheduledEvent, env: Env, _ctx: ExecutionContext): Promise<void> {
+    const transport = createWhatsAppTransport(env);
+    const reminders = await claimDueReminders(env.DB);
+    for (const reminder of reminders) {
+      const person = await env.DB.prepare("SELECT whatsapp_id FROM people WHERE id = ?1 AND active = 1 AND is_sender = 1")
+        .bind(reminder.person_id).first<{ whatsapp_id: string }>();
+      if (!person?.whatsapp_id) {
+        await markReminderFailed(env.DB, reminder.id, reminder.claim_token!, "Reminder owner has no active WhatsApp sender");
+        continue;
+      }
+      try {
+        const sent = await transport.sendText({ to: person.whatsapp_id, body: `Reminder: ${reminder.reminder_text}` });
+        await markReminderSent(env.DB, reminder.id, reminder.claim_token!);
+        await env.DB.prepare(
+          `INSERT OR IGNORE INTO messages
+           (id, person_id, whatsapp_message_id, direction, message_type, body, raw_payload, created_at)
+           VALUES (?1, ?2, ?3, 'outbound', 'text', ?4, ?5, ?6)`,
+        ).bind(crypto.randomUUID(), reminder.person_id, sent.transportMessageId, sent.body, JSON.stringify(sent.rawResponse), new Date().toISOString()).run();
+      } catch (error) {
+        await markReminderFailed(env.DB, reminder.id, reminder.claim_token!, error instanceof Error ? error.message : "Reminder delivery failed");
+      }
+    }
+  },
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     console.log("[request]", request.method, url.pathname);

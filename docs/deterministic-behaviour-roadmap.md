@@ -804,6 +804,8 @@ My favourite TV show is The Chosen
 
 ## Phase 10 — Add reminders through the same deterministic capabilities
 
+**Status: IN PROGRESS** — Strict local date/time reminder creation, D1 persistence, permission boundaries, Cron claiming, delivery auditing, and cancellation/listing are implemented. Production smoke testing and failure/retry verification remain before enabling reminder creation in production.
+
 ### Tasks
 
 Only after fact behaviour is stable:

@@ -36,6 +36,9 @@ export type MemoryIntent =
   | { kind: Extract<SupportedIntentKind, "add_emergency_contact" | "confirm_emergency_contact">; phoneNumber: string }
   | { kind: Extract<SupportedIntentKind, "set_emergency_safe_word" | "confirm_emergency_safe_word">; safeWord: string }
   | { kind: Extract<SupportedIntentKind, "grant_permission" | "revoke_permission">; personName: string; permission: "read" | "write" | "read_write"; category: string }
+  | { kind: Extract<SupportedIntentKind, "create_reminder">; dueAt: string; reminderText: string }
+  | { kind: Extract<SupportedIntentKind, "list_reminders"> }
+  | { kind: Extract<SupportedIntentKind, "cancel_reminder">; reminderId: string }
   | { kind: Extract<SupportedIntentKind, "when_question">; topic: string }
   | { kind: Extract<SupportedIntentKind, "waiting_question"> }
   | { kind: Extract<SupportedIntentKind, "resolve_fact" | "forget_fact">; topic: string }
@@ -81,6 +84,20 @@ export function interpretMessage(
   }
 
   if (/^(?:help|how do i use this|what can i do)\??$/i.test(statement)) return { kind: "help" };
+  if (/^(?:list|show) my reminders\??$/i.test(statement)) return { kind: "list_reminders" };
+  const cancelReminder = statement.match(/^cancel reminder\s+([a-z0-9-]+)\??$/i);
+  if (cancelReminder?.[1]) return { kind: "cancel_reminder", reminderId: cancelReminder[1] };
+  const reminder = statement.match(/^(?:remind me|set a reminder)\s+(?:on\s+)?(\d{1,2})\s+([a-z]+)\s+(\d{4})\s+at\s+(\d{1,2})(?::(\d{2}))?\s+to\s+(.+)$/i);
+  if (reminder?.[1] && reminder[2] && reminder[3] && reminder[4] && reminder[6]) {
+    const month = MONTHS.get(reminder[2].toLowerCase());
+    const hour = Number(reminder[4]);
+    const minute = Number(reminder[5] ?? "0");
+    if (!month || hour > 23 || minute > 59) return { kind: "unknown" };
+    const dueAt = localDateTimeToIso(Number(reminder[3]), month, Number(reminder[1]), hour, minute, config.timezone);
+    if (!dueAt) return { kind: "unknown" };
+    return { kind: "create_reminder", dueAt, reminderText: reminder[6].trim() };
+  }
+  if (/^(?:remind me|set a reminder)\b/i.test(statement)) return { kind: "unknown" };
   const helpTopic = statement.match(/^how do i (save a note|look up a fact|register a family member)\??$/i);
   if (helpTopic?.[1]) return { kind: "help", topic: helpTopic[1] };
 
@@ -245,6 +262,18 @@ function parseNoteDate(value: string): string | null {
   if (!textual) return null;
   const month = MONTHS.get(textual[2].toLowerCase());
   return month ? `${textual[3]}-${month.toString().padStart(2, "0")}-${textual[1].padStart(2, "0")}` : null;
+}
+
+function localDateTimeToIso(year: number, month: number, day: number, hour: number, minute: number, timezone: string): string | null {
+  const guess = Date.UTC(year, month - 1, day, hour, minute);
+  const parts = new Intl.DateTimeFormat("en-US", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(new Date(guess));
+  const values = Object.fromEntries(parts.filter((part) => part.type !== "literal").map((part) => [part.type, Number(part.value)]));
+  const observed = Date.UTC(values.year, values.month - 1, values.day, values.hour, values.minute);
+  const offset = observed - guess;
+  const result = new Date(guess - offset);
+  const check = new Intl.DateTimeFormat("en-CA", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(result);
+  const checked = Object.fromEntries(check.filter((part) => part.type !== "literal").map((part) => [part.type, Number(part.value)]));
+  return checked.year === year && checked.month === month && checked.day === day && checked.hour === hour && checked.minute === minute ? result.toISOString() : null;
 }
 
 function normalizePhone(value: string): string {

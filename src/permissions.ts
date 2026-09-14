@@ -13,7 +13,10 @@ export type CapabilityName =
   | "emergency.trigger"
   | "document.generate"
   | "ai.request"
-  | "family.permission.manage";
+  | "family.permission.manage"
+  | "reminder.create"
+  | "reminder.read"
+  | "reminder.cancel";
 
 export type PermissionDecision = {
   allowed: boolean;

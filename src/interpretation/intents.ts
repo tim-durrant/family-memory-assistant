@@ -18,6 +18,9 @@ export type SupportedIntentKind =
   | "confirm_emergency_safe_word"
   | "grant_permission"
   | "revoke_permission"
+  | "create_reminder"
+  | "list_reminders"
+  | "cancel_reminder"
   | "unknown";
 
 export type IntentDefinition = {
@@ -95,6 +98,21 @@ export const INTENT_CATALOG: Readonly<Record<SupportedIntentKind, IntentDefiniti
     description: "Grant a family member read, write, or read/write access to a supported category.",
     examples: ["Grant Sven read access to my health information"],
     counterexamples: ["Sven can read my health information"],
+  },
+  create_reminder: {
+    description: "Create a reminder at an explicit local date and time.",
+    examples: ["Remind me on 15 November 2026 at 9:00 to call Mum"],
+    counterexamples: ["Remind me sometime to call Mum"],
+  },
+  list_reminders: {
+    description: "List pending reminders for the authenticated sender.",
+    examples: ["List my reminders"],
+    counterexamples: ["What am I waiting for?"],
+  },
+  cancel_reminder: {
+    description: "Cancel one reminder by its displayed identifier.",
+    examples: ["Cancel reminder rem-123"],
+    counterexamples: ["Cancel my clarification"],
   },
   revoke_permission: {
     description: "Revoke a family member's access to a supported category.",
