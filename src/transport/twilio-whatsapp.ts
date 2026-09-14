@@ -64,6 +64,7 @@ export class TwilioWhatsAppTransport implements WhatsAppTransport {
       To: to,
       From: from,
       Body: input.body,
+      ...(this.env.TWILIO_STATUS_CALLBACK_URL ? { StatusCallback: this.env.TWILIO_STATUS_CALLBACK_URL } : {}),
     });
 
     const response = await fetch(`${TWILIO_API_BASE_URL}/${accountSid}/Messages.json`, {

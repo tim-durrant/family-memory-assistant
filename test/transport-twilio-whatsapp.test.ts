@@ -43,6 +43,7 @@ function env(): Env {
     TWILIO_ACCOUNT_SID: "AC1234567890",
     TWILIO_AUTH_TOKEN: authToken,
     TWILIO_WHATSAPP_NUMBER: "+61494813033",
+    TWILIO_STATUS_CALLBACK_URL: "https://example.workers.dev/webhooks/twilio/status",
   };
 }
 
@@ -118,6 +119,7 @@ describe("Twilio WhatsApp transport", () => {
     expect(params.get("To")).toBe("whatsapp:+61412345678");
     expect(params.get("From")).toBe("whatsapp:+61494813033");
     expect(params.get("Body")).toBe("Saved");
+    expect(params.get("StatusCallback")).toBe("https://example.workers.dev/webhooks/twilio/status");
     expect(result.transportMessageId).toBe("SM-outbound-1");
     vi.unstubAllGlobals();
   });
