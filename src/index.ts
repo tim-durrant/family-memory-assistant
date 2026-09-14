@@ -13,6 +13,8 @@ import { D1Adapter } from "./storage.js";
 import { unauthorizedSenderResponseMode } from "./config.js";
 import { acceptWhatsAppLinkCode, extractWhatsAppLinkCode } from "./repositories/whatsapp-links.js";
 import { deliverDueReminders } from "./capabilities/reminders.js";
+import { normalizeTwilioStatus, recordDeliveryStatus } from "./repositories/delivery-status.js";
+import { parseFormBody, verifyTwilioSignature } from "./transport/twilio-whatsapp.js";
 
 export default {
   async scheduled(_event: ScheduledEvent, env: Env, _ctx: ExecutionContext): Promise<void> {
@@ -27,6 +29,9 @@ export default {
       return Response.json(developmentFixture);
     }
 
+    if (url.pathname === "/webhooks/twilio/status" && request.method === "POST") {
+      return handleTwilioStatusCallback(request, env);
+    }
     if (url.pathname !== "/webhooks/whatsapp") {
       return new Response("Not found", { status: 404 });
     }
@@ -171,6 +176,21 @@ async function handleWebhook(
     });
   }
   return new Response(null, { status: result.status });
+}
+
+async function handleTwilioStatusCallback(request: Request, env: Env): Promise<Response> {
+  if (env.WHATSAPP_TRANSPORT !== "twilio" || !env.TWILIO_AUTH_TOKEN) return new Response(null, { status: 404 });
+  const rawBody = new Uint8Array(await request.arrayBuffer());
+  if (!(await verifyTwilioSignature(rawBody, request.headers.get("x-twilio-signature"), request.url, env.TWILIO_AUTH_TOKEN))) return new Response(null, { status: 401 });
+  const fields = parseFormBody(rawBody);
+  const providerMessageId = fields.get("MessageSid");
+  const status = normalizeTwilioStatus(fields.get("MessageStatus"));
+  if (!providerMessageId || !status) return new Response(null, { status: 400 });
+  const occurredAt = fields.get("Timestamp") && !Number.isNaN(Date.parse(fields.get("Timestamp")!))
+    ? new Date(fields.get("Timestamp")!).toISOString()
+    : new Date().toISOString();
+  await recordDeliveryStatus(env.DB, providerMessageId, status, occurredAt, fields.get("ErrorCode"), fields.get("ErrorMessage"));
+  return new Response(null, { status: 204 });
 }
 
 async function maybeReplyToUnauthorizedSender(env: Env, transport: WhatsAppTransport, message: InboundMessage): Promise<void> {
