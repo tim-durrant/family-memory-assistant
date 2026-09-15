@@ -24,6 +24,7 @@ export interface Env {
   DETERMINISTIC_ENABLE_WAITING_FACTS?: string;
   DETERMINISTIC_ENABLE_FACT_RESOLUTION?: string;
   DETERMINISTIC_ENABLE_REMINDER_CREATION?: string;
+  DEFAULT_REMINDER_TIME?: string;
   DETERMINISTIC_FACT_CONFLICT_POLICY?: string;
   DETERMINISTIC_FACT_DELETE_POLICY?: string;
   DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES?: string;
@@ -76,6 +77,7 @@ export type DeterministicConfig = {
   enableWaitingFacts: boolean;
   enableFactResolution: boolean;
   enableReminderCreation: boolean;
+  defaultReminderTime: string;
   factConflictPolicy: "confirm";
   factDeletePolicy: "confirm";
   factConfirmationTtlMinutes: number;
@@ -128,6 +130,7 @@ export const DEFAULT_DETERMINISTIC_CONFIG: DeterministicConfig = {
   enableWaitingFacts: true,
   enableFactResolution: true,
   enableReminderCreation: false,
+  defaultReminderTime: "08:00",
   factConflictPolicy: "confirm",
   factDeletePolicy: "confirm",
   factConfirmationTtlMinutes: 30,
@@ -189,6 +192,7 @@ export function getDeterministicConfig(env: Env): DeterministicConfig {
     enableWaitingFacts: booleanValue(env.DETERMINISTIC_ENABLE_WAITING_FACTS, DEFAULT_DETERMINISTIC_CONFIG.enableWaitingFacts, "DETERMINISTIC_ENABLE_WAITING_FACTS"),
     enableFactResolution: booleanValue(env.DETERMINISTIC_ENABLE_FACT_RESOLUTION, DEFAULT_DETERMINISTIC_CONFIG.enableFactResolution, "DETERMINISTIC_ENABLE_FACT_RESOLUTION"),
     enableReminderCreation: booleanValue(env.DETERMINISTIC_ENABLE_REMINDER_CREATION, DEFAULT_DETERMINISTIC_CONFIG.enableReminderCreation, "DETERMINISTIC_ENABLE_REMINDER_CREATION"),
+    defaultReminderTime: reminderTime(env.DEFAULT_REMINDER_TIME),
     factConflictPolicy: policyValue(env.DETERMINISTIC_FACT_CONFLICT_POLICY, "confirm", "DETERMINISTIC_FACT_CONFLICT_POLICY"),
     factDeletePolicy: policyValue(env.DETERMINISTIC_FACT_DELETE_POLICY, "confirm", "DETERMINISTIC_FACT_DELETE_POLICY"),
     factConfirmationTtlMinutes: positiveInteger(
@@ -281,6 +285,12 @@ function aliasValue(value: string | undefined): readonly { alias: string; canoni
     if (!alias || !canonical) throw new Error("DETERMINISTIC_TOPIC_ALIASES must use alias=canonical pairs");
     return { alias: alias.toLowerCase(), canonical: canonical.toLowerCase() };
   });
+}
+
+function reminderTime(value: string | undefined): string {
+  const result = value ?? DEFAULT_DETERMINISTIC_CONFIG.defaultReminderTime;
+  if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(result)) throw new Error("DEFAULT_REMINDER_TIME must use HH:MM from 00:00 to 23:59");
+  return result;
 }
 
 function positiveInteger(value: string | undefined, fallback: number, name: string): number {

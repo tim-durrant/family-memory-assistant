@@ -1,5 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { buildMemoryReply } from "../src/capabilities/memory.js";
+import { DEFAULT_DETERMINISTIC_CONFIG } from "../src/config.js";
+
+const reminderConfig = { ...DEFAULT_DETERMINISTIC_CONFIG, enableReminderCreation: true };
+
+type Reminder = {
+  reminder_text: string;
+  due_at: string;
+  timezone: string;
+  public_code: string;
+};
 
 type Fact = {
   id: string;
@@ -27,6 +37,7 @@ type Clarification = {
 
 function database(options: { expired?: boolean; emergency?: boolean } = {}) {
   const facts: Fact[] = [];
+  const reminders: Reminder[] = [];
   let clarification: Clarification | null = null;
   const db = {
     prepare(sql: string) {
@@ -50,6 +61,7 @@ function database(options: { expired?: boolean; emergency?: boolean } = {}) {
             },
             async all<T>() {
               if (sql.includes("FROM facts")) return { results: facts as T[] };
+              if (sql.includes("FROM reminders")) return { results: reminders as T[] };
               if (sql.includes("FROM emergency_contacts")) return { results: [{ id: "contact-1", phone_number: "+61400123456", label: "trusted" }] as T[] };
               return { results: [] as T[] };
             },
@@ -57,6 +69,9 @@ function database(options: { expired?: boolean; emergency?: boolean } = {}) {
               const now = new Date().toISOString();
               if (sql.includes("INSERT INTO facts")) {
                 facts.push({ id: String(params[0]), statement: String(params[2]), category: String(params[3]), status: String(params[4]), importance: String(params[5]), effective_date: params[7] as string | null });
+              }
+              if (sql.includes("INSERT INTO reminders")) {
+                reminders.push({ public_code: String(params[3]), reminder_text: String(params[4]), due_at: String(params[5]), timezone: String(params[6]) });
               }
               if (sql.includes("INSERT INTO clarification_state")) {
                 clarification = { id: String(params[0]), person_id: String(params[1]), conversation_id: String(params[2]), pending_intent: String(params[3]), missing_field: String(params[4]), payload_json: String(params[5]), source_message_id: String(params[6]), status: "pending", turn_count: 0, created_at: String(params[7]), updated_at: String(params[7]), expires_at: String(params[8]) };
@@ -81,10 +96,47 @@ function database(options: { expired?: boolean; emergency?: boolean } = {}) {
       return [];
     },
   } as unknown as D1Database;
-  return { db, facts, getClarification: () => clarification };
+  return { db, facts, reminders, getClarification: () => clarification };
 }
 
 describe("persisted clarification state", () => {
+  it("saves a casual dated memory before offering a default-time reminder", async () => {
+    const { db, facts, reminders, getClarification } = database();
+    const reply = await buildMemoryReply(db, "person-1", "message-1", "Remember Jacob has soccer on Saturday", reminderConfig, undefined, undefined, "conversation-1");
+    expect(reply).toMatch(/I’ve saved that Jacob has soccer on Saturday\./);
+    expect(reply).toMatch(/Reply yes to schedule a reminder for 8:00 am on Saturday/);
+    expect(facts).toHaveLength(1);
+    expect(reminders).toHaveLength(0);
+    expect(getClarification()).toMatchObject({ pending_intent: "offer_reminder", missing_field: "confirmation_or_time" });
+  });
+
+  it("creates the default or supplied-time reminder only after confirmation", async () => {
+    const first = database();
+    await buildMemoryReply(first.db, "person-1", "message-1", "Remember Jacob has soccer on Saturday", reminderConfig, undefined, undefined, "conversation-1");
+    await expect(buildMemoryReply(first.db, "person-1", "message-2", "yes", reminderConfig, undefined, undefined, "conversation-1"))
+      .resolves.toMatch(/Reminder \d{2}[A-Z] created for .*Jacob has soccer/);
+    expect(first.reminders).toHaveLength(1);
+    expect(first.reminders[0].due_at).toMatch(/T22:00:00\.000Z$/);
+
+    const second = database();
+    await buildMemoryReply(second.db, "person-1", "message-1", "Remember Jacob has soccer on Saturday", reminderConfig, undefined, undefined, "conversation-1");
+    await buildMemoryReply(second.db, "person-1", "message-2", "3:00 pm", reminderConfig, undefined, undefined, "conversation-1");
+    expect(second.reminders[0].due_at).toMatch(/T05:00:00\.000Z$/);
+  });
+
+  it("does not schedule when declined and expires invalid offers", async () => {
+    const declined = database();
+    await buildMemoryReply(declined.db, "person-1", "message-1", "Remember Jacob has soccer on Saturday", reminderConfig, undefined, undefined, "conversation-1");
+    await expect(buildMemoryReply(declined.db, "person-1", "message-2", "no", reminderConfig, undefined, undefined, "conversation-1"))
+      .resolves.toBe("Okay, I won’t schedule a reminder.");
+    expect(declined.reminders).toHaveLength(0);
+
+    const expired = database({ expired: true });
+    await buildMemoryReply(expired.db, "person-1", "message-1", "Remember Jacob has soccer on Saturday", reminderConfig, undefined, undefined, "conversation-1");
+    await expect(buildMemoryReply(expired.db, "person-1", "message-2", "yes", reminderConfig, undefined, undefined, "conversation-1"))
+      .resolves.toBeUndefined();
+    expect(expired.reminders).toHaveLength(0);
+  });
   it("allows an emergency safe word to interrupt without clearing clarification", async () => {
     const { db, getClarification } = database({ emergency: true });
     await buildMemoryReply(db, "person-1", "message-0", "My appointment is on 3 March", undefined, undefined, undefined, "conversation-1");

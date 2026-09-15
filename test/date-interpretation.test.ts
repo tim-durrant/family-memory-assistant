@@ -61,6 +61,17 @@ describe("deterministic date interpretation", () => {
     });
   });
 
+  it("resolves a bare weekday to the next occurrence strictly after today", () => {
+    expect(interpretMessage("Remember Jacob has soccer on Saturday", config, now)).toMatchObject({
+      effectiveDate: "2026-09-12",
+      needsYear: false,
+      dateIssue: "none",
+    });
+    expect(interpretMessage("The appointment is Thursday", config, new Date("2026-09-10T02:00:00.000Z"))).toMatchObject({
+      effectiveDate: "2026-09-17",
+    });
+  });
+
   it("resolves relative dates in the configured timezone", () => {
     expect(interpretMessage("My appointment is today", config, now)).toMatchObject({ effectiveDate: "2026-09-10" });
     expect(interpretMessage("My appointment is tomorrow", config, now)).toMatchObject({ effectiveDate: "2026-09-11" });

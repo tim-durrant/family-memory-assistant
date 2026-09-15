@@ -264,7 +264,7 @@ function parseNoteDate(value: string): string | null {
   return month ? `${textual[3]}-${month.toString().padStart(2, "0")}-${textual[1].padStart(2, "0")}` : null;
 }
 
-function localDateTimeToIso(year: number, month: number, day: number, hour: number, minute: number, timezone: string): string | null {
+export function localDateTimeToIso(year: number, month: number, day: number, hour: number, minute: number, timezone: string): string | null {
   const guess = Date.UTC(year, month - 1, day, hour, minute);
   const parts = new Intl.DateTimeFormat("en-US", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(new Date(guess));
   const values = Object.fromEntries(parts.filter((part) => part.type !== "literal").map((part) => [part.type, Number(part.value)]));
@@ -350,6 +350,9 @@ function extractDate(
     return { isoDate: addDays(zonedToday(now, config.timezone), offset), needsYear: false, issue: "none" };
   }
 
+  const weekday = statement.match(/\b(?:this\s+|next\s+)?(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b/i)?.[1]?.toLowerCase();
+  if (weekday) return nextWeekday(zonedToday(now, config.timezone), weekday);
+
   const textual = statement.match(/\b(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]+)(?:\s+(\d{4}))?\b/i);
   if (textual) {
     const month = MONTHS.get(textual[2].toLowerCase());
@@ -396,6 +399,17 @@ function extractDate(
   if (!isValidDayMonth(month, day)) return invalidDate();
   if (rawYear === null) return { isoDate: null, needsYear: true, issue: "none" };
   return { isoDate: isoDate(rawYear, month, day), needsYear: false, issue: "none" };
+}
+
+// A bare or "this" weekday means the next occurrence strictly after today;
+// this avoids silently scheduling a reminder in the past.
+function nextWeekday(today: string, weekday: string): DateResult {
+  const weekdays = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  const todayIndex = new Date(`${today}T00:00:00Z`).getUTCDay();
+  const targetIndex = weekdays.indexOf(weekday);
+  if (targetIndex < 0) return noDate();
+  const offset = (targetIndex - todayIndex + 7) % 7 || 7;
+  return { isoDate: addDays(today, offset), needsYear: false, issue: "none" };
 }
 
 function noDate(): DateResult {

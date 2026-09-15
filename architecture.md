@@ -85,6 +85,26 @@ An interpreter turns a normalised message into zero or more **untrusted intent c
 
 All providers implement the same interface and return the same candidate format. Provider selection is application configuration, not capability logic. A provider may also return `unknown` or `needs_clarification`.
 
+#### Health-event interpretation
+
+Health-event recognition is a specialized deterministic interpretation lane, not a database concern and not a diagnosis engine. A health interpreter may use a layered, versioned offline vocabulary:
+
+- HPO as the open canonical clinical-feature vocabulary;
+- CHV/OAC as the patient-language synonym layer;
+- UMLS mappings and SNOMED CT identifiers only where their licensing and distribution conditions permit;
+- a small, reviewed family-language dictionary for local phrases.
+
+The vocabulary supplies concepts, aliases, categories, identifiers, and source versions. It must not interpret sentence meaning by itself. Sentence rules must separately extract and preserve qualifiers such as:
+
+- assertion: present, negated, uncertain, or historical;
+- experiencer: self or another person;
+- duration, onset, timing, severity, and body site;
+- treatment context and recurrence.
+
+For example, `Had a 2 hr migraine this morning` may produce an untrusted `health.record_event` candidate, while `I might have diabetes`, `the doctor ruled out diabetes`, and `my daughter has a migraine` must not become an unqualified self-diagnosis.
+
+The original message remains the source record. The normalized health event is derived data and must retain vocabulary source/version metadata. Health-event interpretation must not write to D1, grant permissions, send messages, or trigger reminders by itself.
+
 A provider must never:
 
 - write to D1;
@@ -127,6 +147,7 @@ Capabilities are ordinary TypeScript functions/classes with narrow dependencies.
 Examples:
 
 - `memory.remember_fact`;
+- `health.record_event`;
 - `memory.recall_fact`;
 - `memory.list_facts`;
 - `reminder.create`;
@@ -600,6 +621,10 @@ src/
       features.ts
       model.ts
       types.ts
+    health-events/
+      interpret.ts                 # health phrase and qualifier extraction
+      vocabulary.ts                # versioned offline vocabulary adapters/data
+      types.ts                     # untrusted health-event candidate types
     structured-request-builder/
       build-request.ts             # classification -> typed request
       types.ts
@@ -618,13 +643,14 @@ src/
     response-renderer/
       render-response.ts
   repositories/                     # domain-facing repository ports/adapters
+    health-events.ts                # health-event persistence/query boundary
   infrastructure/
     d1/                             # D1 implementations only
     whatsapp/                       # Twilio/Meta implementations only
   config.ts
   fixture.ts
 migrations/
-intent-lab/                          # offline evaluation/training only
+`intent-lab/`                          # offline evaluation/training only; never imported by Worker
 test/
   contracts/
   pipeline/
@@ -640,9 +666,11 @@ index -> application -> pipeline -> modules -> contracts
 infrastructure -> contracts/interfaces
 ```
 
-Modules must not import `index.ts`, transport payload types, or concrete D1 implementations. They receive narrow interfaces through constructors/functions. A classifier never writes data, a capability never parses natural language, and a renderer never queries D1.
+Modules must not import `index.ts`, transport payload types, or concrete D1 implementations. They receive narrow interfaces through constructors/functions. A classifier never writes data, a capability never parses natural language, and a renderer never queries D1. Health-event interpretation may produce a candidate, but `health.record_event` validates it, applies subject-scoped health permissions, persists it through a repository, and emits audit metadata.
 
 This is a target layout, not a request to move every current file immediately. Migrate one vertical slice at a time, beginning with the existing fact lookup/record flow. Preserve compatibility exports while tests move to the new contracts. `src/index.ts` should become compact only after the pipeline owns the extracted orchestration; reducing its line count without moving responsibility would merely hide coupling.
+
+The offline `intent-lab/` is for synthetic or deliberately de-identified evaluation only. It is not the health vocabulary store, must not contain raw family health messages, and must never be imported into the Worker. Health-event recognition in production remains a deterministic, versioned interpretation module until a separate safety and consent decision authorizes another provider.
 
 ## 9. Technologies and features not to introduce in V1
 
@@ -658,7 +686,7 @@ Do not introduce these yet:
 - A dashboard as the primary interface.
 - A large NLP framework.
 - Direct AI access to D1, secrets, WhatsApp, or external connectors.
-- Complex ontology or role identity records.
+- Complex ontology or role identity records. A bounded, versioned health vocabulary is acceptable for deterministic recognition; importing a full ontology into runtime business logic is not.
 - Automatic forwarding of private or health-related information.
 
 ## Future hooks worth preserving now

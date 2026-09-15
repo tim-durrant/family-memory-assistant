@@ -752,18 +752,25 @@ My favourite TV show is The Chosen
 
 ### C. Sensitive-health message lane
 
-**Status: PLANNED** — Health terms must be treated as sensitive data, even when the user states them plainly.
+**Status: PLANNED** — Health terms must be treated as sensitive data, even when the user states them plainly. This is a dedicated deterministic interpretation and capability lane, not an extension of generic fact matching.
 
 - Add a conservative, versioned offline health vocabulary for recognition and normalization only; it must not diagnose or establish medical truth.
+- Use HPO as the open canonical clinical-feature vocabulary and CHV/OAC as the patient-language synonym layer. Consider UMLS mappings and SNOMED CT identifiers only after confirming the applicable licence, territory, redistribution, and release-version conditions.
+- Keep vocabulary data separate from sentence interpretation. Store canonical ID/name, aliases, category, source, and source version; do not put a large ontology directly into parser or capability logic.
+- Retain the exact source sentence alongside every normalized event. Public NLP corpora such as n2c2/i2b2 and MIMIC may inform synthetic test design, but they are not runtime vocabularies and require their own access/use controls.
 - Detect health statements, negation, uncertainty, historical language, and references to another person before ordinary fact handling.
 - Route likely health statements into a dedicated low-friction workflow rather than generic fact recording.
 - Preserve the exact original text and provenance before any interpretation.
 - With health-record saving not explicitly enabled, ask for one compact choice, for example: `1. Save as health record 2. Save as private note 3. Don’t save`.
 - With explicit health-record consent already enabled, use a shorter `1. Save 2. Cancel` confirmation.
 - Store semantic qualifiers such as confirmed diagnosis, being investigated, symptom/concern, historical condition, or negated condition separately from the condition term.
+- Model a broad `health_event` with subtypes such as symptom, sign, condition/episode, medication effect, test result, and mood/functioning change; do not force every recognized term into `symptom`.
+- A first candidate such as `Had a 2 hr migraine this morning` should capture concept, present assertion, self experiencer, duration, time reference, and source text. It should not diagnose migraine or silently create a reminder.
 - Never convert `I might have diabetes`, `the doctor ruled out diabetes`, or `my mother has diabetes` into an unqualified diagnosis.
 - Keep emergency detection separate from ordinary health-record storage.
 - Do not send health text to an AI provider by default. Future AI use requires the existing local redaction, consent, fail-closed validation, and provider audit gates.
+- Add a `health.record_event` capability and health-event repository only after subject-scoped health permissions, retention, audit, and correction behaviour are defined. The interpreter must never write D1 or decide authorization.
+- Intent-classifier impact: do not add health data to the current offline classifier corpus or execute an ML classifier in production. When this lane is implemented, add a reviewed `record_health_event` candidate contract and synthetic/de-identified evaluation cases for present, negated, uncertain, historical, treatment-context, duration, and other-person language. The deterministic health lane must remain the production authority.
 
 ### D. Immediate document and media capture
 

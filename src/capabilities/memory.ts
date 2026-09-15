@@ -18,6 +18,14 @@ import {
 } from "../repositories/facts.js";
 import { cancelReminder, createReminder, listReminders } from "../repositories/reminders.js";
 import {
+  createReminderFromOffer,
+  isCasualReminderCandidate,
+  parseReminderOfferAnswer,
+  reminderOfferPrompt,
+  stripRememberPrefix,
+  type ReminderOfferPayload,
+} from "./reminders.js";
+import {
   completeClarification,
   createClarificationState,
   getPendingClarification,
@@ -100,7 +108,9 @@ export async function buildMemoryReply(
   if (pendingClarification) {
     if (/^(?:cancel|stop|never mind|nevermind)$/i.test(text.trim())) {
       await cancelClarification(db, personId, conversationId);
-      return "Okay, I cancelled that clarification.";
+      return pendingClarification.pending_intent === "offer_reminder"
+        ? "Okay, I won’t schedule a reminder."
+        : "Okay, I cancelled that clarification.";
     }
     const interruption = interpretMessage(text, config);
     if (interruption.kind === "help") {
@@ -150,6 +160,29 @@ export async function buildMemoryReply(
       return relationship === "family member"
         ? `I’ve started the family-member approval process for ${payload.displayName}. I have saved the note for you. Save for anyone else?`
         : `${renderReply(config.entityRelationshipSavedReply, { person: payload.displayName, relationship })}\n\nI have saved the note for you. Save for anyone else?`;
+    }
+    if (pendingClarification.pending_intent === "offer_reminder" && pendingClarification.missing_field === "confirmation_or_time") {
+      const payload = JSON.parse(pendingClarification.payload_json) as ReminderOfferPayload;
+      const answer = parseReminderOfferAnswer(text, payload.defaultTime);
+      if (answer.kind === "no") {
+        await completeClarification(db, pendingClarification.id);
+        return "Okay, I won’t schedule a reminder.";
+      }
+      if (answer.kind === "time") {
+        if (!(await authorize(db, { requesterPersonId: personId, capability: "reminder.create" }))) return config.permissionDeniedReply;
+        const reminder = await createReminderFromOffer(db, personId, sourceMessageId, payload, answer);
+        if (reminder) {
+          await completeClarification(db, pendingClarification.id);
+          return `Reminder ${reminder.publicCode} created for ${formatDateTime(reminder.dueAt, payload.timezone ?? config.timezone)}: ${payload.reminderText ?? ""}`;
+        }
+      }
+      const nextTurn = pendingClarification.turn_count + 1;
+      if (nextTurn >= config.maxClarificationTurns) {
+        await cancelClarification(db, personId, conversationId);
+        return "I won’t schedule a reminder. You can ask again any time if you change your mind.";
+      }
+      await incrementClarificationTurn(db, pendingClarification.id);
+      return reminderOfferPrompt(payload);
     }
     if (pendingClarification.pending_intent === "when_question" && pendingClarification.missing_field === "fact_choice") {
       const payload = JSON.parse(pendingClarification.payload_json) as { factIds?: string[] };
@@ -423,7 +456,18 @@ export async function buildMemoryReply(
       );
       return renderReply(config.missingYearReply, { statement: intent.statement });
     }
-    await recordFact(db, personId, sourceMessageId, intent);
+    const factId = await recordFact(db, personId, sourceMessageId, intent);
+    if (config.enableReminderCreation && isCasualReminderCandidate(intent)) {
+      const dueDate = intent.effectiveDate;
+      if (dueDate) {
+        await createClarificationState(
+          db, personId, conversationId, "offer_reminder", "confirmation_or_time",
+          { factId, reminderText: intent.statement, dueDate, defaultTime: config.defaultReminderTime, timezone: config.timezone },
+          sourceMessageId, config.clarificationTtlMinutes,
+        );
+        return `I’ve saved that ${stripRememberPrefix(intent.statement)}.\n\n${reminderOfferPrompt({ reminderText: intent.statement, dueDate, defaultTime: config.defaultReminderTime, timezone: config.timezone })}`;
+      }
+    }
     return `Saved: ${intent.statement}.`;
   }
 
