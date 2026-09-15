@@ -32,6 +32,7 @@ describe("deterministic configuration", () => {
       DETERMINISTIC_ENABLE_WAITING_FACTS: "false",
       DETERMINISTIC_ENABLE_FACT_RESOLUTION: "false",
       DETERMINISTIC_ENABLE_REMINDER_CREATION: "true",
+      DETERMINISTIC_JOURNAL_ENTRY_LABEL: "journal item",
       DETERMINISTIC_FACT_CONFLICT_POLICY: "confirm",
       DETERMINISTIC_FACT_DELETE_POLICY: "confirm",
       DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES: "45",
@@ -46,6 +47,7 @@ describe("deterministic configuration", () => {
       enableWaitingFacts: false,
       enableFactResolution: false,
       enableReminderCreation: true,
+      journalEntryLabel: "journal item",
       factConflictPolicy: "confirm",
       factDeletePolicy: "confirm",
       factConfirmationTtlMinutes: 45,
@@ -65,13 +67,30 @@ describe("deterministic configuration", () => {
         prepare: () => ({ bind: () => ({ all: async () => ({ results: [
           { setting_key: "enableFactResolution", setting_value: "false", value_type: "boolean" },
           { setting_key: "factConfirmationTtlMinutes", setting_value: "45", value_type: "positive_integer" },
+          { setting_key: "copy.journalEntryLabel", setting_value: "memory", value_type: "text" },
+          { setting_key: "copy.missingYearReply", setting_value: "Saved {journalEntry}: {statement}. Which year?", value_type: "text" },
+          { setting_key: "copy.noMatchingFactReply", setting_value: "I haven’t found that yet.", value_type: "text" },
         ] }) }) }),
       } as unknown as D1Database,
     });
     await expect(getDeterministicConfigForPerson(env, "owner-1")).resolves.toMatchObject({
       enableFactResolution: false,
       factConfirmationTtlMinutes: 45,
+      journalEntryLabel: "memory",
+      missingYearReply: "Saved {journalEntry}: {statement}. Which year?",
+      noMatchingFactReply: "I haven’t found that yet.",
     });
+  });
+
+  it("rejects an unsupported placeholder in a D1 copy override", async () => {
+    const env = environment({
+      DB: {
+        prepare: () => ({ bind: () => ({ all: async () => ({ results: [
+          { setting_key: "copy.missingYearReply", setting_value: "Saved {secret}: {statement}", value_type: "text" },
+        ] }) }) }),
+      } as unknown as D1Database,
+    });
+    await expect(getDeterministicConfigForPerson(env, "owner-1")).rejects.toThrow(/unsupported template placeholder/);
   });
 
   it("defaults unauthorized senders to ignore and validates opt-in replies", () => {
@@ -86,5 +105,6 @@ describe("deterministic configuration", () => {
     expect(() => getDeterministicConfig(environment({ DETERMINISTIC_FACT_CONFLICT_POLICY: "overwrite" }))).toThrow(/must be confirm/);
     expect(() => getDeterministicConfig(environment({ DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES: "0" }))).toThrow(/positive integer/);
     expect(() => getDeterministicConfig(environment({ FAMILY_TIMEZONE: " " }))).toThrow(/must not be empty/);
+    expect(() => getDeterministicConfig(environment({ DETERMINISTIC_JOURNAL_ENTRY_LABEL: " " }))).toThrow(/must not be empty/);
   });
 });

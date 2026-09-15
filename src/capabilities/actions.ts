@@ -24,7 +24,7 @@ export const ACTIONS: readonly ActionDefinition[] = [
   { key: "ai.assistance", label: "ask an AI service for additional help", examples: [], status: "planned" },
 ];
 
-export function helpReply(topic?: string): string {
+export function helpReply(topic?: string, journalEntryLabel = "journal entry"): string {
   const normalizedTopic = topic?.trim().toLowerCase();
   const relevant = normalizedTopic
     ? ACTIONS.filter((action) => action.label.includes(normalizedTopic) || action.key.includes(normalizedTopic))
@@ -34,7 +34,7 @@ export function helpReply(topic?: string): string {
   const planned = actions.filter((action) => action.status === "planned");
   const lines = [
     "I can currently:",
-    ...available.map((action) => `- ${action.label}: ${action.examples.join(" | ")}`),
+    ...available.map((action) => `- ${action.key === "fact.record" ? `save a ${journalEntryLabel}` : action.key === "fact.lookup" ? `look up a saved ${journalEntryLabel}` : action.label}: ${action.examples.join(" | ")}`),
   ];
   if (planned.length > 0) {
     lines.push("Not available yet:", ...planned.map((action) => `- ${action.label}`));

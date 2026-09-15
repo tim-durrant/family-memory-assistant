@@ -114,17 +114,17 @@ export async function buildMemoryReply(
     }
     const interruption = interpretMessage(text, config);
     if (interruption.kind === "help") {
-      return `${helpReply(interruption.topic)}\n\n${clarificationPrompt(pendingClarification)}`;
+      return `${helpReply(interruption.topic, config.journalEntryLabel)}\n\n${clarificationPrompt(pendingClarification, config.journalEntryLabel)}`;
     }
     if (interruption.kind !== "unknown"
       && !(pendingClarification.pending_intent === "relationship" && interruption.kind === "record_fact")) {
-      return clarificationPrompt(pendingClarification);
+      return clarificationPrompt(pendingClarification, config.journalEntryLabel);
     }
     if (pendingClarification.pending_intent === "record_fact" && pendingClarification.missing_field === "year") {
       const year = text.trim().match(/^(?:19|20)\d{2}$/)?.[0];
       if (!year) {
         await incrementClarificationTurn(db, pendingClarification.id);
-        return "Please reply with the four-digit year, or say cancel.";
+        return `Please reply with the four-digit year, or say cancel.`;
       }
       const payload = JSON.parse(pendingClarification.payload_json) as { statement?: string; category?: string; status?: string; day?: number; month?: number };
       if (!payload.statement || !payload.category || !payload.status || !payload.day || !payload.month) {
@@ -133,7 +133,7 @@ export async function buildMemoryReply(
       }
       await recordFactWithDate(db, personId, sourceMessageId, payload.statement, payload.category, payload.status, payload.day, payload.month, Number(year));
       await completeClarification(db, pendingClarification.id);
-      return `Saved: ${payload.statement}.`;
+      return `Saved ${config.journalEntryLabel}: ${payload.statement}.`;
     }
     if (pendingClarification.pending_intent === "relationship" && pendingClarification.missing_field === "relationship") {
       const payload = JSON.parse(pendingClarification.payload_json) as { entityId?: string; noteId?: string; displayName?: string };
@@ -252,7 +252,7 @@ export async function buildMemoryReply(
   }
   if (pending && confirmation === "no") {
     await clearPendingFactAction(db, personId);
-    return config.factChangeCancelledReply;
+    return renderReply(config.factChangeCancelledReply, { journalEntry: config.journalEntryLabel });
   }
 
   const intent = interpretMessage(text, config);
@@ -260,7 +260,7 @@ export async function buildMemoryReply(
   if (capability && !(await authorize(db, { requesterPersonId: personId, capability }))) return config.permissionDeniedReply;
   if (intent.kind === "unknown") return optionalReply(config.unknownIntentReply);
 
-  if (intent.kind === "help") return helpReply(intent.topic);
+  if (intent.kind === "help") return helpReply(intent.topic, config.journalEntryLabel);
 
   if (intent.kind === "create_reminder") {
     if (!config.enableReminderCreation) return optionalReply(config.unknownIntentReply);
@@ -446,7 +446,7 @@ export async function buildMemoryReply(
     }
     if (conflicts.length === 1 && config.factConflictPolicy === "confirm") {
       await createPendingFactAction(db, personId, sourceMessageId, "replace", conflicts[0], intent, config.factConfirmationTtlMinutes);
-      return renderReply(config.factConflictReply, { existing: formatFact(conflicts[0]), statement: intent.statement });
+      return renderReply(config.factConflictReply, { existing: formatFact(conflicts[0]), statement: intent.statement, journalEntry: config.journalEntryLabel });
     }
     if (intent.needsYear && intent.dateParts) {
       await createClarificationState(
@@ -454,7 +454,7 @@ export async function buildMemoryReply(
         { day: intent.dateParts.day, month: intent.dateParts.month, statement: intent.statement, category: intent.category, status: intent.status },
         sourceMessageId, config.clarificationTtlMinutes,
       );
-      return renderReply(config.missingYearReply, { statement: intent.statement });
+      return renderReply(config.missingYearReply, { statement: intent.statement, journalEntry: config.journalEntryLabel });
     }
     const factId = await recordFact(db, personId, sourceMessageId, intent);
     if (config.enableReminderCreation && isCasualReminderCandidate(intent)) {
@@ -468,17 +468,17 @@ export async function buildMemoryReply(
         return `I’ve saved that ${stripRememberPrefix(intent.statement)}.\n\n${reminderOfferPrompt({ reminderText: intent.statement, dueDate, defaultTime: config.defaultReminderTime, timezone: config.timezone })}`;
       }
     }
-    return `Saved: ${intent.statement}.`;
+    return `Saved ${config.journalEntryLabel}: ${intent.statement}.`;
   }
 
   if (intent.kind === "forget_fact") {
     if (config.factDeletePolicy !== "confirm") return optionalReply(config.unknownIntentReply);
     const facts = await listFacts(db, personId);
     const matches = matchFacts(facts, intent.topic, config).matches;
-    if (matches.length === 0) return config.resolutionNotFoundReply;
-    if (matches.length > 1) return config.resolutionAmbiguousReply;
+    if (matches.length === 0) return renderReply(config.resolutionNotFoundReply, { journalEntry: config.journalEntryLabel });
+    if (matches.length > 1) return renderReply(config.resolutionAmbiguousReply, { journalEntry: config.journalEntryLabel });
     await createPendingFactAction(db, personId, sourceMessageId, "forget", matches[0], null, config.factConfirmationTtlMinutes);
-    return renderReply(config.factDeleteReply, { existing: formatFact(matches[0]) });
+    return renderReply(config.factDeleteReply, { existing: formatFact(matches[0]), journalEntry: config.journalEntryLabel });
   }
 
   const facts = await listFacts(db, personId);
@@ -498,7 +498,7 @@ export async function buildMemoryReply(
         db, personId, conversationId, "when_question", "fact_choice",
         { factIds: matches.map((fact) => fact.id) }, sourceMessageId, config.clarificationTtlMinutes,
       );
-      return ["I found more than one matching fact:", ...matches.map((fact, index) => `${index + 1}. ${formatFact(fact)}`), "Which one do you mean? Reply with a number or say cancel."].join("\\n");
+      return ["I found more than one matching journal entry:", ...matches.map((fact, index) => `${index + 1}. ${formatFact(fact)}`), "Which one do you mean? Reply with a number or say cancel."].join("\\n");
     }
     return formatFact(matches[0]);
   }
@@ -506,8 +506,8 @@ export async function buildMemoryReply(
   if (intent.kind !== "resolve_fact" && intent.kind !== "forget_fact") return optionalReply(config.unknownIntentReply);
   if (!config.enableFactResolution) return optionalReply(config.unknownIntentReply);
   const matchCount = await resolveFact(db, personId, intent.topic, config, sourceMessageId);
-  if (matchCount === 0) return config.resolutionNotFoundReply;
-  if (matchCount > 1) return config.resolutionAmbiguousReply;
+  if (matchCount === 0) return renderReply(config.resolutionNotFoundReply, { journalEntry: config.journalEntryLabel });
+  if (matchCount > 1) return renderReply(config.resolutionAmbiguousReply, { journalEntry: config.journalEntryLabel });
   return config.resolutionSuccessReply;
 }
 
@@ -590,12 +590,12 @@ function personStatusNotice(
   return status === "approved" ? "" : renderReply(config.personPendingNotice, { person, status });
 }
 
-function clarificationPrompt(state: { pending_intent: string; missing_field: string }): string {
+function clarificationPrompt(state: { pending_intent: string; missing_field: string }, journalEntryLabel = "journal entry"): string {
   if (state.pending_intent === "record_fact" && state.missing_field === "year") {
     return "I’m still waiting for the four-digit year. Reply with the year, or say cancel.";
   }
   if (state.pending_intent === "when_question" && state.missing_field === "fact_choice") {
-    return "I’m still waiting for the number of the fact you mean. Reply with a number, or say cancel.";
+    return `I’m still waiting for the number of the ${journalEntryLabel} you mean. Reply with a number, or say cancel.`;
   }
   if (state.pending_intent === "relationship" && state.missing_field === "relationship") {
     return "I’m still waiting for the relationship. Reply with a relationship, or say cancel.";

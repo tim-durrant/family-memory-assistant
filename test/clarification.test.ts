@@ -149,12 +149,12 @@ describe("persisted clarification state", () => {
   it("persists an incomplete fact and completes it with a valid year", async () => {
     const { db, facts, getClarification } = database();
     await expect(buildMemoryReply(db, "person-1", "message-1", "My driving test is on 12 October", undefined, undefined, undefined, "conversation-1"))
-      .resolves.toBe("Saved: My driving test is on 12 October. What year should I use?");
+      .resolves.toBe("Saved journal entry: My driving test is on 12 October. What year should I use?");
     expect(facts).toHaveLength(0);
     expect(getClarification()?.missing_field).toBe("year");
 
     await expect(buildMemoryReply(db, "person-1", "message-2", "2026", undefined, undefined, undefined, "conversation-1"))
-      .resolves.toBe("Saved: My driving test is on 12 October.");
+      .resolves.toBe("Saved journal entry: My driving test is on 12 October.");
     expect(facts).toHaveLength(1);
     expect(facts[0].effective_date).toBe("2026-10-12");
     expect(getClarification()?.status).toBe("completed");
@@ -195,7 +195,7 @@ describe("persisted clarification state", () => {
     );
     await buildMemoryReply(db, "person-1", "message-1", "When is my appointment?", undefined, undefined, undefined, "conversation-1");
     await expect(buildMemoryReply(db, "person-1", "message-2", "My new appointment is on 20 November 2026", undefined, undefined, undefined, "conversation-1"))
-      .resolves.toBe("I’m still waiting for the number of the fact you mean. Reply with a number, or say cancel.");
+      .resolves.toBe("I’m still waiting for the number of the journal entry you mean. Reply with a number, or say cancel.");
     expect(getClarification()?.turn_count).toBe(0);
     expect(facts).toHaveLength(2);
   });

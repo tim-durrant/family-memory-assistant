@@ -25,6 +25,7 @@ export interface Env {
   DETERMINISTIC_ENABLE_FACT_RESOLUTION?: string;
   DETERMINISTIC_ENABLE_REMINDER_CREATION?: string;
   DEFAULT_REMINDER_TIME?: string;
+  DETERMINISTIC_JOURNAL_ENTRY_LABEL?: string;
   DETERMINISTIC_FACT_CONFLICT_POLICY?: string;
   DETERMINISTIC_FACT_DELETE_POLICY?: string;
   DETERMINISTIC_FACT_CONFIRMATION_TTL_MINUTES?: string;
@@ -78,6 +79,7 @@ export type DeterministicConfig = {
   enableFactResolution: boolean;
   enableReminderCreation: boolean;
   defaultReminderTime: string;
+  journalEntryLabel: string;
   factConflictPolicy: "confirm";
   factDeletePolicy: "confirm";
   factConfirmationTtlMinutes: number;
@@ -131,6 +133,7 @@ export const DEFAULT_DETERMINISTIC_CONFIG: DeterministicConfig = {
   enableFactResolution: true,
   enableReminderCreation: false,
   defaultReminderTime: "08:00",
+  journalEntryLabel: "journal entry",
   factConflictPolicy: "confirm",
   factDeletePolicy: "confirm",
   factConfirmationTtlMinutes: 30,
@@ -146,17 +149,17 @@ export const DEFAULT_DETERMINISTIC_CONFIG: DeterministicConfig = {
   // An empty unknown-intent reply preserves the current behaviour: ignore it.
   unknownIntentReply: "",
   ambiguousFactReply: "I found more than one possibility: {matches}. Which one do you mean?",
-  missingYearReply: "Saved: {statement}. What year should I use?",
+  missingYearReply: "Saved {journalEntry}: {statement}. What year should I use?",
   ambiguousDateReply: "I’m not sure which date you mean. Please use a month name or a date with an unambiguous day/month.",
   invalidDateReply: "I couldn’t validate that date. Please check the day, month, and year.",
   noMatchingFactReply: "I don’t know the answer to that yet.",
   noWaitingFactsReply: "I don’t have anything recorded as waiting right now.",
-  resolutionNotFoundReply: "I couldn’t find a matching fact to resolve.",
-  resolutionAmbiguousReply: "I found more than one matching fact. Which one should I mark as resolved?",
+  resolutionNotFoundReply: "I couldn’t find a matching {journalEntry} to resolve.",
+  resolutionAmbiguousReply: "I found more than one matching {journalEntry}. Which one should I mark as resolved?",
   resolutionSuccessReply: "Marked that as resolved.",
-  factConflictReply: "I found an existing fact: {existing}. Should I replace it with {statement}? Reply yes or no.",
-  factDeleteReply: "Should I forget this fact: {existing}? Reply yes or no.",
-  factChangeCancelledReply: "Okay, I left the existing fact unchanged.",
+  factConflictReply: "I found an existing journal entry: {existing}. Should I replace it with {statement}? Reply yes or no.",
+  factDeleteReply: "Should I forget this journal entry: {existing}? Reply yes or no.",
+  factChangeCancelledReply: "Okay, I left the existing {journalEntry} unchanged.",
   factChangeSuccessReply: "Done.",
   unknownPersonReply: "I don’t know that person yet. To add them, say: Add {person} as a family member.",
   permissionDeniedReply: "I can’t do that because this information requires additional permission.",
@@ -193,6 +196,7 @@ export function getDeterministicConfig(env: Env): DeterministicConfig {
     enableFactResolution: booleanValue(env.DETERMINISTIC_ENABLE_FACT_RESOLUTION, DEFAULT_DETERMINISTIC_CONFIG.enableFactResolution, "DETERMINISTIC_ENABLE_FACT_RESOLUTION"),
     enableReminderCreation: booleanValue(env.DETERMINISTIC_ENABLE_REMINDER_CREATION, DEFAULT_DETERMINISTIC_CONFIG.enableReminderCreation, "DETERMINISTIC_ENABLE_REMINDER_CREATION"),
     defaultReminderTime: reminderTime(env.DEFAULT_REMINDER_TIME),
+    journalEntryLabel: nonEmptyString(env.DETERMINISTIC_JOURNAL_ENTRY_LABEL, DEFAULT_DETERMINISTIC_CONFIG.journalEntryLabel, "DETERMINISTIC_JOURNAL_ENTRY_LABEL"),
     factConflictPolicy: policyValue(env.DETERMINISTIC_FACT_CONFLICT_POLICY, "confirm", "DETERMINISTIC_FACT_CONFLICT_POLICY"),
     factDeletePolicy: policyValue(env.DETERMINISTIC_FACT_DELETE_POLICY, "confirm", "DETERMINISTIC_FACT_DELETE_POLICY"),
     factConfirmationTtlMinutes: positiveInteger(
@@ -248,6 +252,70 @@ export function getDeterministicConfig(env: Env): DeterministicConfig {
     attributeMatchReply: textValue(env.DETERMINISTIC_ATTRIBUTE_MATCH_REPLY, DEFAULT_DETERMINISTIC_CONFIG.attributeMatchReply),
     attributeDifferentReply: textValue(env.DETERMINISTIC_ATTRIBUTE_DIFFERENT_REPLY, DEFAULT_DETERMINISTIC_CONFIG.attributeDifferentReply),
   };
+}
+
+type UserCopyField = keyof Pick<DeterministicConfig,
+  | "unknownIntentReply" | "ambiguousFactReply" | "missingYearReply" | "ambiguousDateReply" | "invalidDateReply"
+  | "noMatchingFactReply" | "noWaitingFactsReply" | "resolutionNotFoundReply" | "resolutionAmbiguousReply"
+  | "resolutionSuccessReply" | "factConflictReply" | "factDeleteReply" | "factChangeCancelledReply" | "factChangeSuccessReply"
+  | "unknownPersonReply" | "permissionDeniedReply" | "addPersonReply" | "personAlreadyExistsReply"
+  | "noteSavedReply" | "noteNotFoundReply" | "entityRelationshipReply" | "entityRelationshipSavedReply"
+  | "personApprovalReply" | "personApprovalResultReply" | "personPendingNotice"
+  | "attributeSavedReply" | "attributeAlreadyKnownReply" | "attributeConflictReply" | "attributeNotFoundReply"
+  | "attributeAmbiguousReply" | "attributeQueryReply" | "attributeMatchReply" | "attributeDifferentReply"
+  | "journalEntryLabel"
+>;
+
+type UserCopySetting = { field: UserCopyField; placeholders: readonly string[] };
+
+const USER_COPY_SETTINGS: Readonly<Record<string, UserCopySetting>> = {
+  "copy.journalEntryLabel": { field: "journalEntryLabel", placeholders: [] },
+  "copy.unknownIntentReply": { field: "unknownIntentReply", placeholders: [] },
+  "copy.ambiguousFactReply": { field: "ambiguousFactReply", placeholders: ["matches"] },
+  "copy.missingYearReply": { field: "missingYearReply", placeholders: ["journalEntry", "statement"] },
+  "copy.ambiguousDateReply": { field: "ambiguousDateReply", placeholders: [] },
+  "copy.invalidDateReply": { field: "invalidDateReply", placeholders: [] },
+  "copy.noMatchingFactReply": { field: "noMatchingFactReply", placeholders: [] },
+  "copy.noWaitingFactsReply": { field: "noWaitingFactsReply", placeholders: [] },
+  "copy.resolutionNotFoundReply": { field: "resolutionNotFoundReply", placeholders: ["journalEntry"] },
+  "copy.resolutionAmbiguousReply": { field: "resolutionAmbiguousReply", placeholders: ["journalEntry"] },
+  "copy.resolutionSuccessReply": { field: "resolutionSuccessReply", placeholders: [] },
+  "copy.factConflictReply": { field: "factConflictReply", placeholders: ["journalEntry", "existing", "statement"] },
+  "copy.factDeleteReply": { field: "factDeleteReply", placeholders: ["journalEntry", "existing"] },
+  "copy.factChangeCancelledReply": { field: "factChangeCancelledReply", placeholders: ["journalEntry"] },
+  "copy.factChangeSuccessReply": { field: "factChangeSuccessReply", placeholders: [] },
+  "copy.unknownPersonReply": { field: "unknownPersonReply", placeholders: ["person"] },
+  "copy.permissionDeniedReply": { field: "permissionDeniedReply", placeholders: [] },
+  "copy.addPersonReply": { field: "addPersonReply", placeholders: ["person"] },
+  "copy.personAlreadyExistsReply": { field: "personAlreadyExistsReply", placeholders: ["person", "status"] },
+  "copy.noteSavedReply": { field: "noteSavedReply", placeholders: [] },
+  "copy.noteNotFoundReply": { field: "noteNotFoundReply", placeholders: [] },
+  "copy.entityRelationshipReply": { field: "entityRelationshipReply", placeholders: ["person"] },
+  "copy.entityRelationshipSavedReply": { field: "entityRelationshipSavedReply", placeholders: ["person", "relationship"] },
+  "copy.personApprovalReply": { field: "personApprovalReply", placeholders: ["person"] },
+  "copy.personApprovalResultReply": { field: "personApprovalResultReply", placeholders: ["person", "decision", "status"] },
+  "copy.personPendingNotice": { field: "personPendingNotice", placeholders: ["person", "status"] },
+  "copy.attributeSavedReply": { field: "attributeSavedReply", placeholders: ["person", "value", "attribute"] },
+  "copy.attributeAlreadyKnownReply": { field: "attributeAlreadyKnownReply", placeholders: ["person", "value", "attribute"] },
+  "copy.attributeConflictReply": { field: "attributeConflictReply", placeholders: ["person", "attribute"] },
+  "copy.attributeNotFoundReply": { field: "attributeNotFoundReply", placeholders: ["person"] },
+  "copy.attributeAmbiguousReply": { field: "attributeAmbiguousReply", placeholders: ["person", "attribute"] },
+  "copy.attributeQueryReply": { field: "attributeQueryReply", placeholders: ["person", "value", "attribute"] },
+  "copy.attributeMatchReply": { field: "attributeMatchReply", placeholders: ["person", "value", "attribute"] },
+  "copy.attributeDifferentReply": { field: "attributeDifferentReply", placeholders: ["person", "value", "attribute", "requested"] },
+};
+
+function applyUserCopySetting(config: DeterministicConfig, key: string, value: string): boolean {
+  const definition = USER_COPY_SETTINGS[key];
+  if (!definition) return false;
+  const trimmed = value.trim();
+  if (!trimmed || trimmed.length > 500) throw new Error(`${key} must be between 1 and 500 characters`);
+  const placeholders = [...trimmed.matchAll(/\{(\w+)\}/g)].map((match) => match[1]);
+  if (placeholders.some((placeholder) => !definition.placeholders.includes(placeholder))) {
+    throw new Error(`${key} contains an unsupported template placeholder`);
+  }
+  (config[definition.field] as string) = trimmed;
+  return true;
 }
 
 function nonEmptyString(value: string | undefined, fallback: string, name: string): string {
@@ -334,6 +402,7 @@ export async function getDeterministicConfigForPerson(env: Env, ownerPersonId: s
     return config;
   }
   for (const setting of settings) {
+    if (applyUserCopySetting(config, setting.setting_key, setting.setting_value)) continue;
     switch (setting.setting_key) {
       case "enableWaitingFacts":
         config.enableWaitingFacts = booleanValue(setting.setting_value, config.enableWaitingFacts, "family_settings.enableWaitingFacts");
